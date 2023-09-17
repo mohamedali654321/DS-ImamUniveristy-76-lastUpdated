@@ -61,5 +61,9 @@
       </span>
   </span>
         </ds-truncatable>
+        <small *ngIf="firstMetadataValue('dc.date.accessioned')" class="text-muted hidden-xs">
+          {{('item.uploaded.on' | translate)+' ' + (translateDate() !== null ? translateDate(): (firstMetadataValue('dc.date.accessioned').split('T')[0] |  date:'longDate'))}}
+        </small>
+        <ds-view-statistics [object]="dso"></ds-view-statistics>
     </div>
 </div>

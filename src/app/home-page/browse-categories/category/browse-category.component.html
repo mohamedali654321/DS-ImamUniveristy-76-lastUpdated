@@ -1,0 +1,12 @@
+<a
+  #selectedCategoryRef
+  class="categoy-container"
+  (click)="setSelectedCategory()"
+>
+  <span class="category-name">{{
+    "search.filters.entityType." + category.value | translate
+  }}</span>
+  <!-- <span class="badge badge-pill badge-secondary align-self-center">{{
+    category.count
+  }}</span> -->
+</a>

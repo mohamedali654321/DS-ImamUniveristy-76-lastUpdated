@@ -6445,7 +6445,7 @@
 "submission.sections.describe.relationship-lookup.search-tab.tab-title.isSiteOfPlace":"المواقع المحلية ({{ count }})",
 
 
-    "search.filters.filter.placeChildLegalName.head": 'الموقع',
+"search.filters.filter.placeChildLegalName.head": 'الموقع',
   "search.filters.filter.placeChildLegalName.label": "بحث اسم الموقع",
   "search.filters.filter.placeChildLegalName.placeholder": "اسم الموقع ",
   "search.filters.applied.f.placeChildLegalName": "الموقع",
@@ -6593,5 +6593,32 @@
 'dsapce.object.collection':'حاوية',
 'dsapce.object.community':'مجتمع',
 'dsapce.object.community, collection':'مجتمع ، حاوية',
+
+'home.view-submissions.head':'الأكثر مشاهدة',
+
+
+'home.news.title.manuscript':'مخطوطات',
+'home.news.desc.manuscript':'المخطوط أو المخطوطة (جمع مخطوطات) أي وثيقة مكتوبة بخط اليد، بدلا من طباعتها في المطبعة. سواء أكان ما يكتب على أوراق البردي أم على غيرها من الرقوق أو الورق العادي',
+'home.news.desc.theises':'الأطروحة الأكاديمية أو الرسالة العلمية هي الوثيقة التي تمثل أبحاث ونتائج الأبحاث التي قام بها الباحث وقدمها إلى جهة أكاديمية لكي تدعم ترشيحه للحصول على درجة علمية أو شهادة متخصصة مثل بكالوريوس أو ماجستير وتسمى حينها Thesis أو الدكتوراه، وتسمى حينها Dissertation',
+'home.news.title.theises':'رسائل جامعية',
+'home.news.title.article':'مقالات',
+'home.news.desc.article':'المقالة هي جزء قائم بذاته من عمل مكتوب أكبر، هذا الجزء المكون من النثر غير القصصي يظهر في الصحف، المجلات، الإنترنت والمنشورات الأكاديمية وهنالك نوعان من المقالات وهما : المقالة العلمية والمقالة الأدبية.',
+
+'home.news.browse':'تصفح',
+'item.uploaded.on':'تم الإيداع في',
+
+  "kware.media.viewer.requestACopy.btn": "طلب نسخة",
+  "kware.media.viewer.requestACopy.message": "هذا الملف مقيد، قم بتسجيل الدخول لتتمكن من فتح الملف، اذا لم تتمكن من الوصول للملف بعد تسجيل الدخول، فربما ليس لديك صلاحيات الوصول لهذا الملف، يمكنك طلب نسخة من الملف في هذه الحالة.",
+  "fileSection.viewerSwitcher.noFileFormat.message": "قم باختيار ملف اولا من قائمة الملفات..",
+  "kware.media.viewer.browseFiles.btn": "تصفح الملفات",
+
+  "mydspace.status.mydspaceArchived": "مؤرشفة",
+"mydspace.status.mydspaceValidation": "التحقق من الصحة",
+"mydspace.status.mydspaceWaitingController": "في انتظار وحدة التحكم",
+"mydspace.status.mydspaceWorkflow": "سير العمل",
+"mydspace.status.mydspaceWorkspace": "مساحة العمل",
+'home.new.upload':'تقديم جديد',
+'search.filters.namedresourcetype.Archived':'مؤرشفة',
+'search.filters.namedresourcetype.Workspace':"مساحة العمل",
 
 }

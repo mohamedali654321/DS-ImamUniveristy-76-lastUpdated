@@ -6,7 +6,7 @@
     height: 100vh;
     flex: 1 1 auto;
     nav {
-        background-color: var(--ds-admin-sidebar-bg);
+        background-color: #424242;
         height: 100%;
         flex-direction: column;
         > div {
@@ -24,7 +24,7 @@
 
         .navbar-nav {
             .admin-menu-header {
-                background-color: var(--ds-admin-sidebar-header-bg);
+                background-color: #424242;
 
                 .sidebar-section {
                   background-color: inherit;
@@ -52,13 +52,13 @@
                 .sidebar-section {
                     display: flex;
                     align-content: stretch;
-                    background-color: var(--ds-admin-sidebar-bg);
+                    background-color: #424242;
                     overflow-x: visible;
 
                     .nav-item {
                         padding-top: var(--bs-spacer);
                         padding-bottom: var(--bs-spacer);
-                        background-color: inherit;
+                        background-color: #424242;
 
                       &:focus-visible {
                         // since links fill the whole sidebar, we _inset_ the outline

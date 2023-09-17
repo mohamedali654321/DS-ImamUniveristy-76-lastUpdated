@@ -13,6 +13,11 @@ import { select, Store } from '@ngrx/store';
 import { AppState } from '../app.reducer';
 import { isAuthenticated } from '../core/auth/selectors';
 import { LocaleService } from 'src/app/core/locale/locale.service'; // import LocaleService
+import { BehaviorSubject } from 'rxjs';
+import { HostListener } from '@angular/core';
+
+@HostListener('window:scroll', ['$event'])
+
 /**
  * Component representing the public navbar
  */
@@ -28,7 +33,8 @@ export class NavbarComponent extends MenuComponent {
    * @type {MenuID.PUBLIC}
    */
   menuID = MenuID.PUBLIC;
-
+  handleScroll = new BehaviorSubject<boolean>(false);
+  topPosToStartShowing = 50;
   /**
    * Whether user is authenticated.
    * @type {Observable<string>}
@@ -54,5 +60,21 @@ export class NavbarComponent extends MenuComponent {
     super.ngOnInit();
     this.isXsOrSm$ = this.windowService.isXsOrSm();
     this.isAuthenticated$ = this.store.pipe(select(isAuthenticated));
+    this.checkScroll();
+   
+  }
+  @HostListener('window:scroll')
+  checkScroll(){
+    const scrollPosition =
+    window.pageYOffset ||
+    document.documentElement.scrollTop ||
+    document.body.scrollTop ||
+    0;
+
+    if (scrollPosition > this.topPosToStartShowing) {
+      this.handleScroll.next(true);    }
+    else {
+      this.handleScroll.next(false)
+    }
   }
 }

@@ -4,13 +4,16 @@
   </ds-item-page-title-field>
   <ds-dso-edit-menu></ds-dso-edit-menu>
 </div>
+<!-- kware start edit -->
+<ds-kware-media-viewer [item]="object"></ds-kware-media-viewer>
+<!-- kware end edit -->
 <div class="row">
   <div class="col-xs-12 col-md-4">
     <!-- <ds-metadata-field-wrapper [hideIfNoTextContent]="false">
       <ds-thumbnail [thumbnail]="object?.thumbnail | async"></ds-thumbnail>
     </ds-metadata-field-wrapper> -->
           <!-- mohamed start edit -->
-          <div class="desktop-mode">
+          <!-- <div class="desktop-mode">
             <ds-item-files-section [item]="object"></ds-item-files-section>
           </div>
   
@@ -19,7 +22,7 @@
               <ds-item-files-section  [item]="object"></ds-item-files-section>
             </div>
             <ds-media-viewer-switcher [item]="object"></ds-media-viewer-switcher>
-          </div>
+          </div> -->
           <!-- <ds-item-files-section [item]="object"></ds-item-files-section> -->
      
          <!-- mohamed end edit -->
@@ -57,12 +60,12 @@
     [label]="'journalissue.page.frequancy'">
   </ds-generic-item-page-field> -->
   </div>
-  <div class="col-xs-12 col-md-7">
+  <div class="col-xs-12 col-md-8">
         <!-- mohamed start edit -->
-        <div class="desktop-mode">
+        <!-- <div class="desktop-mode">
           <ds-media-viewer-switcher [item]="object"></ds-media-viewer-switcher>
          </div>
-       
+        -->
         <!-- <ds-media-viewer-switcher></ds-media-viewer-switcher> -->
           <!-- mohamed end edit -->
    <!-- <ds-pdf-viewer [item]="object"></ds-pdf-viewer> -->

@@ -1,0 +1,12 @@
+<ds-viewer-wrapper [isMobile]="isMobile" [closeViewer]="closeViewer">
+  <div viewerContent style="background-color: red; height: inherit">
+    <iframe
+      title="dspace document viewer"
+      #documentViewer
+      [src]="iframeURL"
+      width="100%"
+      height="100%"
+      sandbox="allow-scripts allow-same-origin allow-forms"
+    ></iframe>
+  </div>
+</ds-viewer-wrapper>

@@ -1,0 +1,17 @@
+.categoy-container {
+  background-color: unset;
+  border: none;
+  cursor: pointer;
+  width: 193px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.categoy-name {
+  text-justify: auto;
+  padding-inline-start: 10px;
+  white-space: break-spaces;
+  text-align: inherit;
+  padding: 5px;
+}

@@ -1,0 +1,5 @@
+<!-- {{ thumbnailURL?._links?.content?.href }} -->
+<div *ngVar="thumbnailURL | async as thumbnailLinks" class="item-card">
+  <img [src]="thumbnailLinks?._links?.content?.href" alt="Image not found" />
+  <span> {{ item.name | kwareTranslate }} </span>
+</div>

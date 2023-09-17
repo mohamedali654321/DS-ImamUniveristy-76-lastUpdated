@@ -168,5 +168,19 @@ export class ItemSearchResultGridElementComponent extends SearchResultGridElemen
     const mdRegx= text.replace(/__|\*|\#|\-|\!|(?:\[([^\]]*)\]\([^)]*\))/gm, '');
     return mdRegx;
        }
+
+       translateDate():any{
+        let date=new Date(this.dso.firstMetadataValue('dc.date.accessioned').split('T')[0]);
+       if(date && this.localeService.getCurrentLanguageCode() === 'ar'){
+         var months = ["يناير", "فبراير", "مارس", "إبريل", "مايو", "يونيو",
+         "يوليو", "أغسطس", "سبتمبر", "أكتوبر", "نوفمبر", "ديسمبر"
+       ];
+       var delDateString =date.getDate() + ' ' + months[date.getMonth()] + '، ' + date.getFullYear(); 
+       
+       return delDateString;
+       }
+       else return null;
+       
+         }
   // end kware edit
 }

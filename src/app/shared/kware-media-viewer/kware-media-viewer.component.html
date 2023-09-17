@@ -1,0 +1,56 @@
+<div *ngIf="!isViewerOpen">
+  <div class="row">
+    <div class="col-xs-12 col-md-3">
+      <button class="files-browse-btn" (click)="openViewer()">
+        <i class="fa fa-file fa-lg" aria-hidden="true"></i>
+        {{ "kware.media.viewer.browseFiles.btn" | translate }}
+      </button>
+    </div>
+  </div>
+</div>
+<div class="viewer-container" *ngIf="isViewerOpen">
+  <div
+    class="files-panel"
+    style="--filesMenuWidth:{{ filesMenuWidth }}"
+    *ngIf="viewerPanelsStatus.isFilesMenuOpen"
+  >
+    <ds-item-files-menu
+      [item]="item"
+      [bitstreams]="bitstreams$ | async"
+      [totalElements]="totalElements"
+      [isLoading]="isLoading"
+      [isLastPage]="isLastPage"
+      [isMobile]="isMobile"
+      [viewerPanelsStatus]="viewerPanelsStatus"
+      (scrollingFinished)="onScrollingFinished()"
+    ></ds-item-files-menu>
+  </div>
+
+  <div class="viewer-panel" *ngIf="viewerPanelsStatus.isViewerPanelOpen">
+    <div class="isLoading" *ngIf="isLoading">
+      <ds-themed-loading
+        message="{{ 'loading.default' | translate }}"
+        [showMessage]="true"
+        style="display: flex; align-items: center; justify-content: center"
+      ></ds-themed-loading>
+    </div>
+    <ds-viewer-panel
+      *ngIf="!isLoading && fileMeta?.format"
+      [closeViewer]="closeViewer"
+      [fileMeta]="fileMeta"
+      [isMobile]="isMobile"
+      [viewerPanelsStatus]="viewerPanelsStatus"
+      [fileUrl]="fileUrl | async"
+    ></ds-viewer-panel>
+    <ng-container *ngIf="!isLoading && !fileMeta?.format">
+      <ds-unknown-file-format
+        [closeViewer]="closeViewer"
+        [fileMeta]="fileMeta"
+        [isMobile]="isMobile"
+        [viewerPanelsStatus]="viewerPanelsStatus"
+        [enableFullScreen]="false"
+      >
+      </ds-unknown-file-format>
+    </ng-container>
+  </div>
+</div>

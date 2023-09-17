@@ -1,0 +1,59 @@
+<ds-viewer-wrapper
+  [isMobile]="isMobile"
+  [closeViewer]="closeViewer"
+  [viewerPanelsStatus]="viewerPanelsStatus"
+>
+  <div leftMenu>
+    <button
+      class="viewer-toolbar-btn"
+      (click)="watermarkPdfFile('print')"
+      dsStopContextMenu
+    >
+      <i class="fas fa-print"></i>
+    </button>
+    <button
+      class="viewer-toolbar-btn"
+      (click)="watermarkPdfFile('download')"
+      dsStopContextMenu
+    >
+      <i class="fas fa-download"></i>
+    </button>
+  </div>
+  <div centerMenu>{{ fileMeta?.name }}</div>
+  <div mobileToolbar>
+    <button
+      class="viewer-toolbar-btn"
+      (click)="watermarkPdfFile('print')"
+      dsStopContextMenu
+    >
+      <i class="fas fa-print"></i>
+    </button>
+    <button
+      class="viewer-toolbar-btn"
+      (click)="watermarkPdfFile('download')"
+      dsStopContextMenu
+    >
+      <i class="fas fa-download"></i>
+    </button>
+  </div>
+  <div #parentContainer class="parent-container" viewerContent>
+    <div class="viewer-container" #viewerContainer>
+      <!-- <ng2-pdfjs-viewer
+        #pdfJsViewer
+        [pdfSrc]="fileMeta?.url"
+        [locale]="localeCode"
+        [openFile]="false"
+        [download]="false"
+        [print]="false"
+      ></ng2-pdfjs-viewer> -->
+      <ng2-pdfjs-viewer
+        #pdfJsViewer
+        [pdfSrc]="fileUrl"
+        [locale]="localeCode"
+        [openFile]="false"
+        [download]="false"
+        [print]="false"
+      ></ng2-pdfjs-viewer>
+    </div>
+  </div>
+</ds-viewer-wrapper>

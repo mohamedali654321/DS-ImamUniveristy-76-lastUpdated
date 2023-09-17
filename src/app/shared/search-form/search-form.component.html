@@ -23,6 +23,11 @@
         [attr.data-test]="'search-box' | dsBrowserOnly"
         [placeholder]="searchPlaceholder"
       />
+      <a *ngIf="query"
+      class="clearIcon"
+      (click)="clearText()">
+      <i class="fa-solid fa-xmark"></i>
+    </a>
       <!-- kware start edit -->
       <select
         class="btn-outline-secondary text-truncate"

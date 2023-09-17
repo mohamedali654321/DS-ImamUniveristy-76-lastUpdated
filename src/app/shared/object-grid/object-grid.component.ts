@@ -172,7 +172,7 @@ export class ObjectGridComponent implements OnInit {
         switch (widthCat) {
           case WidthCategory.XL:
           case WidthCategory.LG: {
-            return 3;
+            return 5;
           }
           case WidthCategory.MD:
           case WidthCategory.SM: {
@@ -184,7 +184,7 @@ export class ObjectGridComponent implements OnInit {
         }
       }),
       distinctUntilChanged()
-    ).pipe(startWith(3));
+    ).pipe(startWith(5));
 
     this.columns$ = observableCombineLatest(
       nbColumns$,

@@ -305,9 +305,26 @@ import { MediaViewerToolbarComponent } from './media-viewer-switcher/media-viewe
 import { ItemFileComponent } from './media-viewer-switcher/item-file/item-file.component';
 import { StopContextMenuDirective } from './kware-custom-directives/stop-context-menu-directive/stop-context-menu.directive';
 import { PublictaionCountComponent } from './publictaion-count/publictaion-count.component';
+import { NgbCarouselModule } from '@ng-bootstrap/ng-bootstrap';
+import { ViewStatisticsComponent } from './view-statistics/view-statistics.component';
 
+import { LayoutModule } from '@angular/cdk/layout';
+import { ItemFileIconComponent } from './kware-media-viewer/item-file-icon/item-file-icon.component';
+import { KwareMediaViewerComponent } from './kware-media-viewer/kware-media-viewer.component';
+import { KwareDocumentViewerComponent } from './kware-media-viewer/media-viewers/kware-document-viewer/kware-document-viewer.component';
+import { KwareImageViewerComponent } from './kware-media-viewer/media-viewers/kware-image-viewer/kware-image-viewer.component';
+import { KwarePdfViewerComponent } from './kware-media-viewer/media-viewers/kware-pdf-viewer/kware-pdf-viewer.component';
+import { KwareVideoPlayerComponent } from './kware-media-viewer/media-viewers/kware-video-player/kware-video-player.component';
+import { ViewerWrapperComponent } from './kware-media-viewer/shared/viewer-wrapper/viewer-wrapper.component';
+import { ItemFilesMenuComponent } from './kware-media-viewer/item-files-menu/item-files-menu.component';
+import { ViewerFileComponent } from './kware-media-viewer/item-file/viewer-file.component';
+import { CdkAccordionModule } from '@angular/cdk/accordion';
+import { UnknownFileFormatComponent } from './kware-media-viewer/shared/unknown-file-format/unknown-file-format.component';
+import { RequestACopyComponent } from './kware-media-viewer/shared/request-a-copy/request-a-copy.component';
+import { ViewerPanelComponent } from './kware-media-viewer/viewer-panel/viewer-panel.component';
 const MODULES = [
   CommonModule,
+  NgbCarouselModule,
   PdfJsViewerModule,
   ScrollingModule,
   FormsModule,
@@ -322,7 +339,12 @@ const MODULES = [
   DragDropModule,
   GoogleRecaptchaModule,
   MenuModule,
-  NgxPaginationModule
+  NgxPaginationModule,
+    /** kware start edit */
+  // ScrollingModule,
+  LayoutModule,
+  CdkAccordionModule
+  /** kware end edit */
 ];
 
 const ROOT_MODULES = [
@@ -356,6 +378,7 @@ const COMPONENTS = [
   // put shared components here
   AlertComponent,
   PublictaionCountComponent,
+  ViewStatisticsComponent,
   AuthNavMenuComponent,
   ThemedAuthNavMenuComponent,
   UserMenuComponent,
@@ -442,6 +465,21 @@ const COMPONENTS = [
  ItemFileComponent,
  MediaViewerToolbarComponent,
  /** kware end edit */
+
+   /** kware start edit */
+   ItemFilesMenuComponent,
+   ViewerFileComponent,
+   KwarePdfViewerComponent,
+   KwareImageViewerComponent,
+   KwareDocumentViewerComponent,
+   KwareVideoPlayerComponent,
+   KwareMediaViewerComponent,
+   ItemFileIconComponent,
+   ViewerWrapperComponent,
+   UnknownFileFormatComponent,
+   RequestACopyComponent,
+   ViewerPanelComponent
+   /** kware end edit */
 ];
 
 const ENTRY_COMPONENTS = [
@@ -546,6 +584,7 @@ const DIRECTIVES = [
     ...COMPONENTS,
     ...ENTRY_COMPONENTS,
     ...DIRECTIVES,
+    
   ],
   providers: [
     ...PROVIDERS

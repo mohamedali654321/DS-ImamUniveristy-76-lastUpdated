@@ -26,7 +26,7 @@
 }
 
 .header {
-  background-color: #3992a4 !important; //NU-edit
+  background-color: #FFF !important; //NU-edit
   position: fixed !important;
   width: 100%;
 }
@@ -35,4 +35,36 @@
 nav{
   height: 120px;
   width: 100%;
+}
+
+::ng-deep ds-themed-header{
+  ul li a{
+    color: #3992a4 !important;
+  }
+
+   ds-link-menu-item .nav-item{
+    color: #3992a4 !important;
+  }
+  .submit-icon{
+    color: #3992a4 !important;
+  }
+ 
+  .navbar-toggler{
+    background-color: #3992a4 !important;
+  }
+  
+    .dropdown-toggle {
+      color: #3992a4 !important;
+    }
+    .dropdown-toggle:hover, .dropdown-togglefocus {
+      color: #3992a4 !important;
+    }
+    .lang-switcher-btn{
+       color: #3992a4 !important;
+    }
+
+
+    ds-expandable-navbar-section ul{
+      background-color: #FFF !important;
+    }
 }

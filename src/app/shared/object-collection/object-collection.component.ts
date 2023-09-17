@@ -196,7 +196,7 @@ export class ObjectCollectionComponent implements OnInit {
     this.currentMode$ = this.route
       .queryParams
       .pipe(
-        map((params) => isEmpty(params?.view) ? ViewMode.ListElement : params.view),
+        map((params) => isEmpty(params?.view) ? (this.route?.parent?.snapshot?.routeConfig?.path ==='home'? ViewMode.GridElement: ViewMode.ListElement) : params.view),
         distinctUntilChanged()
       );
     if (isPlatformBrowser(this.platformId)) {

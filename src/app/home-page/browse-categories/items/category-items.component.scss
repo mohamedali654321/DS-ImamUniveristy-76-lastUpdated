@@ -1,0 +1,40 @@
+.category-items {
+  min-height: 600px;
+  padding: 0 100px;
+}
+
+.items-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  justify-items: center;
+  // width: 90%;
+  // margin: auto;
+
+  // @media only screen and (min-width: 900px) {
+  //   width: 95%;
+  //   flex-flow: row wrap;
+  // }
+}
+
+// .item-card {
+//   background: white;
+//   overflow: hidden;
+//   text-decoration: none;
+//   margin: 10px 5px;
+//   width: 100%;
+//   padding: 10px;
+//   height: 450px;
+//   border: none;
+//   border-radius: 10px;
+//   display: flex;
+//   flex-direction: column;
+//   box-shadow: 0 0 20px rgba(0, 0, 0, 0.05), 0 0px 40px rgba(0, 0, 0, 0.08);
+//   transition: transform 0.2s;
+//   position: relative;
+
+//   &:hover {
+//     box-shadow: 0 1px 8px rgba(36, 35, 35, 0.3);
+//     transform: scale(1.02);
+//   }
+// }

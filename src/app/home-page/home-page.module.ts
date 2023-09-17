@@ -13,6 +13,11 @@ import { RecentItemListComponent } from './recent-item-list/recent-item-list.com
 import { JournalEntitiesModule } from '../entity-groups/journal-entities/journal-entities.module';
 import { ResearchEntitiesModule } from '../entity-groups/research-entities/research-entities.module';
 import { ThemedTopLevelCommunityListComponent } from './top-level-community-list/themed-top-level-community-list.component';
+import { TopSectionComponent } from './top-section/top-section.component';
+import { BrowseCategoriesComponent } from './browse-categories/browse-categories.component';
+import { CategoryItemsComponent } from './browse-categories/items/category-items.component';
+import { BrowseCategoryComponent } from './browse-categories/category/browse-category.component';
+import { CategoryItemComponent } from './browse-categories/item/category-item.component';
 
 const DECLARATIONS = [
   HomePageComponent,
@@ -21,7 +26,12 @@ const DECLARATIONS = [
   ThemedTopLevelCommunityListComponent,
   ThemedHomeNewsComponent,
   HomeNewsComponent,
-  RecentItemListComponent
+  TopSectionComponent,
+  RecentItemListComponent,
+  BrowseCategoriesComponent,
+  BrowseCategoryComponent,
+  CategoryItemsComponent,
+  CategoryItemComponent
 ];
 
 @NgModule({
@@ -35,6 +45,7 @@ const DECLARATIONS = [
   ],
   declarations: [
     ...DECLARATIONS,
+    
   ],
   exports: [
     ...DECLARATIONS,

@@ -11,7 +11,12 @@
     </span>
   </div>
   <div [ngClass]="showThumbnails ? 'col-9' : 'col-md-12'">
-    <ds-type-badge *ngIf="showLabel" [object]="dso"></ds-type-badge>
+    <div class="d-flex">
+      <div class="label_dage" >
+        <span class="badge badge-info" style="background-color: #6aa3d5 !important;color: #FFF; margin-bottom: -2px;" *ngIf="dso.hasMetadata('dc.date.issued') || dso.hasMetadata('dc.date.issuedhijri')" >{{firstMetadataValue('dc.date.issued') ? firstMetadataValue('dc.date.issued') : firstMetadataValue('dc.date.issuedhijri') }}</span>
+        <ds-type-badge  *ngIf="showLabel" [object]="dso"></ds-type-badge>        
+     </div>
+    </div>  
     <ds-truncatable [id]="dso.id">
       <!-- kware-edit kwareTranslatePipe -->
       <a *ngIf="linkType != linkTypes.None" [target]="(linkType == linkTypes.ExternalLink) ? '_blank' : '_self'" rel="noopener noreferrer"
@@ -39,5 +44,9 @@
         </ds-truncatable-part>
   </span>
     </ds-truncatable>
+    <small *ngIf="firstMetadataValue('dc.date.accessioned')" class="text-muted hidden-xs">
+      {{('item.uploaded.on' | translate)+' ' + (translateDate() !== null ? translateDate(): (firstMetadataValue('dc.date.accessioned').split('T')[0] |  date:'longDate'))}}
+    </small>
+    <ds-view-statistics [object]="dso"></ds-view-statistics>
   </div>
 </div>

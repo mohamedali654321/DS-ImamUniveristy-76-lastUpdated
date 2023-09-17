@@ -186,4 +186,8 @@ export class SearchFormComponent implements OnChanges {
       this.onScopeChange(scope);
     });
   }
+
+  clearText(){
+    this.query =null;
+  }
 }

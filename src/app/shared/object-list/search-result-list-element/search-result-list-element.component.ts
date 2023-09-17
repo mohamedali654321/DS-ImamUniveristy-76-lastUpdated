@@ -143,4 +143,18 @@ export class SearchResultListElementComponent<T extends SearchResult<K>, K exten
     return this.truncatableService.isCollapsed(this.dso.id);
   }
 
+  translateDate():any{
+    let date=new Date(this.dso.firstMetadataValue('dc.date.accessioned').split('T')[0]);
+   if(date && (typeof window === 'object' && hasValue(window.localStorage)) && window.localStorage.getItem('selectedLangCode')  === 'ar'){
+     var months = ["يناير", "فبراير", "مارس", "إبريل", "مايو", "يونيو",
+     "يوليو", "أغسطس", "سبتمبر", "أكتوبر", "نوفمبر", "ديسمبر"
+   ];
+   var delDateString =date.getDate() + ' ' + months[date.getMonth()] + '، ' + date.getFullYear(); 
+   
+   return delDateString;
+   }
+   else return null;
+   
+     }
+
 }

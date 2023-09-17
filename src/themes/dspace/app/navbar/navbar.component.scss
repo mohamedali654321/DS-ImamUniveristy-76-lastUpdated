@@ -66,13 +66,51 @@ a.navbar-brand img {
 
 
 nav{
-  background-color: #3992a4 !important; //NU-edit
+  background-color: #FFF ; //NU-edit
   position: fixed !important;
   width: 100%;
 
-
+h6{
+  color: #3992a4 ;
 }
 
+
+  
+
+}
+::ng-deep   header a {
+  color: #3992a4 !important;
+}
+
+
+::ng-deep ds-themed-navbar{
+  ul li a{
+    color: #3992a4 !important;
+  }
+
+   ds-link-menu-item .nav-item{
+    color: #3992a4 !important;
+  }
+  .submit-icon{
+    color: #3992a4 !important;
+  }
+ 
+ 
+    .dropdown-toggle {
+      color: #3992a4 !important;
+    }
+    .dropdown-toggle:hover, .dropdown-togglefocus {
+      color: #3992a4 !important;
+    }
+    .lang-switcher-btn{
+       color: #3992a4 !important;
+    }
+
+
+    ds-expandable-navbar-section ul{
+      background-color: #FFF !important;
+    }
+}
 
 
 
@@ -224,7 +262,7 @@ a:visited {
 .navbar-brand {
   float: left;
   height: 100px;
-  padding: 15px 15px;
+  // padding: 15px 15px;
   font-size: 18px;
   line-height: 20px;
 }
@@ -252,7 +290,7 @@ a {
 }
  .logo-area .main-logo {
   width: 70px;
-  margin-top: -10px;
+  // margin-top: -10px;
   float: left;
   padding-top: 0px;
 }
@@ -267,7 +305,9 @@ img {
   border: 0;
 }
 
-
+::ng-deep html[dir=rtl] .imam-info {
+  margin-left: 30px !important;
+}
 
  .logo-area .imam-info {
   float: right;
@@ -281,14 +321,14 @@ img {
 }
  .logo-area .imam-info {
   float: left;
-  width: calc(100% - 200px);
+  width: calc(100% - 300px);
   padding-left: 10px;
   border-left: 0;
-  margin-left: 10px;
-  margin-top: 30px;
+  margin-left: 0px;
+  margin-top: 20px;
   text-align: left;
   border-right: none;
-  margin-right: 0;
+  margin-right: 4.2rem;
   padding-right: 0;
 }
 
@@ -319,19 +359,25 @@ p {
   margin: 0 0 10px;
 }
 
+::ng-deep html[dir="ltr"]{
 
+  .main-logo{
+    margin-top: -20px;
+    // margin-right: 58px;
+  }
 
+}
 ::ng-deep html[dir="rtl"]{
 
   .main-logo{float: right !important;
-    margin-top: -15px;
-    margin-right: 58px;
+    margin-top: -20px;
+    // margin-right: 58px;
   }
 
   .imam-info{
     float: unset !important;
     padding-right: 50px;
-    margin-top: 10px !important;
+    margin-top: 0px !important;
   }
   .country{ margin-left: -175px !important ;}
  
@@ -349,8 +395,8 @@ p {
     width: calc(100% - 500px);
     padding-left: -30px;
     border-left: 0;
-    margin-left: 10px;
-    margin-top: 30px;
+    margin-left: 0px;
+    margin-top: 20px;
     text-align: left;
     border-right: none;
     margin-right: 140px;
@@ -371,9 +417,69 @@ p {
     margin-top: 30px ;
     text-align: left;
     border-right: none;
-    margin-right: 140px !important;
+    margin-right: 80px !important;
     padding-right: 0;
 }
  
 
+}
+
+@media (min-width: 768px) {
+  ::ng-deep .scrolledY{
+    background-color: rgba(171, 152, 108, .9) !important;
+    transition: all .4s ease-in-out;
+    
+    ul li a{
+      color: #FFF !important;
+    }
+    
+     ds-link-menu-item .nav-item{
+      color: #FFF !important;
+    }
+    .submit-icon{
+      color: #FFF !important;
+    }
+    
+    h6{
+      color: #FFF !important;
+      visibility: hidden;
+      opacity: 0;
+      position: absolute;
+    }
+      .dropdown-toggle {
+        color: #FFF !important;
+      }
+      .dropdown-toggle:hover, .dropdown-togglefocus {
+        color: #FFF !important;
+      }
+      .lang-switcher-btn{
+         color: #FFF !important;
+      }
+    
+    
+      ds-expandable-navbar-section ul{
+        background-color: rgba(171, 152, 108, .9) !important;
+      }
+    
+      height: 67px !important;
+    
+     
+    
+      .navbar-brand img {
+        display: block;
+        position: absolute;
+        top: 25px !important;
+        filter: brightness(0) invert(1);
+          width: 35px !important; //NU-edit
+        //  height: 80px; //NU-edit
+      
+      
+      
+      
+      }
+
+      ul li a{
+        color: #ab986c !important;
+      }
+    }
 }

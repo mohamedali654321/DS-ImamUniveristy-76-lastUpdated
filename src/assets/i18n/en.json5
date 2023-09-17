@@ -6492,6 +6492,32 @@
 'dsapce.object.collection':'collection',
 'dsapce.object.community':'community',
 'dsapce.object.community, collection':'community, collection',
+
+'home.view-submissions.head':'Most Viewed',
+
+'home.news.title.manuscript': 'Manuscripts',
+'home.news.desc.manuscript': 'Manuscript or manuscript (plural of manuscripts) is any document written by hand, rather than printed in a printing press. Whether it is what is written on papyrus or on other parchments or plain paper.',
+'home.news.desc.theises': 'Academic thesis or scientific thesis is the document that represents the research and results of the research carried out by the researcher and submitted to an academic body in order to support his candidacy for a scientific degree or a specialized certificate such as a bachelors or masters degree and is then called thesis or doctorate , then called Dissertation',
+'home.news.title.theises': 'University Dissertations',
+'home.news.title.article':'Articles',
+'home.news.desc.article':'An article is a self-contained part of a larger written work. This part of non-fictional prose appears in newspapers, magazines, the Internet and academic publications.',
+'home.news.browse':'Browse',
+'item.uploaded.on':'Uploaded on',
+
+  "kware.media.viewer.requestACopy.btn": "Request A Copy",
+  "kware.media.viewer.requestACopy.message": "This file is restricted, sign in to be able to open the file, if you cannot access the file after logging in, you may not have permissions to access this file, you can request a copy of the file in this case.",
+  "fileSection.viewerSwitcher.noFileFormat.message": "Select a file first from the file list.",
+  "kware.media.viewer.browseFiles.btn": "Browse files",
+
+    "mydspace.status.mydspaceArchived": "Archived",
+  "mydspace.status.mydspaceValidation": "Validation",
+  "mydspace.status.mydspaceWaitingController": "Waiting for controller",
+  "mydspace.status.mydspaceWorkflow": "Workflow",
+  "mydspace.status.mydspaceWorkspace": "Workspace",
+  'home.new.upload':'New Upload',
+'search.filters.namedresourcetype.Archived':'Archived',
+'search.filters.namedresourcetype.Workspace':"Workspace",
+"search.filters.entityType.Activity":"Activity",
 }
 
 

@@ -13,8 +13,10 @@
   <div [ngClass]="showThumbnails ? 'col-9' : 'col-md-12'">
     <div class="d-flex">
       <div class="label_dage" >
-        <ds-type-badge  *ngIf="showLabel" [object]="dso"></ds-type-badge>
-        <span class="badge badge-info" style="background-color: #e8ebf3 !important;color: #222; margin-bottom: -2px;" *ngIf="dso.hasMetadata('dc.type')" >{{firstMetadataValue('dc.type') | kwareTranslate}}</span>
+        <span class="badge badge-info" style="background-color: #6aa3d5 !important;color: #FFF; margin-bottom: -2px;" *ngIf="dso.hasMetadata('dc.date.issued') || dso.hasMetadata('dc.date.issuedhijri')" >{{firstMetadataValue('dc.date.issued') ? firstMetadataValue('dc.date.issued') : firstMetadataValue('dc.date.issuedhijri') }}</span>
+
+        <!-- <ds-type-badge  *ngIf="showLabel" [object]="dso"></ds-type-badge> -->
+        <span class="badge badge-info" style="background-color: rgb(178, 161, 121)  !important;color: #FFF; margin-bottom: -2px;" *ngIf="dso.hasMetadata('dc.type')" >{{firstMetadataValue('dc.type') | kwareTranslate}}</span>
         <ds-access-status-badge [object]="dso" class="pl-1"></ds-access-status-badge>
      </div>
       
@@ -30,16 +32,16 @@
           <ng-container *ngIf="dso.firstMetadataValue('dc.publisher') || dso.firstMetadataValue('dc.date.issued') || dso.firstMetadataValue('dc.date.issuedhijri')">
             <!-- kware-edit kwareTranslatePipe -->
             (<span *ngIf="dso.firstMetadataValue('dc.publisher')" class="item-list-publisher" [innerHTML]="firstMetadataValue('dc.publisher')   +regxColon() | kwareTranslate"></span>
-            <span *ngIf="dso.firstMetadataValue('dc.date.issued')" class="item-list-date" [innerHTML]="firstMetadataValue('dc.date.issued')"></span>
+            <!-- <span *ngIf="dso.firstMetadataValue('dc.date.issued')" class="item-list-date" [innerHTML]="firstMetadataValue('dc.date.issued')"></span>
             <span *ngIf="dso.firstMetadataValue('dc.date.issued') && dso.firstMetadataValue('dc.date.issuedhijri') " class="item-list-date" [innerHTML]="regxColon()"></span>
-            <span *ngIf="dso.firstMetadataValue('dc.date.issuedhijri')" class="item-list-date" [innerHTML]="firstMetadataValue('dc.date.issuedhijri')"></span>
+            <span *ngIf="dso.firstMetadataValue('dc.date.issuedhijri')" class="item-list-date" [innerHTML]="firstMetadataValue('dc.date.issuedhijri')"></span> -->
             )
           </ng-container>
           <span *ngIf="dso.allMetadata(['dc.contributor.author', 'dc.creator', 'dc.contributor.*']).length > 0" class="item-list-authors">
-            <span *ngFor="let author of authors; let last=last;">
-              <span ><span >{{convertComma((author | kwareTranslate))}}</span></span>
-              <span *ngIf="!last">; </span>
-            </span>
+            <span *ngFor="let author of authors;let last=last;">
+              <span ><i class="fa-regular fa-user">&nbsp;</i>{{convertComma((author | kwareTranslate))}}</span>
+              <span *ngIf="!last">&nbsp;&nbsp;</span>
+          </span>
           </span>
         </ds-truncatable-part>
     </span>
@@ -68,5 +70,9 @@
         </ds-truncatable-part>
       </div>
     </ds-truncatable>
+    <small *ngIf="firstMetadataValue('dc.date.accessioned')" class="text-muted hidden-xs">
+      {{('item.uploaded.on' | translate)+' ' + (translateDate() !== null ? translateDate(): (firstMetadataValue('dc.date.accessioned').split('T')[0] |  date:'longDate'))}}
+    </small>
+    <ds-view-statistics [object]="dso"></ds-view-statistics>
   </div>
 </div>

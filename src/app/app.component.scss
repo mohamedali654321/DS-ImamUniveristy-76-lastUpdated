@@ -968,7 +968,7 @@ a{color: #207698 !important;}
 
 
   ::ng-deep ds-root main{
-     margin-top: 180px !important;
+     margin-top: 144px !important;
    }
 
   @media screen and (max-width:768px){
@@ -1704,18 +1704,22 @@ ds-dynamic-onebox .fa-circle {
 }
 // kware end edit -- issue.7.6.001
 
-::ng-deep ds-truncatable-part{
-  .clamp-default-3 .content {
-    text-align: justify !important;
-     text-justify: inter-word !important;
-  }
+::ng-deep ds-item-list-element{
 
-  .dont-break-out{
-    text-align: justify !important;
-     text-justify: inter-word !important;
-  }
-  
-}
+  ds-truncatable-part{
+   .clamp-default-3 .content {
+     text-align: justify !important;
+      text-justify: inter-word !important;
+   }
+ 
+   .dont-break-out{
+     text-align: justify !important;
+      text-justify: inter-word !important;
+   }
+   
+ }
+ 
+ }
 
 ::ng-deep ds-metadata-values{
   .dont-break-out p{
@@ -1723,3 +1727,591 @@ ds-dynamic-onebox .fa-circle {
      text-justify: inter-word !important;
   }
 }
+
+::ng-deep ds-top-section{
+  .pagination-info , #paginationControls , .pagination{
+      visibility: hidden;
+      opacity: 0;
+      display: none;
+  }
+}
+
+::ng-deep ds-navbar ul {
+  li{
+    margin-block: auto !important;
+  }
+}
+
+::ng-deep ngb-carousel{
+  ol{
+    top: 270px !important;
+  }
+}
+
+::ng-deep html[dir="rtl"]{
+  .carousel-item-next:not(.carousel-item-left),
+  .active.carousel-item-right {
+    transform: translateX(-100%);
+  }
+  .carousel-item-prev:not(.carousel-item-right),
+  .active.carousel-item-left {
+    transform: translateX(100%);
+  }
+
+  .carousel-control-next{
+    left: auto !important;
+    right: 0 !important;
+  }
+  .carousel-control-prev{
+    left: 0 !important;
+    right: auto !important;
+   
+    
+  }
+  .carousel-control-next-icon{
+    transform: scale(-1) !important;
+  }
+  .carousel-control-prev-icon{
+    transform: scale(-1) !important;
+  }
+  // .carousel-indicators{
+  //   transform: scale(-1) !important;
+  // }
+}
+
+::ng-deep ds-home-page{
+  ds-search-form {
+    input{
+      height: 47px !important;
+    }
+  }
+}
+
+::ng-deep ds-top-section{
+
+  ds-item-search-result-grid-element{
+    ds-truncatable-part{
+      .clamp-default-3 .content{
+        max-height: 1.3rem;
+      }
+    }
+  }
+
+  .keys-info{
+    position: absolute;
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  // ds-thumbnail img{
+  //   scale: 1.7 !important;
+  // }
+
+}
+
+
+::ng-deep ds-item-search-result-grid-element{
+  .card-body{
+    padding: 0.5rem !important;
+  }
+
+}
+
+::ng-deep {
+  h2, .h2 {
+    font-size: 1.5rem !important;
+}
+}
+
+
+::ng-deep html[dir="ltr"]{
+  .label_dage span{
+    padding: 2.5px !important;
+    
+  }
+
+
+ds-top-section .label_dage{
+  gap: 0px !important;
+  display: initial !important;
+}
+
+  ds-access-status-badge .pl-1, .px-1{
+    padding-left: 0rem !important;
+  }
+}
+
+::ng-deep html[dir="rtl"]{
+  .btn-floating{
+    float: left;
+  }
+  }
+  
+  
+  ::ng-deep html[dir="ltr"]{
+    .btn-floating{
+      float: right;
+    }
+  }
+
+
+  ::ng-deep{
+    .scrollTop:hover {
+      background-color: #6fbfcf;
+      filter: drop-shadow(3px 0px 6px darkcyan);
+    }
+    
+    .sidebar-top-level-items > ul > li {
+      border-bottom: 2px solid #6f6f6f;
+      background-color: #424242;
+  }
+  }
+
+
+  ::ng-deep html[dir="rtl"]{
+    ds-collection-source {
+      .space-children-mr{
+        display: block;
+    }
+    
+     .btn-primary{
+      margin-right: 10px;
+    }
+    
+    .btn-primary{
+      margin-right: 10px;
+    }
+    
+    .btn-secondary{
+      margin-left: 0px !important;
+      margin-right: 0px;
+    }
+    }
+  }
+  
+  
+  ::ng-deep html[dir="ltr"]{
+    ds-collection-source {
+      .space-children-mr{
+        display: block;
+    }
+    
+     .btn-primary{
+      margin-left: 10px;
+    }
+    
+    .btn-primary{
+      margin-left: 10px;
+    }
+    
+    .btn-secondary{
+      margin-right: 0px !important;
+      margin-left: 0px;
+    }
+    }
+  }
+
+
+
+  .nav-item.nav-link.d-flex.flex-row.flex-nowrap:hover {
+    background-color: #ab986c;
+  }
+  
+  .sidebar-section.ng-trigger.ng-trigger-bgColor:hover {
+    background-color: #ab986c !important;
+  }
+  
+  ::ng-deep ds-admin-sidebar{
+    .navbar-dark .navbar-nav .nav-link:hover, .navbar-dark .navbar-nav .nav-link:focus {
+      background-color: #ab986c !important;
+  
+      ds-onclick-menu-item a{
+        background-color: #ab986c !important; 
+       }
+       
+       ds-link-menu-item a{
+         background-color: #ab986c !important; 
+       }
+  } 
+  
+  
+  }
+  ::ng-deep ds-search-form{
+    .btn-primary {
+      background-color: #3992a4 !important;
+      border-color: #3992a4 !important;
+  }
+  }
+
+  ::ng-deep{
+    ds-search-navbar form > input{
+      margin-top: 0 !important;
+    }
+  
+   
+  }
+
+
+  ::ng-deep{
+    .nav-item.nav-link:hover {
+      background-color: #eee;
+  }
+  
+  ds-expandable-navbar-section .dropdown-toggle:focus,ds-expandable-navbar-section .dropdown-toggle:active{
+    position: relative;
+    z-index: 1000;
+    margin-top: 2px;
+    border: 2px solid #eee;
+    border-bottom: none;
+    background-color: white;
+  }
+  
+    ds-expandable-navbar-section  .dropdown-menu{
+      top: 0px;
+      left: 0px;
+      will-change: transform;
+      box-shadow: rgba(0, 0, 0, 0.3) 0px 2px 6px 0px !important;
+      z-index: 99;
+      position: absolute;
+      transform: translate(-82px, 44px) !important;
+      border-radius: 5px;
+      border: 2px solid #eee;
+    }
+  }
+  
+  ::ng-deep html[dir="ltr"]{
+    ds-expandable-navbar-section  .dropdown-menu{
+      transform: translate(2px, 44px) !important;
+  
+    }
+  }
+  
+  
+  
+  
+  
+  
+  
+  ::ng-deep {
+    .scrolledY .nav-item.nav-link:hover {
+      background-color: #b3a27ab0;
+  }
+  
+  .scrolledY .dropdown-toggle:active,.scrolledY .dropdown-toggle:focus{
+    position: relative;
+    z-index: 10000 !important;
+    margin-top: 4px !important;
+    border: 2px solid #b4b1b1 !important;
+    border-bottom: none !important;
+    background-color: #ab986c !important;
+  }
+  
+  .scrolledY  .dropdown-menu{
+      top: 0px;
+      left: 0px;
+      will-change: transform;
+      //  box-shadow: rgba(0, 0, 0, 0.3) 0px 2px 6px 0px !important;
+      z-index: 999 !important;
+      position: absolute;
+      transform: translate(-85px, 44px) !important;
+      border-radius: 5px;
+      border: 2px solid #b4b1b1 !important;
+    }
+  }
+  
+  ::ng-deep html[dir="ltr"]{
+    .scrolledY  .dropdown-menu{
+      transform: translate(0px, 44px) !important;
+  
+    }
+  }
+  
+  ::ng-deep html[dir="rtl"] ds-item-search-result-list-element-submission{
+    .row .pl-3{
+      padding-right: 10rem !important;
+    }
+  }
+
+  ::ng-deep ds-home-news{
+    ds-themed-search-form{
+      .scope-button{
+        background-color: #495057 !important;
+        border-color: #495057 !important;
+        color: #fff;
+     }
+    }
+  }
+
+
+
+  ::ng-deep ds-browse-categories{
+    .pagination-info , ds-rss , .pagination, #paginationControls{
+      opacity: 0;
+      visibility: hidden;
+      position: absolute;
+    }
+
+    .browse-category-link-circle-selected{
+      background-color: #ab986c !important;
+      border-radius: 50%;
+      border: 1px solid #ab986c !important;
+    }
+
+    .browse-category-link-circle{
+      border: 1px solid #ab986c !important;
+    }
+
+    .browse-category-link-selected{
+      background-color: #3992a4 !important;
+    border-color: #3992a4 !important;
+    color: #FFF !important;
+    }
+
+    .browse-category-link-selected a{
+      color: #FFF !important;
+    }
+  }
+  ::ng-deep ds-root main{
+    .container {
+      max-width: 1540px !important;
+    
+  }
+
+  }
+  // ::ng-deep  ds-home-page{
+  //   .container {
+  //     max-width: 1540px !important;
+  //     justify-content: center !important;
+  //     align-items: center !important;
+  // }
+
+  // }
+
+  ::ng-deep ds-themed-home-news{
+    .container {
+      max-width: 1140px !important;
+  }
+
+  }
+
+
+  ::ng-deep{
+    @media (min-width: 1200px){
+      .col-lg-4 {
+        flex: 0 0 0 0 33.33333333% !important;
+        max-width: 19.33333333% !important;
+      } 
+    }
+   
+  }
+
+  // ::ng-deep ds-home-page{
+  //   @media (min-width: 992px){
+  //     .col-lg-4 {
+  //       flex: 0 0 0 0 33.33333333% !important;
+  //       max-width: 19.33333333% !important;
+  //     } 
+  //   }
+   
+  // }
+ ::ng-deep ds-item-search-result-grid-element .card-title{
+  font-size: 1.2rem !important;
+ }
+
+//  ::ng-deep{
+//   div.container ds-browse-categories div.card-columns.row {
+//     justify-content: center;
+// }
+//  }
+
+ ::ng-deep{
+  div.container div.card-columns.row {
+    justify-content: center;
+}
+ }
+
+ ::ng-deep ds-listable-object-component-loader{
+  .viewButton{
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+  }
+ }
+ 
+ ::ng-deep{
+  .card-container{
+    background-color: transparent !important;
+  }
+ }
+
+
+
+ ::ng-deep{
+  ds-listable-object-component-loader .card{
+    ds-view-statistics .d-block {
+      display: flex !important;
+      justify-content: end;
+      margin: 0 0.75rem;
+  }
+  } 
+
+.card.ng-tns-c128-15.ng-trigger.ng-trigger-focusShadow {
+    border-radius: 15px !important;
+    background-color: whitesmoke !important;
+}
+
+ds-listable-object-component-loader div.card {
+    border-radius: 15px;
+    background-color: whitesmoke;
+}
+
+.card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 1px solid rgba(0,0,0,.125);
+    border-radius: .25rem;
+}
+
+.card-element{
+    border-radius: 25px;
+}
+
+.thumbnail.ng-star-inserted {
+    border: 1px solid whitesmoke;
+    border-radius: 25px !important;
+}
+
+div.card div.thumbnail > .thumbnail-content {
+    height: 290px !important;
+    width: 90% !important;
+    display: block !important;
+    min-width: 90% !important;
+    min-height: 100% !important;
+    margin: auto;
+    margin-top: .75rem;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+.d-block {
+    display: flex;
+    justify-content: end;
+    margin: 0 0.75rem;
+}
+
+.item-abstract.card-text {
+    color: #7d858c;
+    font-size: 0.8rem;
+}
+
+
+ds-listable-object-component-loader .card-title {
+    font-size: 1rem !important;
+    line-height: 1.6rem;
+    margin-bottom: 0;
+}
+.card-container .thumbnail-content {
+    height: 290px !important;
+    width: 90% !important;
+    display: block !important;
+    min-width: 90% !important;
+    min-height: 100% !important;
+    margin: auto;
+    margin-top: .75rem !important;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+.badge.ng-star-inserted {
+  border-radius: 15px;
+}
+
+.keys-info .badge-info{
+  background-color: transparent !important;
+}
+.keys-info span {
+  background-color: transparent !important;
+}
+
+.browse-category-link , .browse-category-link-selected{
+  border-radius: 15px;
+}
+
+.browse-category-btn{
+  border-radius: 5px;
+}
+
+
+.clamp-default-3.h4 .content {
+  max-height: 4.6rem;
+}
+
+
+}
+
+
+::ng-deep{
+  //   .badge.ng-star-inserted {
+  //     border-radius: 15px;
+  //     padding: 0.4rem 0.5rem;
+  //     min-width: 3.3rem;
+  //     background-color: rgb(178, 161, 121) !important;
+  //     color: #fff;
+  //     margin-bottom: -2px;
+  // } 
+  .label_dage span {
+      // padding: 0.4rem 0.5rem !important;
+      border-radius: 15px;
+  }
+  .badge-secondary {
+      background-color: #207698 !important;
+  }
+  
+  
+  .badge {
+    display: inline-block;
+    padding: .6em .5em;
+    font-size: 75%;
+    font-weight: 700;
+    line-height: 1;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: 15px;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    min-width: 3.3rem;
+  }
+  
+  ds-listable-object-component-loader .card-title {
+    line-height: 1.4rem;
+    margin-bottom: 0;
+    margin-top: 0.3rem;
+  }
+  .card-text:last-child {
+    font-size: 0.9rem;
+  }
+  .clamp-default-3.h4 .content {
+    
+    margin-top: 0.5rem;
+  }
+  
+  .clamp-default-3.h4 .content {
+    margin-top: 0.5rem;
+  }
+  
+  ds-listable-object-component-loader .card ds-view-statistics .d-block {
+    justify-content: end;
+    margin: 0.5rem .75rem;
+  }
+
+  .clamp-default-3 .content {
+    max-height: 4rem;
+  }
+  }
+  
+  

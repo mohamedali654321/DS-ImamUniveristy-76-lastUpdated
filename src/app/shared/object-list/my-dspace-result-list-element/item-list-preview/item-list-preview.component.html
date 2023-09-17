@@ -14,7 +14,7 @@
           <span class="text-muted">
             <ds-truncatable-part [id]="item.id" [minLines]="1">
               (<span *ngIf="item.hasMetadata('dc.publisher')" class="item-list-publisher"
-                [innerHTML]="item.firstMetadataValue('dc.publisher') + ', '"></span>
+                [innerHTML]="(item.firstMetadataValue('dc.publisher') | kwareTranslate) + ', '"></span>
               <span class="item-list-date"
                 [innerHTML]="item.firstMetadataValue('dc.date.issued') || ('mydspace.results.no-date' | translate)"></span>)
               <span *ngIf="item.hasMetadata(['dc.contributor.author', 'dc.creator', 'dc.contributor.*']);"
