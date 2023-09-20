@@ -24,5 +24,6 @@ export class HomePageComponent implements OnInit {
     this.site$ = this.route.data.pipe(
       map((data) => data.site as Site),
     );
+   
   }
 }

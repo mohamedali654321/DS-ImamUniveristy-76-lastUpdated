@@ -1,30 +1,30 @@
 <!-- <div class="d-flex flex-row  mb-4 pb-4 ng-tns-c416-2"></div> -->
 <ng-container  *ngVar="(itemsRD$ | async) as itemRD">
-  <div  class="mt-4 container"  *ngIf=" itemRD?.length > 0" >
-          
-          <h2 style="margin-bottom: 30px;">
-           {{'home.view-submissions.head' | translate}}</h2>
-          <div class="grid-container  ">
-            <div class="card-container " *ngFor="let item of itemRD.slice(0,5)">
-              <div class="">
-                  <ds-listable-object-component-loader [object]="item.payload" [viewMode]="viewMode" class="">
-                  </ds-listable-object-component-loader>
-              </div>
-          </div>
-      </div>
-          <!-- <ds-viewable-collection
-          [config]="paginationConfig"
-          [sortConfig]="sortConfig"
-          [objects]="itemRD"
-          [hideGear]="true"
-          >
-        </ds-viewable-collection> -->
-         <!-- kware-edit end -->
-          <!-- <button (click)="onLoadMore()" class="btn btn-primary search-button mt-4 float-left ng-tns-c290-40"> {{'vocabulary-treeview.load-more' | translate }} ...</button> -->
-  </div>
+    <div  class="mt-4 container"  *ngIf=" itemRD?.length > 0" >
+            
+            <h2  class="container" >
+             {{'home.view-submissions.head' | translate}}</h2>
+            <div class="grid-container container ">
+              <div class="card-container " *ngFor="let item of itemRD.slice(0,5)">
+                <div class="">
+                    <ds-listable-object-component-loader [object]="item.payload" [viewMode]="viewMode" class="">
+                    </ds-listable-object-component-loader>
+                </div>
+            </div>
+        </div>
+            <!-- <ds-viewable-collection
+            [config]="paginationConfig"
+            [sortConfig]="sortConfig"
+            [objects]="itemRD"
+            [hideGear]="true"
+            >
+          </ds-viewable-collection> -->
+           <!-- kware-edit end -->
+            <!-- <button (click)="onLoadMore()" class="btn btn-primary search-button mt-4 float-left ng-tns-c290-40"> {{'vocabulary-treeview.load-more' | translate }} ...</button> -->
+    </div>
 
-  <ds-error *ngIf="itemRD?.length < 0" message="{{'error.recent-submissions' | translate}}"></ds-error>
-  <ds-loading *ngIf="!itemRD || itemRD.isLoading" message="{{'loading.recent-submissions' | translate}}">
-  </ds-loading>
+    <ds-error *ngIf="itemRD?.length < 0" message="{{'error.recent-submissions' | translate}}"></ds-error>
+    <ds-loading *ngIf="!itemRD || itemRD.isLoading" message="{{'loading.recent-submissions' | translate}}">
+    </ds-loading>
 </ng-container>
 

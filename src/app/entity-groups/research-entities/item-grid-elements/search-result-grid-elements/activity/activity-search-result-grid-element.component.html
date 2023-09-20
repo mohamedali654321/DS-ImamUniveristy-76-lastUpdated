@@ -19,7 +19,7 @@
                 </ds-thumbnail>
             </div>
         </span>
-    <div class="card-body">
+    <div class="card-body" [ngClass]="{'fixed-height':(isCollapsed() | async)}">
       <ds-type-badge *ngIf="showLabel" [object]="dso"></ds-type-badge>
       <ds-truncatable-part [id]="dso.id" [minLines]="3" type="h4">
         <!-- kware-edit kwareTranslatePipe -->
@@ -67,7 +67,13 @@
               <span [innerHTML]="removeMarkdown(firstMetadataValue('event.about') | kwareTranslate)"></span>
           </p>
       </ds-truncatable-part>
-      <small *ngIf="firstMetadataValue('dc.date.accessioned')" class="text-muted hidden-xs">
+      <div class="container" [ngClass]="{'fixed-bottom-content':(isCollapsed() | async)}">
+        <small  *ngIf="firstMetadataValue('dc.date.accessioned')" class="text-muted date-float">
+          {{('item.uploaded.on' | translate)+' ' + (translateDate() !== null ? translateDate(): (firstMetadataValue('dc.date.accessioned').split('T')[0] |  date:'longDate'))}}
+        </small>
+        <ds-view-statistics [object]="dso"></ds-view-statistics>
+      </div>
+      <!-- <small *ngIf="firstMetadataValue('dc.date.accessioned')" class="text-muted hidden-xs">
         {{('item.uploaded.on' | translate)+' ' + (translateDate() !== null ? translateDate(): (firstMetadataValue('dc.date.accessioned').split('T')[0] |  date:'longDate'))}}
       </small>
       <ds-view-statistics [object]="dso"></ds-view-statistics>
@@ -75,7 +81,7 @@
         <a [target]="(linkType == linkTypes.ExternalLink) ? '_blank' : '_self'"
            rel="noopener noreferrer" [routerLink]="[itemPageRoute]"
            class="lead btn btn-primary viewButton">{{ 'search.results.view-result' | translate}}</a>
-      </div>
+      </div> -->
     </div>
   </ds-truncatable>
   <ng-content></ng-content>

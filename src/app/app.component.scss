@@ -926,9 +926,9 @@ h4{
     }
 
 
-  ::ng-deep .card:hover{
-      border: #3992a4 1.5px solid;
-    }
+  // ::ng-deep .card:hover{
+  //     border: #3992a4 1.5px solid;
+  //   }
 
 
 
@@ -1243,9 +1243,9 @@ a{color: #207698 !important;}
 
   justify-items: center;
 
-  span{
-    padding: 5px !important;
-  }
+  // span{
+  //   padding: 5px !important;
+  // }
 
 }
 
@@ -2071,7 +2071,7 @@ ds-top-section .label_dage{
       color: #FFF !important;
     }
   }
-  ::ng-deep ds-root main{
+  ::ng-deep ds-root {
     .container {
       max-width: 1540px !important;
     
@@ -2273,7 +2273,7 @@ ds-listable-object-component-loader .card-title {
   }
   
   
-  .badge {
+  .card .badge {
     display: inline-block;
     padding: .6em .5em;
     font-size: 75%;
@@ -2311,7 +2311,122 @@ ds-listable-object-component-loader .card-title {
 
   .clamp-default-3 .content {
     max-height: 4rem;
+   font-size: .9rem !important;
+
   }
   }
   
   
+  ::ng-deep html[dir="rtl"] {
+    .fixed-height{
+      position: relative;
+      height: 350px !important;
+  }
+  
+  .fixed-bottom-content{
+      position: absolute;
+      bottom: .5rem;
+      width: 100%;
+  }
+  
+  ::ng-deep ds-top-section{
+    .fixed-height{
+      position: relative;
+      height: 290px !important;
+    }
+    
+    .fixed-bottom{
+      position: absolute;
+      bottom: .5rem;
+      width: 100%;
+    }
+  }
+  }
+  
+  ::ng-deep html[dir="ltr"] {
+    .fixed-height{
+      position: relative;
+      height: 360px !important;
+  }
+  
+  .fixed-bottom-content{
+      position: absolute;
+      bottom: .5rem;
+      width: 100%;
+  }
+
+
+  ::ng-deep ds-top-section{
+    .fixed-height{
+      position: relative;
+      height: 290px !important;
+    }
+    
+    .fixed-bottom{
+      position: absolute;
+      bottom: .5rem;
+      width: 100%;
+    }
+  }
+
+  }
+  ::ng-deep{
+    .card   .clamp-default-3 .content {
+      max-height: 4rem ;
+     font-size: .9rem !important;
+  
+    }
+  
+    .card  .clamp-default-3.h4 .content {
+      max-height: 4.6rem;
+  }
+  
+  .card  .keys-info a {
+    font-weight: normal !important;
+  }
+
+  .card .expandButton{
+    font-size: .9rem !important;
+  }
+  }
+
+
+  ::ng-deep html[dir="rtl"]{
+    .date-float{
+      position: relative;
+      left: 12px;
+    }
+  }
+  
+  ::ng-deep html[dir="ltr"]{
+    .date-float{
+      position: relative;
+      right: 12px;
+    }
+  }
+
+  ::ng-deep html[dir="rtl"]{
+    .loadMore{
+      margin-left: 25px;
+    }
+  }
+  
+  ::ng-deep html[dir="ltr"]{
+    .loadMore{
+      margin-right: 25px;
+    }
+  }
+
+  
+  ::ng-deep{
+    .clamp-default-3 .content:after{
+      background: none !important;
+    }
+  }
+
+
+  ::ng-deep .browse-category-link-selected .badge-secondary{
+    color: #207698 !important;
+    background-color: #FFF !important;
+  
+  }

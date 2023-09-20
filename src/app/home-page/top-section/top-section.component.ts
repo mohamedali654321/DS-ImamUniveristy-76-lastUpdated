@@ -81,7 +81,6 @@ export class TopSectionComponent implements OnInit {
 
 this.getMostViewsItems(this.siteId).then((items) => {
   items.subscribe((item) => {
-    console.log(item['_embedded'].usagereports[0]?.points[0].values.views)
     item['_embedded'].usagereports[0]?.points?.forEach(async(point) => {
       let itemId =await point.id;
       this.itemIds.push(point.id);

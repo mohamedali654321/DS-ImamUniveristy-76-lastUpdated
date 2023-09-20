@@ -5,7 +5,7 @@
 >
   <span class="category-name">{{
     "search.filters.entityType." + category.value | translate
-  }}</span>
+  }}&nbsp;<span class="badge badge-pill badge-secondary  archived-items-lead ng-star-inserted">{{(fetchedItems | async)?.payload?.totalElements}}</span></span>
   <!-- <span class="badge badge-pill badge-secondary align-self-center">{{
     category.count
   }}</span> -->

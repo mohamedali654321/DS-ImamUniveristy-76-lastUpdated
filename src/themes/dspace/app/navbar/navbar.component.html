@@ -2,22 +2,27 @@
 
 
 
-<nav [ngClass]="{'open': !(menuCollapsed | async),'scrolledY': (handleScroll | async) }" [@slideMobileNav]="!(windowService.isXsOrSm() | async) ? 'default' : ((menuCollapsed | async) ? 'collapsed' : 'expanded')"
-  class="navbar navbar-expand-md navbar-light p-0 navbar-container" [ngClass]="{'scrolledY':(handleScroll | async)=== true}" role="navigation" [attr.aria-label]="'nav.main.description' | translate">
+<nav [ngClass]="{'open': !(menuCollapsed | async),'scrolledY': ((handleScroll | async)) }" [@slideMobileNav]="!(windowService.isXsOrSm() | async) ? 'default' : ((menuCollapsed | async) ? 'collapsed' : 'expanded')"
+  class="navbar navbar-expand-md navbar-light p-0 navbar-container"  role="navigation" [attr.aria-label]="'nav.main.description' | translate">
   <div class="navbar-inner-container w-100 h-100" [class.container]="!(isXsOrSm$ | async)">
-    <a class="navbar-brand" href="/">
-      <div class="logo-area">
-          <img class="main-logo" [src]="(handleScroll | async) ? 'assets/images/small-logo.svg':'assets/images/logo-imam.png'" alt="">
-          <img class="small-logo" src="/_layouts/15/2016/Portal/img/small-logo.svg" alt="">
-          <div class="imam-info hidden-xs hidden-sm">
-              <h6> {{'footer.top.content1' | translate}}</h6>
-              <h6> {{'footer.top.content6' | translate}}</h6>
-              
-          </div>
-      </div>
-  </a>
+    <div>
 
-    <div id="collapsingNav" class="w-100 h-100">
+   
+      <a class="navbar-brand" href="/">
+        <div class="logo-area">
+            <img class="main-logo" [src]="(handleScroll | async) ? 'assets/images/small-logo.svg':'assets/images/logo-imam.png'" alt="">
+            <img class="small-logo" src="/_layouts/15/2016/Portal/img/small-logo.svg" alt="">
+            <div class="imam-info hidden-xs hidden-sm">
+                <h6> {{'footer.top.content1' | translate}}</h6>
+                <h6> {{'footer.top.content6' | translate}}</h6>
+                
+            </div>
+        </div>
+    </a>
+</div>
+    <div id="collapsingNav" class="w-100 h-100" style="
+    justify-content: center;
+    display: inline;">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0 h-100">
         <li *ngIf="(isXsOrSm$ | async) && (isAuthenticated$ | async)">
             <ds-user-menu [inExpandableNavbar]="true"></ds-user-menu>

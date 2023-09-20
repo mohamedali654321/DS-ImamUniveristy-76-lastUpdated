@@ -74,7 +74,8 @@ export class SearchResultGridElementComponent<T extends SearchResult<K>, K exten
     return Metadata.firstValue([this.object.hitHighlights, this.dso.metadata], keyOrKeys);
   }
 
-  private isCollapsed(): Observable<boolean> {
+  public isCollapsed(): Observable<boolean> {
+    
     return this.truncatableService.isCollapsed(this.dso.id);
   }
 }

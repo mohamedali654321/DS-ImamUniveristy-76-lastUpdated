@@ -1,6 +1,5 @@
 import { Component, ViewChild, ElementRef, EventEmitter, Input, OnInit, Output, OnDestroy } from '@angular/core';
 import { Observable } from 'rxjs';
-import { BrowseEntrySearchOptions } from 'src/app/core/browse/browse-entry-search-options.model';
 import { BrowseService } from 'src/app/core/browse/browse.service';
 import { SortDirection, SortOptions } from 'src/app/core/cache/models/sort-options.model';
 import { PaginatedList } from 'src/app/core/data/paginated-list.model';
@@ -15,11 +14,11 @@ import { PaginatedSearchOptions } from 'src/app/shared/search/models/paginated-s
 import { environment } from 'src/environments/environment';
 
 @Component({
-  selector: 'ds-browse-category',
-  templateUrl: './browse-category.component.html',
-  styleUrls: ['./browse-category.component.scss']
+  selector: 'ds-browse-sub-category',
+  templateUrl: './browse-sub-category.component.html',
+  styleUrls: ['./browse-sub-category.component.scss']
 })
-export class BrowseCategoryComponent implements OnInit, OnDestroy {
+export class BrowseSubCategoryComponent implements OnInit, OnDestroy {
   @Input() category;
   @Input() categoryIndex;
   @Output() selectedCategory = new EventEmitter<number>();
@@ -45,37 +44,19 @@ export class BrowseCategoryComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
-    // this.browseService
-    //   .getBrowseItemsFor(
-    //     this.category.value,
-    //     '',
-    //     new BrowseEntrySearchOptions('entityType'))
-    //   .subscribe(item => this.fetchedItems = item?.payload?.page);
-
-
-
-      this.fetchedItems = this.searchService.search(
-        new PaginatedSearchOptions({
-          pagination: this.paginationConfig,
-          dsoTypes: [DSpaceObjectType.ITEM],
-          sort: this.sortConfig,
-          query:`dspace.entity.type:${this.category.value}`,
-          fixedFilter:`f.entityType=${this.category.value},equals`
-        },),
-        undefined,
-        undefined,
-        undefined,
-      ).pipe(
-        toDSpaceObjectListRD()
-      ) as Observable<RemoteData<PaginatedList<Item>>>;
-    
-    
-
-
-
-
-
-
+    this.fetchedItems = this.searchService.search(
+      new PaginatedSearchOptions({
+        pagination: this.paginationConfig,
+        dsoTypes: [DSpaceObjectType.ITEM],
+        sort: this.sortConfig,
+        query: `dc.type:${this.category.value}`
+      },),
+      undefined,
+      undefined,
+      undefined,
+    ).pipe(
+      toDSpaceObjectListRD()
+    ) as Observable<RemoteData<PaginatedList<Item>>>;
   }
 
   setSelectedCategory() {

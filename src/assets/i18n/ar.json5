@@ -2870,6 +2870,7 @@
 "repository.title.prefix": "المستودع الرقمي في جامعة الإمام محمد بن سعود الإسلامية :: ",
 
   "repository.title.prefixDSpace": "المستودع الرقمي في جامعة الإمام محمد بن سعود الإسلامية :: ",
+  
 
 
   "resource-policies.add.button": "إضافة",
@@ -6620,5 +6621,5 @@
 'home.new.upload':'تقديم جديد',
 'search.filters.namedresourcetype.Archived':'مؤرشفة',
 'search.filters.namedresourcetype.Workspace':"مساحة العمل",
-
+'browse.itemtype.*':'الكل',
 }
