@@ -1551,3 +1551,50 @@
 2023-09-20 13:05:44,914 INFO supervisord started with pid 1
 2023-09-20 13:05:45,916 INFO spawned: 'dspaceAngular' with pid 8
 2023-09-20 13:05:47,130 INFO success: dspaceAngular entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2023-09-20 14:21:24,437 WARN received SIGTERM indicating exit request
+2023-09-20 14:21:24,443 INFO waiting for dspaceAngular to die
+2023-09-20 14:21:24,455 INFO stopped: dspaceAngular (terminated by SIGTERM)
+2023-09-20 14:21:25,749 CRIT Supervisor is running as root.  Privileges were not dropped because no user is specified in the config file.  If you intend to run as root, you can set user=root in the config file to avoid this message.
+2023-09-20 14:21:25,751 INFO supervisord started with pid 1
+2023-09-20 14:21:26,754 INFO spawned: 'dspaceAngular' with pid 8
+2023-09-20 14:21:28,062 INFO success: dspaceAngular entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2023-09-20 20:04:36,768 WARN received SIGTERM indicating exit request
+2023-09-20 20:04:36,773 INFO waiting for dspaceAngular to die
+2023-09-20 20:04:36,815 INFO stopped: dspaceAngular (terminated by SIGTERM)
+2023-09-20 20:04:36,815 INFO reaped unknown pid 38
+2023-09-20 20:04:36,815 INFO reaped unknown pid 9
+2023-09-20 20:04:36,815 INFO reaped unknown pid 37
+2023-09-20 20:04:38,493 CRIT Supervisor is running as root.  Privileges were not dropped because no user is specified in the config file.  If you intend to run as root, you can set user=root in the config file to avoid this message.
+2023-09-20 20:04:38,499 INFO supervisord started with pid 1
+2023-09-20 20:04:39,502 INFO spawned: 'dspaceAngular' with pid 8
+2023-09-20 20:04:41,039 INFO success: dspaceAngular entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2023-09-21 10:56:57,673 WARN received SIGTERM indicating exit request
+2023-09-21 10:56:57,676 INFO waiting for dspaceAngular to die
+2023-09-21 10:56:57,716 INFO stopped: dspaceAngular (terminated by SIGTERM)
+2023-09-21 10:56:57,717 INFO reaped unknown pid 38
+2023-09-21 10:56:57,717 INFO reaped unknown pid 9
+2023-09-21 10:56:57,717 INFO reaped unknown pid 37
+2023-09-21 10:56:59,286 CRIT Supervisor is running as root.  Privileges were not dropped because no user is specified in the config file.  If you intend to run as root, you can set user=root in the config file to avoid this message.
+2023-09-21 10:56:59,291 INFO supervisord started with pid 1
+2023-09-21 10:57:00,293 INFO spawned: 'dspaceAngular' with pid 8
+2023-09-21 10:57:01,625 INFO success: dspaceAngular entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2023-09-21 11:12:35,671 WARN received SIGTERM indicating exit request
+2023-09-21 11:12:35,671 INFO waiting for dspaceAngular to die
+2023-09-21 11:12:35,687 INFO stopped: dspaceAngular (terminated by SIGTERM)
+2023-09-21 11:12:35,687 INFO reaped unknown pid 38
+2023-09-21 11:12:35,687 INFO reaped unknown pid 9
+2023-09-21 11:12:35,687 INFO reaped unknown pid 37
+2023-09-21 11:12:36,621 CRIT Supervisor is running as root.  Privileges were not dropped because no user is specified in the config file.  If you intend to run as root, you can set user=root in the config file to avoid this message.
+2023-09-21 11:12:36,624 INFO supervisord started with pid 1
+2023-09-21 11:12:37,626 INFO spawned: 'dspaceAngular' with pid 8
+2023-09-21 11:12:38,865 INFO success: dspaceAngular entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2023-09-21 11:21:37,856 WARN received SIGTERM indicating exit request
+2023-09-21 11:21:37,858 INFO waiting for dspaceAngular to die
+2023-09-21 11:21:37,879 INFO stopped: dspaceAngular (terminated by SIGTERM)
+2023-09-21 11:21:37,879 INFO reaped unknown pid 38
+2023-09-21 11:21:37,879 INFO reaped unknown pid 9
+2023-09-21 11:21:37,879 INFO reaped unknown pid 37
+2023-09-21 11:21:39,310 CRIT Supervisor is running as root.  Privileges were not dropped because no user is specified in the config file.  If you intend to run as root, you can set user=root in the config file to avoid this message.
+2023-09-21 11:21:39,314 INFO supervisord started with pid 1
+2023-09-21 11:21:40,316 INFO spawned: 'dspaceAngular' with pid 8
+2023-09-21 11:21:41,477 INFO success: dspaceAngular entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
