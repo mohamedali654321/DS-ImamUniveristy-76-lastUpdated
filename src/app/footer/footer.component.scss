@@ -59,6 +59,7 @@ hr{
 }
 
 .container-fluid{
+  max-width: 1540px !important;
   width: 100%;
   padding-right: 12px;
   padding-left: 12px;
@@ -67,7 +68,7 @@ hr{
 //  align-items: center;
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-around;
 
 }
 
@@ -120,6 +121,7 @@ a.lnkMap {
   }
   
   .container-fluid[_ngcontent-dspace-angular-c210] {
+    max-width: 1540px !important;
     width: 100%;
     padding-right: 12px;
     padding-left: 12px;
@@ -127,7 +129,7 @@ a.lnkMap {
     margin-left: auto;
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-around;
   }
   
   

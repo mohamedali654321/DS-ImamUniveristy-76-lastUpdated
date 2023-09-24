@@ -25,11 +25,12 @@
     padding: 0;
     margin-top: 7px;
     text-decoration: none;
+    text-shadow: none !important;
 }
-
-select{
+ select{
   border-right: 0;
 }
+
 .clearIcon{
   transform: translateX(20px);
         color: #495057;
@@ -40,10 +41,11 @@ select{
         align-items: center;
         display: flex;
         font-size: 1rem;
+        text-shadow: none !important;
 }
 
-::ng-deep ds-themed-home-page .clearIcon:hover{
-  margin-top: 11px !important;
+::ng-deep  .clearIcon:hover{
+  margin-top: 9px !important;
 }
 
 ::ng-deep html[dir="ltr"] {
@@ -54,11 +56,12 @@ select{
   .clearIcon:hover{
     transform: translateX(-2px) !important;
   }
-  ds-themed-home-page .clearIcon:hover{
+   .clearIcon:hover{
     margin-top: 11px !important;
   }
 
-  select{
+ select{
     border-left: 0;
   }
+  
 }

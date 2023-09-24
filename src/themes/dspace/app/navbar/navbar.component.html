@@ -8,17 +8,18 @@
     <div>
 
    
-      <a class="navbar-brand" href="/">
+      <div class="navbar-brand" >
         <div class="logo-area">
-            <img class="main-logo" [src]="(handleScroll | async) ? 'assets/images/small-logo.svg':'assets/images/logo-imam.png'" alt="">
-            <img class="small-logo" src="/_layouts/15/2016/Portal/img/small-logo.svg" alt="">
-            <div class="imam-info hidden-xs hidden-sm">
-                <h6> {{'footer.top.content1' | translate}}</h6>
-                <h6> {{'footer.top.content6' | translate}}</h6>
+          <a href="/"><img  class="main-logo" [src]="(handleScroll | async) ? 'assets/images/small-logo.svg':'assets/images/logo-imam.png'" alt="">
+            <img  class="small-logo" src="/_layouts/15/2016/Portal/img/small-logo.svg" alt=""></a>
+            
+            <div *ngIf="!(handleScroll | async)" class="imam-info hidden-xs hidden-sm">
+               <a href="/"> <h6> {{'footer.top.content1' | translate}}</h6></a>
+              <a href="/"> <h6> {{'footer.top.content6' | translate}}</h6></a>
                 
             </div>
-        </div>
-    </a>
+          </div>
+    </div>
 </div>
     <div id="collapsingNav" class="w-100 h-100" style="
     justify-content: center;

@@ -1748,6 +1748,37 @@ ds-dynamic-onebox .fa-circle {
   }
 }
 
+// ::ng-deep html[dir="rtl"]{
+//   .carousel-item-next:not(.carousel-item-left),
+//   .active.carousel-item-right {
+//     transform: translateX(-100%);
+//   }
+//   .carousel-item-prev:not(.carousel-item-right),
+//   .active.carousel-item-left {
+//     transform: translateX(100%);
+//   }
+
+//   .carousel-control-next{
+//     left: auto !important;
+//     right: 0 !important;
+//   }
+//   .carousel-control-prev{
+//     left: 0 !important;
+//     right: auto !important;
+   
+    
+//   }
+//   .carousel-control-next-icon{
+//     transform: scale(-1) !important;
+//   }
+//   .carousel-control-prev-icon{
+//     transform: scale(-1) !important;
+//   }
+//   // .carousel-indicators{
+//   //   transform: scale(-1) !important;
+//   // }
+// }
+
 ::ng-deep html[dir="rtl"]{
   .carousel-item-next:not(.carousel-item-left),
   .active.carousel-item-right {
@@ -1759,34 +1790,51 @@ ds-dynamic-onebox .fa-circle {
   }
 
   .carousel-control-next{
-    left: auto !important;
-    right: 0 !important;
-  }
-  .carousel-control-prev{
     left: 0 !important;
     right: auto !important;
+  }
+  .carousel-control-prev{
+    left: auto !important;
+    right: 0 !important;
    
     
   }
-  .carousel-control-next-icon{
-    transform: scale(-1) !important;
-  }
-  .carousel-control-prev-icon{
-    transform: scale(-1) !important;
-  }
+  // .carousel-control-next-icon{
+  //   transform: scale(-1) !important;
+  // }
+  // .carousel-control-prev-icon{
+  //   transform: scale(-1) !important;
+  // }
   // .carousel-indicators{
   //   transform: scale(-1) !important;
   // }
 }
 
-::ng-deep ds-home-page{
+// ::ng-deep ds-home-page{
+//   ds-search-form {
+//     input{
+//       height: 47px !important;
+//     }
+//   }
+// }
+::ng-deep {
   ds-search-form {
     input{
       height: 47px !important;
     }
   }
-}
+  ds-starts-with-text{
+    input{
+      height: 47px !important;
+    }
+  }
 
+  ds-starts-with-date{
+    input , select{
+      height: 47px !important;
+    }
+  }
+}
 ::ng-deep ds-top-section{
 
   ds-item-search-result-grid-element{
@@ -2074,9 +2122,16 @@ ds-top-section .label_dage{
   ::ng-deep ds-root {
     .container {
       max-width: 1540px !important;
+      justify-content: center;
     
   }
 
+  }
+
+  ::ng-deep ds-breadcrumbs{
+    .container {
+      justify-content: flex-start;
+    }
   }
   // ::ng-deep  ds-home-page{
   //   .container {
@@ -2273,9 +2328,24 @@ ds-listable-object-component-loader .card-title {
   }
   
   
+  // .card .badge {
+  //   display: inline-block;
+  //   padding: .6em .5em;
+  //   font-size: 75%;
+  //   font-weight: 700;
+  //   line-height: 1;
+  //   text-align: center;
+  //   white-space: nowrap;
+  //   vertical-align: baseline;
+  //   border-radius: 15px;
+  //   transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+  //   min-width: 3.3rem;
+  // }
+
+
   .card .badge {
     display: inline-block;
-    padding: .6em .5em;
+    // padding: .6em .5em;
     font-size: 75%;
     font-weight: 700;
     line-height: 1;
@@ -2284,7 +2354,7 @@ ds-listable-object-component-loader .card-title {
     vertical-align: baseline;
     border-radius: 15px;
     transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
-    min-width: 3.3rem;
+    // min-width: 3.3rem;
   }
   
   ds-listable-object-component-loader .card-title {
@@ -2429,4 +2499,65 @@ ds-listable-object-component-loader .card-title {
     color: #207698 !important;
     background-color: #FFF !important;
   
+  }
+
+  ::ng-deep{
+    .card .card-title{
+      font-weight: bold;
+    }
+    .card .badge{
+      font-weight: 500;
+    }
+  
+  }
+
+
+
+  ::ng-deep{
+    .scroll {
+      display: block;
+      padding: 5px;
+      margin-top: 5px;
+      width: 100%;
+      height: 100px;
+      overflow-y: scroll;
+  }
+
+  .card{
+    ::-webkit-scrollbar {
+      width: 5px;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: #3992a4; 
+      border-radius: 10px;
+    }
+  }
+  ds-item-search-result-grid-element{
+    .collapseButton{
+    visibility: hidden;
+    position: absolute;
+    }
+    .expandButton{
+      visibility: hidden;
+      position: absolute;
+    }
+  }
+
+  }
+
+
+  ::ng-deep{
+    ds-listable-object-component-loader .card{
+      box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+      &:hover{
+          transform: scale(1.04)
+      }
+      transition: .5s;
+    }
+  }
+
+
+  ::ng-deep .card:hover{
+    border: #3992a4 1.5px solid;
   }
