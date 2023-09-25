@@ -28,7 +28,7 @@
     </div>
       <ds-truncatable [id]="dso.id">
           <ds-truncatable-part [id]="dso.id" [minLines]="3" type="h4">
-              <h4 class="card-title" [innerHTML]="dsoTitle"></h4>
+            <a [routerLink]="[itemPageRoute]">  <h4 class="card-title" [innerHTML]="dsoTitle"></h4></a> 
           </ds-truncatable-part>
           <ds-truncatable-part [id]="dso.id" [minLines]="1" >
             <p class="item-authors card-text text-muted">
@@ -79,10 +79,10 @@
         </p>
       </div>
       </ds-truncatable>
-      <span [ngClass]="{'fixed-bottom-content':(isCollapsed() | async)}">
-      <small *ngIf="firstMetadataValue('dc.date.accessioned')" class="text-muted">
-        {{('item.uploaded.on' | translate)+' ' + (translateDate() !== null ? translateDate(): (firstMetadataValue('dc.date.accessioned').split('T')[0] |  date:'longDate'))}}
-      </small>
+      <span  style="display:flex;justify-content: space-between;" [ngClass]="{'fixed-bottom-content':(isCollapsed() | async)}">
+        <small *ngIf="firstMetadataValue('dc.date.accessioned')" class="badge badge-pill badge-secondary align-self-center archived-items-lead" [attr.title]="('item.uploaded.on' | translate)">
+          <i class="fa-solid fa-upload"></i> {{' ' + (translateDate() !== null ? translateDate(): (firstMetadataValue('dc.date.accessioned').split('T')[0] |  date:'longDate'))}}
+        </small>
       
       <ds-view-statistics [object]="dso"></ds-view-statistics>
       <!-- <div *ngIf="linkType != linkTypes.None" class="text-center">

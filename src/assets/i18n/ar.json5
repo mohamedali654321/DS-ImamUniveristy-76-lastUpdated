@@ -6622,4 +6622,12 @@
 'search.filters.namedresourcetype.Archived':'مؤرشفة',
 'search.filters.namedresourcetype.Workspace':"مساحة العمل",
 'browse.itemtype.*':'الكل',
+
+'publication.counts':'المنشورات',
+'views.counts':'المشاهدات',
+'downloads.counts':'التنزيلات',
+'item.uploaded.on':'تاريخ الإيداع',
+// 'publication.counts':'عدد المنشورات : ',
+// 'views.counts':'عدد المشاهدات : ',
+// 'downloads.counts':'عدد التنزيلات : ',
 }

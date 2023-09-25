@@ -6502,7 +6502,7 @@
 'home.news.title.article':'Articles',
 'home.news.desc.article':'An article is a self-contained part of a larger written work. This part of non-fictional prose appears in newspapers, magazines, the Internet and academic publications.',
 'home.news.browse':'Browse',
-'item.uploaded.on':'Uploaded on',
+// 'item.uploaded.on':'Uploaded on',
 
   "kware.media.viewer.requestACopy.btn": "Request A Copy",
   "kware.media.viewer.requestACopy.message": "This file is restricted, sign in to be able to open the file, if you cannot access the file after logging in, you may not have permissions to access this file, you can request a copy of the file in this case.",
@@ -6519,6 +6519,14 @@
 'search.filters.namedresourcetype.Workspace':"Workspace",
 "search.filters.entityType.Activity":"Activity",
 'browse.itemtype.*':'All',
+
+'publication.counts':'Publications',
+'views.counts':'Views',
+'downloads.counts':'Downloads',
+'item.uploaded.on':'Deposit date',
+// 'publication.counts':'Publications counts : ',
+// 'views.counts':'Views counts : ',
+// 'downloads.counts':'Downloads counts : ',
 }
 
 

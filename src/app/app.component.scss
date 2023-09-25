@@ -2464,14 +2464,14 @@ ds-listable-object-component-loader .card-title {
   ::ng-deep html[dir="rtl"]{
     .date-float{
       position: relative;
-      left: 12px;
+      left: 20px;
     }
   }
   
   ::ng-deep html[dir="ltr"]{
     .date-float{
       position: relative;
-      right: 12px;
+      right: 20px;
     }
   }
 
@@ -2561,3 +2561,19 @@ ds-listable-object-component-loader .card-title {
   ::ng-deep .card:hover{
     border: #3992a4 1.5px solid;
   }
+
+  ::ng-deep{
+    .card small{
+       background-color:rgb(106, 163, 213) !important ;
+     } 
+     ds-listable-object-component-loader small{
+       background-color:rgb(106, 163, 213) !important ;
+     }
+   }
+   ::ng-deep{
+    .card small{
+       background-color:transparent !important ;
+       color: #6c757d !important;
+     } 
+   
+   }

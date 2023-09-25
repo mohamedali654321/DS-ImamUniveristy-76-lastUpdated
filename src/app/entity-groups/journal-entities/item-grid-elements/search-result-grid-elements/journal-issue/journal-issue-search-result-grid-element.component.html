@@ -29,7 +29,7 @@
       <ds-truncatable-part [id]="dso.id" [minLines]="3" type="h4">
         <!-- kware-edit kwareTranslatePipe -->
                <!-- <h4 class="card-title" [innerHTML]="dsoTitle | kwareTranslate"></h4> -->
-               <h4 class="card-title">{{ dsoTitle  | kwareTranslate}}
+               <h4 class="card-title"><a [routerLink]="[itemPageRoute]">{{ dsoTitle  | kwareTranslate}}</a> 
                 <ds-publictaion-count style="font-size: 16px !important;"  [dso]="dso"></ds-publictaion-count>
               </h4>
         <!-- kware-edit end  -->
@@ -76,9 +76,9 @@
             <span [innerHTML]="firstMetadataValue('dc.description.abstract') | kwareTranslate"></span>
         </p>
     </ds-truncatable-part>
-    <div class="container" [ngClass]="{'fixed-bottom-content':(isCollapsed() | async)}">
-      <small  *ngIf="firstMetadataValue('dc.date.accessioned')" class="text-muted date-float">
-        {{('item.uploaded.on' | translate)+' ' + (translateDate() !== null ? translateDate(): (firstMetadataValue('dc.date.accessioned').split('T')[0] |  date:'longDate'))}}
+    <div style="display:flex;justify-content: space-between;" class="container" [ngClass]="{'fixed-bottom-content':(isCollapsed() | async)}">
+      <small *ngIf="firstMetadataValue('dc.date.accessioned')" class="badge badge-pill badge-secondary align-self-center archived-items-lead date-float" [attr.title]="('item.uploaded.on' | translate)">
+        <i class="fa-solid fa-upload"></i> {{' ' + (translateDate() !== null ? translateDate(): (firstMetadataValue('dc.date.accessioned').split('T')[0] |  date:'longDate'))}}
       </small>
       <ds-view-statistics [object]="dso"></ds-view-statistics>
     </div>
