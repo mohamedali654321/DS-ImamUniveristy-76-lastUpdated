@@ -12,6 +12,7 @@
       >
         <i class="fas fa-print"></i>
       </button>
+      <div class="divider-v"></div>
       <button
         class="viewer-toolbar-btn"
         (click)="watermarkImage('download')"
@@ -81,11 +82,7 @@
         <i class="fa fa-undo" aria-hidden="true"></i>
       </button>
       <div class="divider-v"></div>
-      <button
-        [disabled]="true"
-        class="viewer-toolbar-btn"
-        (click)="setMagnifierMode()"
-      >
+      <button class="viewer-toolbar-btn" (click)="setMagnifierMode()">
         <i class="fa fa-search" aria-hidden="true"></i>
       </button>
       <div class="divider-v"></div>
@@ -191,7 +188,11 @@
         <i class="fa fa-undo" aria-hidden="true"></i>
       </button>
 
-      <button class="viewer-toolbar-btn" (click)="setMagnifierMode()">
+      <button
+        class="viewer-toolbar-btn"
+        [disabled]="true"
+        (click)="setMagnifierMode()"
+      >
         <i class="fa fa-search" aria-hidden="true"></i>
       </button>
 
@@ -237,9 +238,11 @@
       (dblclick)="canvasDoubleClick($event)"
       (mousemove)="canvasMouseMove($event)"
       (mousedown)="canvasMouseDown($event)"
+      (contextmenu)="(false)"
+      (click)="canvasOnClick()"
       class="image-canvas"
+      dsStopContextMenu
     ></canvas>
-
     <canvas #zoomCanvas style="z-index: 1"></canvas>
   </div>
 </ds-viewer-wrapper>

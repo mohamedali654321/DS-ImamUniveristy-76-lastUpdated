@@ -6,13 +6,12 @@
 >
   <div centerMenu>{{ fileMeta?.name }}</div>
   <div #parentContainer class="parent-container" viewerContent>
-    <!-- <div class="viewer-container" #viewerContainer> -->
     <div class="downlaod-only">
       <span *ngIf="fileMeta.format">{{
-        "fileSection.viewerSwitcher.downloadOnly.message" | translate
+        'fileSection.viewerSwitcher.downloadOnly.message' | translate
       }}</span>
       <span *ngIf="!fileMeta.format">{{
-        "fileSection.viewerSwitcher.noFileFormat.message" | translate
+        'fileSection.viewerSwitcher.noFileFormat.message' | translate
       }}</span>
       <button
         *ngIf="fileMeta.format"
@@ -21,10 +20,9 @@
       >
         <em class="fa fa-download"></em>
         <span>{{
-          "fileSection.viewerSwitcher.downloadOnly.btn" | translate
+          'fileSection.viewerSwitcher.downloadOnly.btn' | translate
         }}</span>
       </button>
-      <!-- </div> -->
     </div>
   </div>
 </ds-viewer-wrapper>

@@ -1,5 +1,21 @@
-<ds-viewer-wrapper [isMobile]="isMobile" [closeViewer]="closeViewer">
-  <div viewerContent style="background-color: red; height: inherit">
+<ds-viewer-wrapper
+  [isMobile]="isMobile"
+  [closeViewer]="closeViewer"
+  [viewerPanelsStatus]="viewerPanelsStatus"
+>
+  <div leftMenu>
+    <div class="toolbar-controls-container">
+      <button (click)="downloadDocument()" dsStopContextMenu>
+        <i class="fas fa-download"></i>
+      </button>
+      <div class="divider-v"></div>
+      <button (click)="printDocument()" dsStopContextMenu>
+        <i class="fas fa-print"></i>
+      </button>
+    </div>
+  </div>
+  <div centerMenu>{{ fileMeta?.name }}</div>
+  <div class="viewer-container" viewerContent>
     <iframe
       title="dspace document viewer"
       #documentViewer

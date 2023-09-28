@@ -26,7 +26,7 @@
           <ds-type-badge  *ngIf="showLabel" [object]="dso"></ds-type-badge>        
        </div>
       </div>  
-      <ds-truncatable-part [id]="dso.id" [minLines]="3" type="h4">
+      <ds-truncatable-part [id]="dso.id" [minLines]="3" type="h4" [isGridview]="true">
         <!-- kware-edit kwareTranslatePipe -->
                  <!-- <h4 class="card-title" [innerHTML]="dsoTitle | kwareTranslate"></h4> -->
                  <h4 class="card-title"><a [routerLink]="[itemPageRoute]">{{ dsoTitle  | kwareTranslate}}</a> 
@@ -52,12 +52,12 @@
 
       <p *ngIf="dso.hasMetadata('creativework.datePublished')"
          class="item-date card-text text-muted">
-        <ds-truncatable-part [id]="dso.id" [minLines]="1">
+        <ds-truncatable-part [id]="dso.id" [minLines]="1" [isGridview]="true">
           <span [innerHTML]="firstMetadataValue('creativework.datePublished')"></span>
         </ds-truncatable-part>
       </p>
       <p *ngIf="dso.hasMetadata('dc.description')" class="item-description card-text">
-        <ds-truncatable-part [id]="dso.id" [minLines]="3">
+        <ds-truncatable-part [id]="dso.id" [minLines]="3" [isGridview]="true">
           <span [innerHTML]="firstMetadataValue('dc.description') | kwareTranslate"></span>
         </ds-truncatable-part>
       </p>

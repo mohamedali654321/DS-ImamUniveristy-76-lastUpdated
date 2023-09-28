@@ -36,6 +36,7 @@ export class ViewerFileComponent implements OnInit {
   @Output() selectedFileEmitter = new EventEmitter<number>();
   @ViewChild('selectedFileRef') selectedFileRef: ElementRef<any>;
   @Input() isMobile: boolean;
+  // @Input() preFetchedFiles: [];
 
   bitstreamPath$: Observable<{
     routerLink: string;
@@ -118,7 +119,7 @@ export class ViewerFileComponent implements OnInit {
   }
 
   scrollToView() {
-    this.selectedFileRef.nativeElement.scrollIntoView({
+    this.selectedFileRef?.nativeElement?.scrollIntoView({
       behavior: 'smooth',
       block: 'nearest',
       inline: 'start',

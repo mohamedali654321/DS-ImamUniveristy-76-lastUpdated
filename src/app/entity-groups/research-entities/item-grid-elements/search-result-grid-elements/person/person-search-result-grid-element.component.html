@@ -21,32 +21,32 @@
         </span>
     <div class="card-body" [ngClass]="{'fixed-height':(isCollapsed() | async)}">
       <ds-type-badge *ngIf="showLabel" [object]="dso"></ds-type-badge>
-      <ds-truncatable-part [id]="dso.id" [minLines]="3" type="h4">
+      <ds-truncatable-part [id]="dso.id" [minLines]="3" type="h4" [isGridview]="true">
         <!-- <h4 class="card-title" [innerHTML]="convertComma(dsoTitle)"></h4> -->
         <h4 class="card-title"><a [routerLink]="[itemPageRoute]">{{ dsoTitle  | kwareTranslate}}</a> 
           <ds-publictaion-count style="font-size: 16px !important;"  [dso]="dso"></ds-publictaion-count>
         </h4>
       </ds-truncatable-part>
       <p *ngIf="dso.hasMetadata('person.email')" class="item-email card-text text-muted">
-        <ds-truncatable-part [id]="dso.id" [minLines]="1">
+        <ds-truncatable-part [id]="dso.id" [minLines]="1" [isGridview]="true">
           <span [innerHTML]="firstMetadataValue('person.email')"></span>
         </ds-truncatable-part>
       </p>
       <p *ngIf="dso.hasMetadata('person.jobTitle')" class="item-jobtitle card-text">
-        <ds-truncatable-part [id]="dso.id" [minLines]="3">
+        <ds-truncatable-part [id]="dso.id" [minLines]="3" [isGridview]="true">
           <!-- kware-edit kwareTranslatePipe -->
           <span [innerHTML]="firstMetadataValue('person.jobTitle') | kwareTranslate"></span>
         </ds-truncatable-part>
       </p>
 
       <p *ngIf="dso.hasMetadata('person.jobTitle.description')" class="item-jobtitle card-text">
-        <ds-truncatable-part [id]="dso.id" [minLines]="3">
+        <ds-truncatable-part [id]="dso.id" [minLines]="3" [isGridview]="true">
           <!-- kware-edit kwareTranslatePipe -->
           <span [innerHTML]="removeMarkdown(firstMetadataValue('person.jobTitle.description') | kwareTranslate)"></span>
         </ds-truncatable-part>
       </p>
       <p *ngIf="dso.hasMetadata('person.description.biography')" class="item-jobtitle card-text">
-        <ds-truncatable-part [id]="dso.id" [minLines]="3">
+        <ds-truncatable-part [id]="dso.id" [minLines]="3" [isGridview]="true">
           <!-- kware-edit kwareTranslatePipe -->
           <span [innerHTML]="removeMarkdown(firstMetadataValue('person.description.biography') | kwareTranslate)"></span>
         </ds-truncatable-part>

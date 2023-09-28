@@ -16,6 +16,7 @@ export class ViewerPanelComponent {
   @Input() viewerPanelsStatus: any;
   @Input() fileMeta: any;
   @Input() fileUrl: any;
+  @Input() fileFormat: string;
   @Input() closeViewer: () => void;
 
   msFilesFormats = [

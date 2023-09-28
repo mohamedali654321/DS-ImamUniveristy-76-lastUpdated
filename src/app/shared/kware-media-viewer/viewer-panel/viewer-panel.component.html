@@ -23,10 +23,12 @@
       (fileMeta.canDownload | async) &&
       msFilesFormats.includes(fileMeta?.format)
     "
-    [docURL]="fileMeta?.url"
+    [docURL]="fileUrl"
     [locale]="localeCode"
     [closeViewer]="closeViewer"
     [isMobile]="isMobile"
+    [viewerPanelsStatus]="viewerPanelsStatus"
+    [fileMeta]="fileMeta"
   ></ds-kware-document-viewer>
   <ds-kware-video-player
     *ngIf="
@@ -34,18 +36,21 @@
       (fileMeta?.format.startsWith('video') ||
         fileMeta?.format.startsWith('audio'))
     "
-    [docURL]="fileMeta?.url"
-    [locale]="localeCode"
+    [fileMeta]="fileMeta"
+    [src]="fileUrl"
     [closeViewer]="closeViewer"
     [isMobile]="isMobile"
+    [viewerPanelsStatus]="viewerPanelsStatus"
+    [locale]="localeCode"
   ></ds-kware-video-player>
   <ds-unknown-file-format
     *ngIf="
       !msFilesFormats.includes(fileMeta?.format) &&
       !fileMeta?.format.startsWith('image') &&
       !fileMeta?.format.startsWith('video') &&
+      !fileMeta?.format.startsWith('audio') &&
       fileMeta?.format !== 'application/pdf' &&
-      fileMeta?.url !== '' &&
+      fileUrl !== '' &&
       (fileMeta.canDownload | async)
     "
     [closeViewer]="closeViewer"

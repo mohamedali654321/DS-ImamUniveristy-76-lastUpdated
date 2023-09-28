@@ -27,7 +27,7 @@
        </div>
         <ds-access-status-badge [object]="dso" class="pl-1"></ds-access-status-badge>
       </div>
-      <ds-truncatable-part [id]="dso.id" [minLines]="3" type="h4">
+      <ds-truncatable-part [id]="dso.id" [minLines]="3" type="h4" [isGridview]="true">
         <!-- <h4 class="card-title" [innerHTML]="dsoTitle | kwareTranslate"></h4> -->
         <h4 class="card-title"><a [routerLink]="[itemPageRoute]">{{ dsoTitle  | kwareTranslate}}</a> 
           <ds-publictaion-count style="font-size: 16px !important;"  [dso]="dso"></ds-publictaion-count>
@@ -45,7 +45,7 @@
 
       </div>
       <p *ngIf="dso.hasMetadata('dc.description')" class="item-description card-text ">
-        <ds-truncatable-part [id]="dso.id" [minLines]="3">
+        <ds-truncatable-part [id]="dso.id" [minLines]="3" [isGridview]="true">
           <span [innerHTML]="removeMarkdown(firstMetadataValue('dc.description'))"></span>
         </ds-truncatable-part>
         

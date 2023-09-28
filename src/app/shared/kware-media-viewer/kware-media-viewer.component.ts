@@ -1,3 +1,4 @@
+/* eslint-disable unused-imports/no-unused-imports */
 import { MediaViewerService } from './services/media-viewer.service';
 import {
   Component,
@@ -32,13 +33,13 @@ export class KwareMediaViewerComponent implements OnInit, OnDestroy {
   isLoading: boolean;
   totalElements: number;
   pageNumber: number;
-  pageSize = 1000;
+  pageSize = 25;
 
   isLastPage: boolean;
 
   localeCode = '';
   fileMeta = {
-    format: null,
+    format: '',
     name: '',
     canDownload: null,
     canRequestACopy: null,
@@ -48,6 +49,7 @@ export class KwareMediaViewerComponent implements OnInit, OnDestroy {
   };
 
   fileUrl: any;
+  fileFormat: string;
   isMobile: boolean;
   isViewerOpen = false;
 
@@ -102,6 +104,7 @@ export class KwareMediaViewerComponent implements OnInit, OnDestroy {
     this.viewerService.fileMetadata.subscribe((meta) => {
       if (this.fileMeta !== meta) {
         this.fileMeta = meta;
+        this.fileFormat = meta.format;
         this.fileUrl = this.fileService.retrieveFileDownloadLink(
           meta.contentLink
         );
@@ -156,7 +159,6 @@ export class KwareMediaViewerComponent implements OnInit, OnDestroy {
         this.totalElements = res?.page.totalElements;
         this.isLoading = false;
         this.isLastPage = this.pageNumber + 1 === res?.page.totalPages;
-
       });
   }
 

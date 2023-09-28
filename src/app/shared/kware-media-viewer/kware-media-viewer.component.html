@@ -3,7 +3,7 @@
     <div class="col-xs-12 col-md-3">
       <button class="files-browse-btn" (click)="openViewer()">
         <i class="fa fa-file fa-lg" aria-hidden="true"></i>
-        {{ "kware.media.viewer.browseFiles.btn" | translate }}
+        {{ 'kware.media.viewer.browseFiles.btn' | translate }}
       </button>
     </div>
   </div>
@@ -27,22 +27,19 @@
   </div>
 
   <div class="viewer-panel" *ngIf="viewerPanelsStatus.isViewerPanelOpen">
-    <div class="isLoading" *ngIf="isLoading">
-      <ds-themed-loading
-        message="{{ 'loading.default' | translate }}"
-        [showMessage]="true"
-        style="display: flex; align-items: center; justify-content: center"
-      ></ds-themed-loading>
-    </div>
-    <ds-viewer-panel
-      *ngIf="!isLoading && fileMeta?.format"
-      [closeViewer]="closeViewer"
-      [fileMeta]="fileMeta"
-      [isMobile]="isMobile"
-      [viewerPanelsStatus]="viewerPanelsStatus"
-      [fileUrl]="fileUrl | async"
-    ></ds-viewer-panel>
-    <ng-container *ngIf="!isLoading && !fileMeta?.format">
+    <ng-container *ngIf="fileMeta?.format">
+      <ds-viewer-panel
+        [closeViewer]="closeViewer"
+        [fileMeta]="fileMeta"
+        [fileFormat]="fileFormat"
+        [isMobile]="isMobile"
+        [viewerPanelsStatus]="viewerPanelsStatus"
+        [fileUrl]="fileUrl | async"
+        [localeCode]="localeCode"
+      ></ds-viewer-panel>
+    </ng-container>
+
+    <ng-container *ngIf="!fileMeta?.format">
       <ds-unknown-file-format
         [closeViewer]="closeViewer"
         [fileMeta]="fileMeta"

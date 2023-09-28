@@ -1,7 +1,8 @@
 import { AfterViewChecked, Component, ElementRef, Input, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { TruncatableService } from '../truncatable.service';
 import { hasValue } from '../../empty.util';
-
+import { NgbActiveModal , NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
+import { TruncatableModalComponent } from '../truncatable-modal/truncatable-modal.component';
 @Component({
   selector: 'ds-truncatable-part',
   templateUrl: './truncatable-part.component.html',
@@ -13,6 +14,10 @@ import { hasValue } from '../../empty.util';
  * It needs a TruncatableComponent parent to identify it's current state
  */
 export class TruncatablePartComponent implements AfterViewChecked, OnInit, OnDestroy {
+
+  modalRef: NgbModalRef;
+
+  @Input() isGridview?: boolean ;
   /**
    * Number of lines shown when the part is collapsed
    */
@@ -46,6 +51,8 @@ export class TruncatablePartComponent implements AfterViewChecked, OnInit, OnDes
    */
   @Input() showToggle = true;
 
+  showModal=false;
+
   /**
    * The view on the truncatable part
    */
@@ -69,12 +76,16 @@ export class TruncatablePartComponent implements AfterViewChecked, OnInit, OnDes
    */
   expandable = false;
 
-  public constructor(private service: TruncatableService) {}
+  public constructor(private service: TruncatableService,
+    public modalService: NgbModal
+    
+    ) {}
 
   /**
    * Initialize lines variable
    */
   ngOnInit() {
+    console.log('Toggling truncatable' +this.id +this.isGridview)
     this.setLines();
   }
 
@@ -96,15 +107,27 @@ export class TruncatablePartComponent implements AfterViewChecked, OnInit, OnDes
   ngAfterViewChecked() {
     this.truncateElement();
   }
+  
 
   /**
    * Expands the truncatable when it's collapsed, collapses it when it's expanded
    */
   public toggle() {
+    console.log('Toggling truncatable' +this.id +this.isGridview)
+    if(!this.showModal){
     this.service.toggle(this.id);
     this.expandable = !this.expandable;
+    }
+  
+    
   }
 
+
+  openModal(){
+    this.modalRef =this.modalService.open(TruncatableModalComponent, { centered: true , scrollable: true});
+    const modalComp = this.modalRef.componentInstance;
+    modalComp.content=this.content.nativeElement.innerText;
+  }
   /**
    * check for the truncate element
    */

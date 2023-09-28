@@ -2390,7 +2390,7 @@ ds-listable-object-component-loader .card-title {
   ::ng-deep html[dir="rtl"] {
     .fixed-height{
       position: relative;
-      height: 350px !important;
+      height: 310px !important;
   }
   
   .fixed-bottom-content{
@@ -2533,16 +2533,16 @@ ds-listable-object-component-loader .card-title {
       border-radius: 10px;
     }
   }
-  ds-item-search-result-grid-element{
-    .collapseButton{
-    visibility: hidden;
-    position: absolute;
-    }
-    .expandButton{
-      visibility: hidden;
-      position: absolute;
-    }
-  }
+  // ds-item-search-result-grid-element{
+  //   .collapseButton{
+  //   visibility: hidden;
+  //   position: absolute;
+  //   }
+  //   .expandButton{
+  //     visibility: hidden;
+  //     position: absolute;
+  //   }
+  // }
 
   }
 
@@ -2577,3 +2577,55 @@ ds-listable-object-component-loader .card-title {
      } 
    
    }
+
+
+
+   ::ng-deep html[dir="rtl"] {
+    ds-browse-categories  ds-sub-org-unit-search-result-grid-element{
+
+      .fixed-height{
+        position: relative;
+        height: 350px !important;
+    }
+    
+    .fixed-bottom-content{
+        position: absolute;
+        bottom: .5rem;
+        width: 100%;
+    }
+    }
+
+
+  }
+  
+  ::ng-deep html[dir="ltr"] {
+    ds-browse-categories  ds-sub-org-unit-search-result-grid-element{
+      .fixed-height{
+        position: relative;
+        height: 360px !important;
+    }
+    
+    .fixed-bottom-content{
+        position: absolute;
+        bottom: .5rem;
+        width: 100%;
+    }
+    }
+
+
+
+
+  }
+
+  ::ng-deep{
+    ds-search-filters .d-block{
+      margin-left: 0 !important;
+      margin-right: 0 !important;
+    }
+  }
+  ::ng-deep html[dir="ltr"] {
+    ds-footer img {
+      margin-right: -30px !important;
+    }
+  }
+ 

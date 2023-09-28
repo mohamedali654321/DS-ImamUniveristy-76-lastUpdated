@@ -22,7 +22,7 @@
     </span>
     <div class="card-body" [ngClass]="{'fixed-height':(isCollapsed() | async)}">
       <ds-type-badge *ngIf="showLabel" [object]="dso"></ds-type-badge>
-      <ds-truncatable-part [id]="dso.id" [minLines]="3" type="h4">
+      <ds-truncatable-part [id]="dso.id" [minLines]="3" type="h4" [isGridview]="true">
         <!-- kware-edit kwareTranslatePipe -->
         <!-- <h4 class="card-title" [innerHTML]="dsoTitle | kwareTranslate"></h4> -->
         <h4 class="card-title"><a [routerLink]="[itemPageRoute]">{{ dsoTitle  | kwareTranslate}}</a> 
@@ -30,7 +30,7 @@
         </h4>
       </ds-truncatable-part>
       <span class="text-muted">
-        <ds-truncatable-part [id]="dso.id" [minLines]="1">
+        <ds-truncatable-part [id]="dso.id" [minLines]="1" [isGridview]="true">
             <ng-container *ngIf="dso.firstMetadataValue('dc.publisher')
                 || dso.firstMetadataValue('dc.date.issued')">
                 <!-- kware-edit kwareTranslatePipe -->
@@ -61,7 +61,7 @@
     <span *ngIf="dso.allMetadata(['dc.description']).length> 0"
         class="item-list-org-unit-description">
         <!-- kware-edit kwareTranslatePipe -->
-        <ds-truncatable-part [id]="dso.id" [minLines]="3"><span
+        <ds-truncatable-part [id]="dso.id" [minLines]="3" [isGridview]="true"><span
                 [innerHTML]="removeMarkdown(firstMetadataValue('dc.description') | kwareTranslate)
                 "></span>
         </ds-truncatable-part>

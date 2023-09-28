@@ -30,7 +30,7 @@
           <ds-truncatable-part [id]="dso.id" [minLines]="3" type="h4">
             <a [routerLink]="[itemPageRoute]">  <h4 class="card-title" [innerHTML]="dsoTitle"></h4></a> 
           </ds-truncatable-part>
-          <ds-truncatable-part [id]="dso.id" [minLines]="1" >
+          <ds-truncatable-part [id]="dso.id" [minLines]="1" [isGridview]="true" >
             <p class="item-authors card-text text-muted">
               <!-- <span *ngIf="dso.hasMetadata('dc.date.issued')" class="item-date">{{firstMetadataValue('dc.date.issued')}}</span>
               <span *ngIf="dso.firstMetadataValue('dc.date.issued') && dso.firstMetadataValue('dc.date.issuedhijri') " class="item-list-date" [innerHTML]="regxColon()"></span>
@@ -44,7 +44,7 @@
 
           <!-- kware-edit keywords show -->
 
-          <ds-truncatable-part [id]="dso.id" [minLines]="1" >
+          <ds-truncatable-part [id]="dso.id" [minLines]="1" [isGridview]="true" >
             <div  *ngIf="dso.hasMetadata('dc.subject')"  >
               <div class="keys-info  ">
                 <span class=" badge-info"   *ngFor="let keyword of keywords;let last=last;"><a  style="white-space: -webkit-nowrap !important;"  href="/search?query=&f.subject={{keyword}},equals" title="{{keyword | kwareTranslate}}">{{keyword | kwareTranslate}}</a><span style="color:#207698 ;" *ngIf="!last"> • </span> </span>
@@ -53,31 +53,29 @@
   
             </div>
           </ds-truncatable-part>
-          <!-- <ds-truncatable-part *ngIf="dso.hasMetadata('dc.description.abstract')" [id]="dso.id" [minLines]="3">
+          <ds-truncatable-part *ngIf="dso.hasMetadata('dc.description.abstract')" [isGridview]="true" [id]="dso.id" [minLines]="3">
               <p class="item-abstract card-text">
         
                   <span [innerHTML]=" removeMarkdown(abstract | kwareTranslate)"></span>
               </p>
           </ds-truncatable-part>
 
-          <ds-truncatable-part *ngIf="!dso.hasMetadata('dc.description.abstract') && dso.hasMetadata('dc.description') " [id]="dso.id" [minLines]="3">
+          <ds-truncatable-part *ngIf="!dso.hasMetadata('dc.description.abstract') && dso.hasMetadata('dc.description') " [isGridview]="true" [id]="dso.id" [minLines]="3">
             <p class="item-abstract card-text">
                 <span [innerHTML]="removeMarkdown(dso.firstMetadataValue('dc.description') | kwareTranslate)"></span>
             </p>
-        </ds-truncatable-part> -->
-        <div style="max-height: 5.4rem;" class="scroll" *ngIf="dso.hasMetadata('dc.description.abstract')">
+        </ds-truncatable-part>
+        <!-- <div style="max-height: 5.4rem;" class="scroll" *ngIf="dso.hasMetadata('dc.description.abstract')">
           <p class="item-abstract card-text">
-            <!-- kware-edit kwareTranslatePipe -->
               <span [innerHTML]=" removeMarkdown(abstract | kwareTranslate)"></span>
           </p>
         </div>
 
       <div style="max-height: 5.4rem;" class="scroll" *ngIf="!dso.hasMetadata('dc.description.abstract') && dso.hasMetadata('dc.description') ">
         <p class="item-abstract card-text">
-          <!-- kware-edit kwareTranslatePipe -->
             <span [innerHTML]="removeMarkdown(dso.firstMetadataValue('dc.description') | kwareTranslate)"></span>
         </p>
-      </div>
+      </div> -->
       </ds-truncatable>
       <span  style="display:flex;justify-content: space-between;" [ngClass]="{'fixed-bottom-content':(isCollapsed() | async)}">
         <small *ngIf="firstMetadataValue('dc.date.accessioned')" class="badge badge-pill badge-secondary align-self-center archived-items-lead" [attr.title]="('item.uploaded.on' | translate)">

@@ -15,6 +15,7 @@ export class PublictaionCountComponent {
   data = new BehaviorSubject<any[]>([]);
   issueRelation = new BehaviorSubject<any[]>([]);
   issuesIds = [];
+  countLength = new BehaviorSubject<number>(0);
   constructor(
     protected dsoService: DSpaceObjectDataService // publication counter
   ) {}
@@ -39,7 +40,7 @@ export class PublictaionCountComponent {
                   metadata &&
                   metadata.key?.includes('relation.isPublicationOfJournalIssue') &&
               !metadata.key?.includes('latestForDiscovery')
-                ? this.data.next(this.data.getValue().concat([metadata]))
+                ? this.data.next(this.data.getValue().concat([metadata.uuid]))
                 : null;
                 })
               })
@@ -63,7 +64,7 @@ export class PublictaionCountComponent {
             md &&
             md.key?.includes('relation.isPublicationOfJournalIssue') &&
             !md.key?.includes('latestForDiscovery')
-              ? this.data.next(this.data.getValue().concat([md]))
+              ? this.data.next(this.data.getValue().concat([md.uuid]))
               : null;
           });
         });
@@ -78,7 +79,7 @@ export class PublictaionCountComponent {
           md.key?.includes('relation.isPublicationOfAuthor') ||
           md.key?.includes('relation.isPublicationOfAdvisors')) &&
         !md.key?.includes('latestForDiscovery')
-          ? this.data.next(this.data.getValue().concat([md]))
+          ? this.data.next(this.data.getValue().concat([md.uuid]))
           : null;
       });
     } else {
@@ -89,11 +90,19 @@ export class PublictaionCountComponent {
             this.dso.firstMetadataValue('dspace.entity.type')
         ) &&
         !md.key?.includes('latestForDiscovery')
-          ? this.data.next(this.data.getValue().concat([md]))
+          ? this.data.next(this.data.getValue().concat([md.uuid]))
           : null;
       });
     }
+    
+    this.data.subscribe((res) => {
+      this.publicationRelation= this.removeDuplicates(res);
+      this.countLength.next(this.publicationRelation.length) ;
+    });
   }
-
+  removeDuplicates(arr) {
+    return arr.filter((item,
+        index) => arr.indexOf(item) === index);
+}
   
 }

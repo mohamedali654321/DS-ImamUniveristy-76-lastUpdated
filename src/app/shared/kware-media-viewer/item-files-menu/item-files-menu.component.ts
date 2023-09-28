@@ -5,6 +5,7 @@ import {
   Component,
   ElementRef,
   EventEmitter,
+  HostListener,
   Input,
   OnInit,
   Output,
@@ -49,6 +50,12 @@ export class ItemFilesMenuComponent implements OnInit {
   itemSize = 20;
   emitted = false;
 
+  @HostListener('window:scroll', ['$event'])
+  onScroll(event: any) {
+    if ((event.target.offsetHeight + event.target.scrollTop) >= (event.target.scrollHeight - 10) && !this.isLoading && !this.isLastPage) {
+      this.scrollingFinished.emit();
+    }
+  }
   constructor(private viewerService: MediaViewerService) { }
 
   ngOnInit(): void {

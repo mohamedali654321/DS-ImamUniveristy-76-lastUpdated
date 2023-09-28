@@ -31,11 +31,11 @@
         <ds-truncatable-part [id]="dso.id" [minLines]="1">
           <ng-container *ngIf="dso.firstMetadataValue('dc.publisher') || dso.firstMetadataValue('dc.date.issued') || dso.firstMetadataValue('dc.date.issuedhijri')">
             <!-- kware-edit kwareTranslatePipe -->
-            (<span *ngIf="dso.firstMetadataValue('dc.publisher')" class="item-list-publisher" [innerHTML]="firstMetadataValue('dc.publisher')   +regxColon() | kwareTranslate"></span>
+            <span *ngIf="dso.firstMetadataValue('dc.publisher')" class="item-list-publisher" [innerHTML]="firstMetadataValue('dc.publisher')   +regxColon() | kwareTranslate"></span>
             <!-- <span *ngIf="dso.firstMetadataValue('dc.date.issued')" class="item-list-date" [innerHTML]="firstMetadataValue('dc.date.issued')"></span>
             <span *ngIf="dso.firstMetadataValue('dc.date.issued') && dso.firstMetadataValue('dc.date.issuedhijri') " class="item-list-date" [innerHTML]="regxColon()"></span>
             <span *ngIf="dso.firstMetadataValue('dc.date.issuedhijri')" class="item-list-date" [innerHTML]="firstMetadataValue('dc.date.issuedhijri')"></span> -->
-            )
+            
           </ng-container>
           <span *ngIf="dso.allMetadata(['dc.contributor.author', 'dc.creator', 'dc.contributor.*']).length > 0" class="item-list-authors">
             <span *ngFor="let author of authors;let last=last;">

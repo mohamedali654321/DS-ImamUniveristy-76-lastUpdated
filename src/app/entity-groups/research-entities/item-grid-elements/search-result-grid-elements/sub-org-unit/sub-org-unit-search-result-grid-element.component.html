@@ -21,7 +21,7 @@
         </span>
     <div class="card-body"[ngClass]="{'fixed-height':(isCollapsed() | async)}">
       <ds-type-badge *ngIf="showLabel" [object]="dso"></ds-type-badge>
-      <ds-truncatable-part [id]="dso.id" [minLines]="3" type="h4">
+      <ds-truncatable-part [id]="dso.id" [minLines]="3" type="h4" [isGridview]="true">
         <!-- kware-edit kwareTranslatePipe -->
         <!-- <h4 class="card-title" [innerHTML]="dsoTitle | kwareTranslate"></h4> -->
         <h4 class="card-title"><a [routerLink]="[itemPageRoute]">{{ dsoTitle  | kwareTranslate}}</a> 
@@ -34,29 +34,29 @@
 
       </div>
       <p *ngIf="dso.hasMetadata('organization.role')" class="item-jobtitle card-text">
-        <ds-truncatable-part [id]="dso.id" [minLines]="3">
+        <ds-truncatable-part [id]="dso.id" [minLines]="3" [isGridview]="true">
           <!-- kware-edit kwareTranslatePipe -->
           <span [innerHTML]="firstMetadataValue('organization.role') | kwareTranslate"></span>
         </ds-truncatable-part>
       </p>
 
       <div *ngIf="dso.allMetadata(['dc.relation.college']).length > 0">
-        <span style="color:#3992a4 !important ;font-size: 15px;font-weight: 600;" [innerHtml]="firstMetadataValue('dc.relation.college') | kwareTranslate"></span>
+        <span style="color:#3992a4 !important ;font-size: .9rem;font-weight:normal;" [innerHtml]="firstMetadataValue('dc.relation.college') | kwareTranslate"></span>
 
       </div>
       <div *ngIf="dso.allMetadata(['organization.legalName']).length > 0 || dso.allMetadata(['organization.legalName.alternative']).length > 0">
-        <span style="color:#3992a4 !important ;font-size: 15px;font-weight: 600;" [innerHtml]="(localeEn && firstMetadataValue('organization.legalName.alternative')) ? (firstMetadataValue('organization.legalName.alternative') | kwareTranslate) :  (firstMetadataValue('organization.legalName') | kwareTranslate)"></span>
+        <span style="color:#3992a4 !important ;font-size: .9rem;font-weight:normal;" [innerHtml]="(localeEn && firstMetadataValue('organization.legalName.alternative')) ? (firstMetadataValue('organization.legalName.alternative') | kwareTranslate) :  (firstMetadataValue('organization.legalName') | kwareTranslate)"></span>
 
       </div>
       <p *ngIf="dso.hasMetadata('organization.foundingDate')"
          class="item-date card-text text-muted">
-        <ds-truncatable-part [id]="dso.id" [minLines]="1">
+        <ds-truncatable-part [id]="dso.id" [minLines]="1" [isGridview]="true">
           <span [innerHTML]="firstMetadataValue('organization.foundingDate')"></span>
         </ds-truncatable-part>
       </p>
       <p *ngIf="dso.hasMetadata('organization.address.addressCountry')"
          class="item-location card-text">
-        <ds-truncatable-part [id]="dso.id" [minLines]="3">
+        <ds-truncatable-part [id]="dso.id" [minLines]="3" [isGridview]="true">
           <!-- kware-edit kwareTranslatePipe -->
           <span
             class="item-country">{{firstMetadataValue('organization.address.addressCountry') | kwareTranslate}}</span>
@@ -67,7 +67,7 @@
           </span>
         </ds-truncatable-part>
       </p>
-      <ds-truncatable-part *ngIf=" dso.hasMetadata('dc.description') " [id]="dso.id" [minLines]="3">
+      <ds-truncatable-part *ngIf=" dso.hasMetadata('dc.description') " [id]="dso.id" [minLines]="3" [isGridview]="true">
         <p class="text-muted">
           <!-- kware-edit kwareTranslatePipe -->
             <span [innerHTML]=" removeMarkdown(dso.firstMetadataValue('dc.description') | kwareTranslate)"></span>

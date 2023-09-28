@@ -309,6 +309,8 @@ import { NgbCarouselModule } from '@ng-bootstrap/ng-bootstrap';
 import { ViewStatisticsComponent } from './view-statistics/view-statistics.component';
 
 import { LayoutModule } from '@angular/cdk/layout';
+
+import { TruncatableModalComponent } from './truncatable/truncatable-modal/truncatable-modal.component';
 import { ItemFileIconComponent } from './kware-media-viewer/item-file-icon/item-file-icon.component';
 import { KwareMediaViewerComponent } from './kware-media-viewer/kware-media-viewer.component';
 import { KwareDocumentViewerComponent } from './kware-media-viewer/media-viewers/kware-document-viewer/kware-document-viewer.component';
@@ -322,6 +324,8 @@ import { CdkAccordionModule } from '@angular/cdk/accordion';
 import { UnknownFileFormatComponent } from './kware-media-viewer/shared/unknown-file-format/unknown-file-format.component';
 import { RequestACopyComponent } from './kware-media-viewer/shared/request-a-copy/request-a-copy.component';
 import { ViewerPanelComponent } from './kware-media-viewer/viewer-panel/viewer-panel.component';
+import { HandleDurationTimePipe } from './kware-media-viewer/media-viewers/kware-video-player/handle-duration-time.pipe';
+
 const MODULES = [
   CommonModule,
   NgbCarouselModule,
@@ -371,7 +375,10 @@ const PIPES = [
   ShortNumberPipe,
   KwareTranslatePipe,
   KwareCommaConvertPipe,
-  KwareLanguageSplitPipe
+  KwareLanguageSplitPipe,
+   /** kware start edit */
+   HandleDurationTimePipe
+   /** kware end edit */
 ];
 
 const COMPONENTS = [
@@ -466,20 +473,20 @@ const COMPONENTS = [
  MediaViewerToolbarComponent,
  /** kware end edit */
 
-   /** kware start edit */
-   ItemFilesMenuComponent,
-   ViewerFileComponent,
-   KwarePdfViewerComponent,
-   KwareImageViewerComponent,
-   KwareDocumentViewerComponent,
-   KwareVideoPlayerComponent,
-   KwareMediaViewerComponent,
-   ItemFileIconComponent,
-   ViewerWrapperComponent,
-   UnknownFileFormatComponent,
-   RequestACopyComponent,
-   ViewerPanelComponent
-   /** kware end edit */
+  /** kware start edit */
+  ItemFilesMenuComponent,
+  ViewerFileComponent,
+  KwarePdfViewerComponent,
+  KwareImageViewerComponent,
+  KwareDocumentViewerComponent,
+  KwareVideoPlayerComponent,
+  KwareMediaViewerComponent,
+  ItemFileIconComponent,
+  ViewerWrapperComponent,
+  UnknownFileFormatComponent,
+  RequestACopyComponent,
+  ViewerPanelComponent
+  /** kware end edit */
 ];
 
 const ENTRY_COMPONENTS = [
@@ -584,6 +591,7 @@ const DIRECTIVES = [
     ...COMPONENTS,
     ...ENTRY_COMPONENTS,
     ...DIRECTIVES,
+    TruncatableModalComponent,
     
   ],
   providers: [

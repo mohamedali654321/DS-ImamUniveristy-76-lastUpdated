@@ -4,12 +4,13 @@
   </div>
   <!-- kware-edit start 
    - fix show more beside show less in RTL -->
-  <button class="btn btn-link p-0 expandButton" dsDragClick (actualClick)="toggle()" *ngIf="!expand && !expandable">
+
+  <button class="btn btn-link p-0 expandButton" dsDragClick (actualClick)=" isGridview  ? openModal() : toggle()" *ngIf="!expand && !expandable" >
     <i class="fas fa-angle-down"></i>
     <span class="ml-1">{{ 'item.truncatable-part.show-more' | translate }}</span>
   </button>
   <!-- kware-edit start  -->
-  <button class="btn btn-link p-0 collapseButton" dsDragClick (actualClick)="toggle()" *ngIf="expand && expandable">
+  <button class="btn btn-link p-0 collapseButton" dsDragClick (actualClick)="toggle()" *ngIf="expand && expandable ">
     <i class="fas fa-angle-up"></i>
     <span class="ml-1">{{ 'item.truncatable-part.show-less' | translate }}</span>
   </button>

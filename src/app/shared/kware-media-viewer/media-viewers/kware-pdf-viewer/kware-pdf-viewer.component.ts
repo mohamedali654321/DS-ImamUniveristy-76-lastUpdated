@@ -37,9 +37,9 @@ export class KwarePdfViewerComponent implements OnInit, OnChanges {
   constructor(private viewerService: MediaViewerService, private localeService: LocaleService) {
   }
   ngOnChanges(changes: SimpleChanges): void {
-    if (!changes.fileUrl.firstChange) {
+    if (!changes.fileUrl?.firstChange) {
       if (this.pdfJsViewer) {
-        this.pdfJsViewer.pdfSrc = encodeURIComponent(changes.fileUrl.currentValue);
+        this.pdfJsViewer.pdfSrc = encodeURIComponent(changes.fileUrl?.currentValue);
         this.pdfJsViewer.refresh();
       }
     }
@@ -60,15 +60,13 @@ export class KwarePdfViewerComponent implements OnInit, OnChanges {
     const image = await pdfDoc.embedPng(imageBuffer);
 
     const pages = pdfDoc.getPages();
-    pages.map(page => {
+    pages.forEach(page => {
       const { width, height } = image.scale(0.2);
       page.drawImage(image, {
         x: page.getWidth() / 2 - width / 2,
         y: page.getHeight() / 2 - height / 2,
         width: width,
         height: height,
-        // width: 300,
-        // height: 428,
         opacity: 0.1,
       });
     });
@@ -94,7 +92,7 @@ export class KwarePdfViewerComponent implements OnInit, OnChanges {
   printPdf(byte: any) {
     let blob = new Blob([byte], { type: this.fileMeta?.format });
     const blobUrl = window.URL.createObjectURL(blob);
-    const iframe: any = document.createElement('iframe');
+    const iframe = document.createElement('iframe');
     iframe.style.display = 'none';
     iframe.src = blobUrl;
     document.body.appendChild(iframe);

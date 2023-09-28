@@ -5,7 +5,6 @@ import {
   ViewChild,
   OnInit,
   ElementRef,
-  Renderer2,
   OnChanges,
   SimpleChanges,
 } from '@angular/core';
@@ -50,8 +49,10 @@ export class KwareImageViewerComponent implements OnInit, OnChanges {
 
   zoomCan: any;
   zoomCtx: any;
+  isStopMoveOnZoom = false;
 
   isFullScreen = false;
+  isLoadingImage: boolean;
 
   zoomValues: any[] = [
     {
@@ -117,7 +118,6 @@ export class KwareImageViewerComponent implements OnInit, OnChanges {
 
   constructor(
     private viewerService: MediaViewerService,
-    private renderer: Renderer2
   ) { }
 
 
@@ -155,27 +155,12 @@ export class KwareImageViewerComponent implements OnInit, OnChanges {
           if (this.canvas.getContext) {
             this.context = this.canvas.getContext('2d');
             this.loadImage(img);
+            this.isLoadingImage = false;
           }
         }
       });
     }
   }
-
-  private getImageFromURL = (url, cb) => {
-    const img = new Image();
-    img.onload = () => cb(null, img);
-    img.onerror = (err) => cb(err);
-    img.crossOrigin = 'anonymous';
-    img.src = url;
-  };
-
-  private resetViewerValues = () => {
-    this.isZoomed = false;
-    this.isMagnifierMode = false;
-    this.currentRotateDegree = 0;
-    this.currentZoomValue = 100;
-    this.currentBrightnessValue = 100;
-  };
 
   private loadImage(image: HTMLImageElement) {
     if (!this.canvas || !image) { return; }
@@ -198,6 +183,26 @@ export class KwareImageViewerComponent implements OnInit, OnChanges {
     this.context.drawImage(image, 0, 0, this.canvas.width, this.canvas.height);
   }
 
+  private getImageFromURL = (url, cb) => {
+    this.isLoadingImage = true;
+
+    const img = new Image();
+    img.onload = () => cb(null, img);
+    img.onerror = (err) => cb(err);
+    img.crossOrigin = 'anonymous';
+    img.src = url;
+  };
+
+  private resetViewerValues = () => {
+    this.isZoomed = false;
+    this.isMagnifierMode = false;
+    this.currentRotateDegree = 0;
+    this.currentZoomValue = 100;
+    this.currentBrightnessValue = 100;
+  };
+
+
+
   rescaleCanvas(zoomRatio: any) {
     if (this.context) {
       this.canvas.style.width = zoomRatio;
@@ -218,7 +223,7 @@ export class KwareImageViewerComponent implements OnInit, OnChanges {
 
   watermarkImage(actionType: string) {
     const canvas = document.createElement('canvas');
-    const ctx: any = canvas.getContext('2d');
+    const ctx = canvas.getContext('2d');
     canvas.width = this.baseImage.width;
     canvas.height = this.baseImage.height;
     ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -261,7 +266,7 @@ export class KwareImageViewerComponent implements OnInit, OnChanges {
   };
 
   printImage(canvas: any) {
-    const iframe: any = document.createElement('iframe');
+    const iframe = document.createElement('iframe');
     canvas.toBlob((blob) => {
       iframe.src = window.URL.createObjectURL(blob);
       iframe.style.display = 'none';
@@ -276,35 +281,40 @@ export class KwareImageViewerComponent implements OnInit, OnChanges {
   }
 
   canvasDoubleClick(e) {
+    e.preventDefault();
     if (!this.isZoomed) {
       this.viewerContainer.nativeElement.style.cursor = 'zoom-out';
       this.currentZoomValue = this.maxZoomValue;
       this.rescaleCanvas(`${Number(this.currentZoomValue)}%`);
       this.isZoomed = true;
+      this.isStopMoveOnZoom = false;
     } else {
       this.viewerContainer.nativeElement.style.cursor = 'zoom-in';
       this.currentZoomValue = this.minZoomValue;
       this.rescaleCanvas(`${Number(this.currentZoomValue)}%`);
       this.isZoomed = false;
+      this.isStopMoveOnZoom = false;
     }
   }
 
-  magnifyCanvas(e) {
-    this.zoomCtx.drawImage(this.baseImage, e.x, e.y, 200, 100, 0, 0, 400, 200);
-    this.zoomCan.style.top = e.pageY + 10 + 'px';
-    this.zoomCan.style.left = e.pageX + 10 + 'px';
+  canvasOnClick() {
+    this.isStopMoveOnZoom = !this.isStopMoveOnZoom;
   }
 
   canvasMouseMove(e) {
-    // How far the mouse has been moved
-    const dx = (e.clientX - this.mousePosition.x) * 2;
-    const dy = (e.clientY - this.mousePosition.y) * 3;
+    if (this.isMagnifierMode) {
+      /** TBD */
+    } else if (!this.isStopMoveOnZoom) {
+      // How far the mouse has been moved
+      const dx = (e.clientX - this.mousePosition.x) * 2;
+      const dy = (e.clientY - this.mousePosition.y) * 3;
 
-    // Scroll the image
-    this.viewerContainer.nativeElement.scrollTop =
-      this.mousePosition.top - dy;
-    this.viewerContainer.nativeElement.scrollLeft =
-      this.mousePosition.left - dx;
+      // Scroll the image
+      this.viewerContainer.nativeElement.scrollTop =
+        this.mousePosition.top - dy;
+      this.viewerContainer.nativeElement.scrollLeft =
+        this.mousePosition.left - dx;
+    }
   }
 
   // Detect mouse position on click or db-click event
@@ -332,6 +342,7 @@ export class KwareImageViewerComponent implements OnInit, OnChanges {
       this.viewerContainer.nativeElement.style.filter = `brightness(${Number(this.currentBrightnessValue)}%)`;
     }
   }
+
 
   imageRotate() {
     if (this.currentRotateDegree === 270) {
