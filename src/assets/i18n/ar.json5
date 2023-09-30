@@ -6630,4 +6630,15 @@
 // 'publication.counts':'عدد المنشورات : ',
 // 'views.counts':'عدد المشاهدات : ',
 // 'downloads.counts':'عدد التنزيلات : ',
+
+  "videoPlayer.playBtn": "تشغيل",
+  "videoPlayer.pauseBtn": "ايقاف مؤقت",
+  "videoPlayer.replayBtn": "اعادة تشغيل",
+  "videoPlayer.muteBtn": "كتم الصوت",
+  "videoPlayer.stopBtn": "ايقاف التشغيل",
+  "videoPlayer.volumeBar": "الصوت",
+
+  'home.recent-submissions.items':'الأحدث إضافة',
+
 }
+

@@ -65,6 +65,8 @@
   </ng-container>
 
   <ng-container *ngIf="selectedCategory !== 0">
+    <h4 class="recent-head" style="color: #c7ba9d !important;"> {{'home.recent-submissions.items' | translate}}</h4>
+
     <ds-viewable-collection
       [config]="paginationConfig"
       [sortConfig]="sortConfig"

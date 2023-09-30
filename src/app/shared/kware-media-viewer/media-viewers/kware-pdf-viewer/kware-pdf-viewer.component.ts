@@ -37,9 +37,9 @@ export class KwarePdfViewerComponent implements OnInit, OnChanges {
   constructor(private viewerService: MediaViewerService, private localeService: LocaleService) {
   }
   ngOnChanges(changes: SimpleChanges): void {
-    if (!changes.fileUrl?.firstChange) {
+    if (!changes.fileUrl.firstChange) {
       if (this.pdfJsViewer) {
-        this.pdfJsViewer.pdfSrc = encodeURIComponent(changes.fileUrl?.currentValue);
+        this.pdfJsViewer.pdfSrc = encodeURIComponent(changes.fileUrl.currentValue);
         this.pdfJsViewer.refresh();
       }
     }

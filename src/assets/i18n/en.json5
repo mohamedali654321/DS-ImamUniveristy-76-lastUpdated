@@ -6527,6 +6527,14 @@
 // 'publication.counts':'Publications counts : ',
 // 'views.counts':'Views counts : ',
 // 'downloads.counts':'Downloads counts : ',
+
+  "videoPlayer.playBtn": "Play",
+  "videoPlayer.pauseBtn": "Pause",
+  "videoPlayer.replayBtn": "Replay",
+  "videoPlayer.muteBtn": "Mute",
+  "videoPlayer.stopBtn": "Stop",
+  "videoPlayer.volumeBar": "Volume",
+  'home.recent-submissions.items':'Recently Added',
 }
 
 

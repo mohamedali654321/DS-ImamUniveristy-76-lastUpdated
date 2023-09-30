@@ -2629,3 +2629,13 @@ ds-listable-object-component-loader .card-title {
     }
   }
  
+  ::ng-deep html[dir="rtl"] {
+    .recent-head{
+     margin-right: 30px;
+    }
+   }
+   ::ng-deep html[dir="ltr"] {
+    .recent-head{
+     margin-left: 30px;
+    }
+   }
