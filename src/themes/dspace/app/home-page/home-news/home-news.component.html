@@ -1,109 +1,63 @@
-<div class="background-image" >
-  <ngb-carousel class="container"   container *ngIf="images">
-    <ng-template *ngFor="let image of images" ngbSlide>
-  <div >
-    
-        <div class="item active">
-          <div class="">
-            <div style="display: flex;justify-content: center;"
-             class="row inner-slider-content" >
-              <!-- left spacing -->
-              <div class="col-xs-1 hidden-xs"></div>
-              <!-- community logo -->
-              <div class="col-sm-2 col-xs-6 slider-content" style="" >
-                <img 
-                style="height: 150px !important;width: 150px !important;border-radius: 50% !important;"
-                  class="img-responsive"
-                  [src]="image.imageSrc"
-                />
-              </div>
-              <!-- community content -->
-              <div class="col-sm-8 col-xs-10 content-text">
-                <div class="row">
+<!-- <div class="background-image" >
+ 
 
-                  <div class="col-md-8 col-xs-12 record-elem">
-                    <h4>
-                      <a style="color: #FFF;" [href]="image.url"
-                        >{{image.title | translate}}
-                      </a>
-                    </h4>
-                  </div>
-                  
-                  <div class="col-md-4 hidden-sm hidden-xs">
-                    <div class="pull-left" style="display: flex;gap: 5px;">
-                      <!-- <a
-                        [href]="image.url"
-                        class="btn btn-sm btn-default btn btn-primary search-button"
-                        >{{'home.news.browse' | translate}}</a
-                      > -->
-                      <!-- <button
-                        
-                        class="btn btn-sm btn-primary" style="background-color: #3992a4 !important;
-                        border-color: #3992a4 !important;"
-                        (click)="createSubmissionFormById(image.id)"
-                        ><i class="fa-solid fa-upload"></i> {{'home.new.upload' | translate}}</button
-                      > -->
-                    </div>
-                  </div>
-                  <div class="col-xs-12 hidden-lg hidden-md">
-                    <div style="display: flex;gap: 3px;">
-                      <!-- <a
-                      [href]="image.url"
-                      [routerLink]="image.url"
-                        class="btn btn-sm btn-default btn btn-primary search-button"
-                        >{{'home.news.browse' | translate}}</a
-                      >
-                      <button
-                      (click)="createSubmissionFormById(image.id)"
-                        class="btn btn-sm btn-success"
-                        ><i class="fa-solid fa-upload"></i> {{'home.new.upload' | translate}}</button
-                      > -->
-                    </div>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-md-12">
-                    <span style="color: #ffffffc5;font-size: .9rem;font-weight: 300;">
-                      {{image.desc | translate}}
-                      <br>
-                      <br>
-                      <div class="pull-left" style="display: flex;gap: 5px;">
-                      <a
-                      [href]="image.url"
-                      [routerLink]="image.url"
-                      style="background-color: #3992a4 !important;
-                      border-color: #3992a4 !important;"
-                        class=" btn btn-primary"
-                        >{{'home.news.browse' | translate}}</a
-                      >
-                    </div>
-                    </span>
-                    
-                  </div>
-           
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-     
-  </div>
-</ng-template>
-</ngb-carousel>
-<div class="container">
-  <ds-themed-search-form [showScopeSelector]="showScopeSelector" [inPlaceSearch]="false" [searchPlaceholder]="'home.search-form.placeholder' | translate"></ds-themed-search-form>
-
-</div>
 
 </div>
 
 <div>
   <div class="container">
+    <div class="container">
+      <ds-themed-search-form [showScopeSelector]="showScopeSelector" [inPlaceSearch]="false" [searchPlaceholder]="'home.search-form.placeholder' | translate"></ds-themed-search-form>
+    
+    </div>
     <div class="jumbotron jumbotron-fluid">
       <div class="d-flex flex-wrap">
-        <!-- kware edit
-    translate home-news screen -->
+    
       </div>
     </div>
   </div>
+</div> -->
+
+
+<div class="background-image">
+  <div class="container" >
+
+    <div class="jumbotron jumbotron-fluid">
+      <div class="d-flex flex-wrap" style="justify-content: center;align-items: center;width: 100%;">
+        <!-- kware edit
+        translate home-news screen -->
+        <div style="width: 100%;margin-top: 100px;">
+          <ds-themed-search-form [showScopeSelector]="showScopeSelector" [inPlaceSearch]="false" [searchPlaceholder]="'home.search-form.placeholder' | translate"></ds-themed-search-form>
+
+          <!-- <h1 class="display-3">{{ "home.news.dspace7" | translate }}</h1> -->
+        </div>
+      </div>
+      <!-- <ul>
+
+        <li>
+          {{ "home.news.dspace.intro.content1" | translate }}
+        </li>
+        <li>
+          {{ "home.news.dspace.intro.content2" | translate }}
+        </li>
+        <li>
+          {{ "home.news.dspace.intro.content3" | translate }}
+        </li>
+      </ul> -->
+    
+      <!-- <p>
+        {{ "home.news.dspace.testUser.header" | translate }}
+      </p> -->
+      <!-- <ul>
+        <li>{{ "home.news.dspace.demoSite.userName" | translate }} = dspace@kwareict.com</li>
+        <li>{{ "home.news.dspace.demoSite.userPass" | translate }} = kware-dspace7-demo</li>
+      </ul> -->
+    </div>
+  </div>
+  <!-- <small class="credits"
+    >Photo by
+    <a href="https://www.pexels.com/@inspiredimages">@kwaretech</a></small
+  > -->
+  <!-- end kware edit -->
 </div>
+

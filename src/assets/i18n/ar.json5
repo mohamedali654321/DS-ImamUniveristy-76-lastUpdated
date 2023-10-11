@@ -4147,7 +4147,7 @@
 'item.page.scientificmatters':'الأمور العلمية',
 'item.page.pests':'الآفات',
 'item.page.technicalmatters':'الأمور الفنية',
-'item.page.isimage':'التصوير',
+'item.page.isimage':'رسومات توضيحية',
 'item.page.papertype':'نوع الورق ',
 'item.page.inkcolor':'لون الحبر ',
 'item.page.fonttype':'نوع الخط ',
@@ -4157,7 +4157,7 @@
 'item.page.dottingForm':'شكل التنقيط',
 'item.page.underlining':'التسطير',
 'item.page.puncturing':'التخريم',
-'item.page.decor':'الديكور',
+'item.page.decor':'وصف الأمور الفنية',
 'item.page.introduction':'فاتحة المخطوط ',
 'item.page.conclusion':'خاتمة المخطوط ',
 'item.page.note':'الملاحظات',
@@ -6639,6 +6639,13 @@
   "videoPlayer.volumeBar": "الصوت",
 
   'home.recent-submissions.items':'الأحدث إضافة',
+  'journal.page.primaryContactAddress':'عنوان الاتصال الأساسي',
+  'journal.page.technicalContactAddress':'عنوان اتصال الدعم الفني',
+  'item.page.typeFormat':'شكل الوعاء المادي',
+   "search.filters.filter.typeFormat.head": 'شكل الوعاء المادي',
+  "search.filters.filter.typeFormat.label": "بحث  شكل الوعاء المادي",
+  "search.filters.filter.typeFormat.placeholder": 'شكل الوعاء المادي',
+  "search.filters.applied.f.typeFormat": 'شكل الوعاء المادي',
 
 }
 

@@ -24,6 +24,7 @@ import { PaginationComponentOptions } from '../pagination/pagination-component-o
 import { ViewMode } from '../../core/shared/view-mode.model';
 import { Context } from '../../core/shared/context.model';
 import { CollectionElementLinkType } from '../object-collection/collection-element-link.type';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   changeDetection: ChangeDetectionStrategy.Default,
@@ -158,8 +159,9 @@ export class ObjectGridComponent implements OnInit {
 
   data: any = {};
   columns$: Observable<ListableObject[]>;
+  isSearch: boolean;
 
-  constructor(private hostWindow: HostWindowService) {
+  constructor(private hostWindow: HostWindowService,private route: ActivatedRoute,) {
     this._objects$ = new BehaviorSubject(undefined);
   }
 
@@ -167,12 +169,14 @@ export class ObjectGridComponent implements OnInit {
    * Initialize the instance variables
    */
   ngOnInit(): void {
+  this.route.data.subscribe(data=>{data.breadcrumbKey === 'search' ? this.isSearch = true : this.isSearch = false});
+  console.log(this.isSearch)  
     const nbColumns$ = this.hostWindow.widthCategory.pipe(
       map((widthCat: WidthCategory) => {
         switch (widthCat) {
           case WidthCategory.XL:
           case WidthCategory.LG: {
-            return 5;
+            return this.isSearch ?  4 : 5;
           }
           case WidthCategory.MD:
           case WidthCategory.SM: {
@@ -184,7 +188,7 @@ export class ObjectGridComponent implements OnInit {
         }
       }),
       distinctUntilChanged()
-    ).pipe(startWith(5));
+    ).pipe(startWith(this.isSearch ?  4 : 5));
 
     this.columns$ = observableCombineLatest(
       nbColumns$,

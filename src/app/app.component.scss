@@ -2156,6 +2156,13 @@ ds-top-section .label_dage{
         flex: 0 0 0 0 33.33333333% !important;
         max-width: 19.33333333% !important;
       } 
+
+      ds-search{
+        .col-lg-4 {
+        flex: 0 0 0 0 33.33333333% !important;
+        max-width: 24.5333333% !important;
+        }
+      }
     }
    
   }
@@ -2580,7 +2587,22 @@ ds-listable-object-component-loader .card-title {
 
 
 
+
    ::ng-deep html[dir="rtl"] {
+
+    ds-collection-page ds-sub-org-unit-search-result-grid-element{
+      .fixed-height{
+        position: relative;
+        height: 350px !important;
+    }
+    
+    .fixed-bottom-content{
+        position: absolute;
+        bottom: .5rem;
+        width: 100%;
+    }
+
+    }
     ds-browse-categories  ds-sub-org-unit-search-result-grid-element{
 
       .fixed-height{
@@ -2611,7 +2633,18 @@ ds-listable-object-component-loader .card-title {
         width: 100%;
     }
     }
-
+    ds-collection-page ds-sub-org-unit-search-result-grid-element{
+      .fixed-height{
+        position: relative;
+        height: 360px !important;
+    }
+    
+    .fixed-bottom-content{
+        position: absolute;
+        bottom: .5rem;
+        width: 100%;
+    }
+    }
 
 
 
@@ -2637,5 +2670,44 @@ ds-listable-object-component-loader .card-title {
    ::ng-deep html[dir="ltr"] {
     .recent-head{
      margin-left: 30px;
+    }
+   }
+
+   ::ng-deep{
+    .clamp-default-2.h4 .content:after{
+      background: none !important;
+    }
+    .clamp-default-2.h4 .content{
+      max-height: 3rem;
+    }
+  
+    .card_text_abstract {
+      display: -webkit-box;
+      -webkit-line-clamp: 6;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+      .card{
+      .collapseButton{
+      visibility: hidden;
+      position: absolute;
+      }
+      .expandButton{
+        visibility: hidden;
+        position: absolute;
+      }
+    }
+  
+    ds-sub-org-unit-search-result-grid-element{
+      .card_text_abstract {
+        -webkit-line-clamp: 5;
+  
+      }
+    }
+    ds-org-unit-search-result-grid-element{
+      .card_text_abstract {
+        -webkit-line-clamp: 5;
+  
+      }
     }
    }

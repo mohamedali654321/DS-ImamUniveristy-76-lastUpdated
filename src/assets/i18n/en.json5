@@ -4046,7 +4046,7 @@
 'item.page.scientificmatters':'Scientific matters',
 'item.page.pests':'Pests',
 'item.page.technicalmatters':'Technical matters',
-'item.page.isimage':'Imaging',
+'item.page.isimage':'Illustrations',
 'item.page.papertype':'Paper type',
 'item.page.inkcolor':'Ink color',
 'item.page.fonttype':'Font type',
@@ -4056,7 +4056,7 @@
 'item.page.dottingForm':'Dotting form',
 'item.page.underlining':'Underlining',
 'item.page.puncturing':'Puncturing',
-'item.page.decor':'Décor',
+'item.page.decor':'Description of technical matters',
 'item.page.introduction':'Opening of the manuscript',
 'item.page.conclusion':'Conclusion of the manuscript',
 'item.page.note':'Notes',
@@ -6535,6 +6535,16 @@
   "videoPlayer.stopBtn": "Stop",
   "videoPlayer.volumeBar": "Volume",
   'home.recent-submissions.items':'Recently Added',
+
+   'journal.page.primaryContactAddress':'Primary contact address',
+  'journal.page.technicalContactAddress':'Technical support contact address',
+
+  'item.page.typeFormat':'The shape of the physical vessel',
+
+   "search.filters.filter.typeFormat.head": "The shape of the physical vessel",
+  "search.filters.filter.typeFormat.label": "Search  shape of the physical vessel",
+  "search.filters.filter.typeFormat.placeholder": "The shape of the physical vessel",
+  "search.filters.applied.f.typeFormat": "The shape of the physical vessel",
 }
 
 

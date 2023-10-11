@@ -73,11 +73,13 @@ export class SubmissionSectionContainerComponent implements OnInit {
       ],
       parent: this.injector
     });
-            //kware-edit-start mohamed
-            if (!this.sectionData.id.includes('LinkedDataStep') && !this.sectionData.id.includes('SpecificationsStep')){
-              this.sectionID.next(this.sectionData.id);
-            }
-            //kware-edit-end mohamed
+           //kware-edit-start mohamed
+           if (!this.sectionData.id.includes('LinkedDataStep') && !this.sectionData.id.includes('SpecificationsStep')
+           && !this.sectionData.id.includes('manuscriptPageTwo') && !this.sectionData.id.includes('manuscriptPageThree') 
+         && !this.sectionData.id.includes('manuscriptPageFour') && !this.sectionData.id.includes('manuscriptPageFive')){
+             this.sectionID.next(this.sectionData.id);
+           }
+           //kware-edit-end mohamed
   }
 
   /**

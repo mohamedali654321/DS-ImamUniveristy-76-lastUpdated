@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { ViewMode } from '../../../../core/shared/view-mode.model';
 import { listableObjectComponent } from '../../../../shared/object-collection/shared/listable-object/listable-object.decorator';
 import { ItemComponent } from '../../../../item-page/simple/item-types/shared/item.component';
-
+import { getItemPageRoute } from 'src/app/item-page/item-page-routing-paths';
 @listableObjectComponent('OrgUnit', ViewMode.StandalonePage)
 @Component({
   selector: 'ds-org-unit',
@@ -22,6 +22,10 @@ export class OrgUnitComponent extends ItemComponent {
   }
 
   ngOnInit(): void {
-    console.log(this.relatedItems)
+    
   }
+
+  getItemPageRoute(object :any) :any{
+    return getItemPageRoute(object)+ '/full';
+   }
 }

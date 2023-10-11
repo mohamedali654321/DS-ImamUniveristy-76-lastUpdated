@@ -6,7 +6,9 @@
     </ds-thumbnail>
     </a>
     <span *ngIf="linkType == linkTypes.None" class="dont-break-out">
-    <ds-thumbnail [thumbnail]="dso?.thumbnail | async" [limitWidth]="true">
+    <ds-thumbnail [thumbnail]="dso?.thumbnail | async"
+    [defaultImage]="'assets/images/Show.jpg'"
+     [limitWidth]="true">
     </ds-thumbnail>
     </span>
   </div>

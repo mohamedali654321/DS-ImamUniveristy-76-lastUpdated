@@ -89,10 +89,10 @@
 
     </ng-template>
 
-    <ds-select *ngIf="field.enums?.length > 5">
+    <!-- <ds-select *ngIf="field.enums?.length > 5">
       <ng-container class="selection" *ngVar="getSelectedOption(getSelectedCcLicense(), field) as option">
         <span *ngIf="option">
-          <!-- {{ option.label }} -->
+          
           {{ 'cc.license.options.'+ option.id | translate}}
         </span>
         <span *ngIf="!option">
@@ -104,6 +104,27 @@
           <button *ngFor="let option of field.enums"
                   class="dropdown-item"
                   (click)="selectOption(getSelectedCcLicense(), field, option)">
+                  {{ 'cc.license.options.'+ option.id | translate}}
+          </button>
+        </div>
+      </ng-container>
+    </ds-select> -->
+
+    <ds-select *ngIf="field.enums?.length > 5" [disabled]="field.id === 'jurisdiction' && defaultJurisdiction !== undefined && defaultJurisdiction !== 'none'">
+      <ng-container class="selection" *ngVar="getSelectedOption(getSelectedCcLicense(), field) as option">
+        <span *ngIf="option">
+          {{ 'cc.license.options.'+ option.id | translate}}
+        </span>
+        <span *ngIf="!option">
+          {{ 'submission.sections.ccLicense.option.select' | translate }}
+        </span>
+      </ng-container>
+      <ng-container class="menu">
+        <div class="options-select-menu overflow-auto">
+          <button *ngFor="let option of field.enums"
+                  class="dropdown-item"
+                  (click)="selectOption(getSelectedCcLicense(), field, option)">
+                  
                   {{ 'cc.license.options.'+ option.id | translate}}
           </button>
         </div>

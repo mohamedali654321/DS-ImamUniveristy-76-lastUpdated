@@ -5,7 +5,9 @@
   <a *ngIf="linkType != linkTypes.None" [target]="(linkType == linkTypes.ExternalLink) ? '_blank' : '_self'" rel="noopener noreferrer" [routerLink]="[itemPageRoute]"
       class="card-img-top full-width" [attr.title]="'search.results.view-result' | translate">
       <div>
-          <ds-thumbnail [thumbnail]="dso?.thumbnail | async" [limitWidth]="false">
+          <ds-thumbnail [thumbnail]="dso?.thumbnail | async"
+          [defaultImage]="'assets/images/Show.jpg'"
+           [limitWidth]="false">
           </ds-thumbnail>
       </div>
   </a>
@@ -27,7 +29,7 @@
       
     </div>
       <ds-truncatable [id]="dso.id">
-          <ds-truncatable-part [id]="dso.id" [minLines]="3" type="h4">
+          <ds-truncatable-part [id]="dso.id" [minLines]="2" type="h4">
             <a [routerLink]="[itemPageRoute]">  <h4 class="card-title" [innerHTML]="dsoTitle"></h4></a> 
           </ds-truncatable-part>
           <ds-truncatable-part [id]="dso.id" [minLines]="1" [isGridview]="true" >
@@ -53,7 +55,7 @@
   
             </div>
           </ds-truncatable-part>
-          <ds-truncatable-part *ngIf="dso.hasMetadata('dc.description.abstract')" [isGridview]="true" [id]="dso.id" [minLines]="3">
+          <!-- <ds-truncatable-part *ngIf="dso.hasMetadata('dc.description.abstract')" [isGridview]="true" [id]="dso.id" [minLines]="3">
               <p class="item-abstract card-text">
         
                   <span [innerHTML]=" removeMarkdown(abstract | kwareTranslate)"></span>
@@ -64,18 +66,18 @@
             <p class="item-abstract card-text">
                 <span [innerHTML]="removeMarkdown(dso.firstMetadataValue('dc.description') | kwareTranslate)"></span>
             </p>
-        </ds-truncatable-part>
-        <!-- <div style="max-height: 5.4rem;" class="scroll" *ngIf="dso.hasMetadata('dc.description.abstract')">
+        </ds-truncatable-part> -->
+        <div class="card_text_abstract"  *ngIf="dso.hasMetadata('dc.description.abstract')">
           <p class="item-abstract card-text">
               <span [innerHTML]=" removeMarkdown(abstract | kwareTranslate)"></span>
           </p>
         </div>
 
-      <div style="max-height: 5.4rem;" class="scroll" *ngIf="!dso.hasMetadata('dc.description.abstract') && dso.hasMetadata('dc.description') ">
+      <div class="card_text_abstract" *ngIf="!dso.hasMetadata('dc.description.abstract') && dso.hasMetadata('dc.description') ">
         <p class="item-abstract card-text">
             <span [innerHTML]="removeMarkdown(dso.firstMetadataValue('dc.description') | kwareTranslate)"></span>
         </p>
-      </div> -->
+      </div>
       </ds-truncatable>
       <span  style="display:flex;justify-content: space-between;" [ngClass]="{'fixed-bottom-content':(isCollapsed() | async)}">
         <small *ngIf="firstMetadataValue('dc.date.accessioned')" class="badge badge-pill badge-secondary align-self-center archived-items-lead" [attr.title]="('item.uploaded.on' | translate)">

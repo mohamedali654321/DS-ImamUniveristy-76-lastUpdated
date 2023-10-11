@@ -20,12 +20,21 @@
             </div>
         </span>
     <div class="card-body" [ngClass]="{'fixed-height':(isCollapsed() | async)}">
-      <ds-type-badge *ngIf="showLabel" [object]="dso"></ds-type-badge>
-      <ds-truncatable-part [id]="dso.id" [minLines]="3" type="h4" [isGridview]="true">
+      <!-- <ds-type-badge *ngIf="showLabel" [object]="dso"></ds-type-badge> -->
+      <div class="d-flex" style="justify-content: space-between;">
+        <div class="label_dage" >
+          <ds-type-badge  *ngIf="showLabel" [object]="dso"></ds-type-badge> 
+       </div>
+       <div>
+        <ds-publictaion-count style="font-size: 16px !important;"  [dso]="dso"></ds-publictaion-count>
+       </div>     
+       
+      </div> 
+      <ds-truncatable-part [id]="dso.id" [minLines]="2" type="h4" [isGridview]="true">
         <!-- kware-edit kwareTranslatePipe -->
                  <!-- <h4 class="card-title" [innerHTML]="dsoTitle | kwareTranslate"></h4> -->
                  <h4 class="card-title"><a [routerLink]="[itemPageRoute]">{{ dsoTitle  | kwareTranslate}}</a> 
-                  <ds-publictaion-count style="font-size: 16px !important;"  [dso]="dso"></ds-publictaion-count>
+                  <!-- <ds-publictaion-count style="font-size: 16px !important;"  [dso]="dso"></ds-publictaion-count> -->
                 </h4>
       </ds-truncatable-part>
       <p *ngIf="dso.hasMetadata('organization.role')" class="item-jobtitle card-text">
@@ -57,12 +66,18 @@
           </span>
         </ds-truncatable-part>
       </p>
-      <ds-truncatable-part *ngIf=" dso.hasMetadata('dc.description') " [id]="dso.id" [minLines]="3" [isGridview]="true">
+      <!-- <ds-truncatable-part *ngIf=" dso.hasMetadata('dc.description') " [id]="dso.id" [minLines]="3" [isGridview]="true">
         <p class="text-muted">
-          <!-- kware-edit kwareTranslatePipe -->
             <span [innerHTML]=" removeMarkdown(dso.firstMetadataValue('dc.description') | kwareTranslate)"></span>
         </p>
-    </ds-truncatable-part>
+    </ds-truncatable-part> -->
+  <!-- </div>
+</ds-truncatable-part> -->
+<div class="card_text_abstract" *ngIf="dso.hasMetadata('dc.description')">
+  <p class="item-abstract card-text">
+      <span [innerHTML]="removeMarkdown(dso.firstMetadataValue('dc.description') | kwareTranslate)"></span>
+  </p>
+</div>
     <div style="display:flex;justify-content: space-between;" class="container" [ngClass]="{'fixed-bottom-content':(isCollapsed() | async)}">
       <small *ngIf="firstMetadataValue('dc.date.accessioned')" class="badge badge-pill badge-secondary align-self-center archived-items-lead date-float" [attr.title]="('item.uploaded.on' | translate)">
         <i class="fa-solid fa-upload"></i> {{' ' + (translateDate() !== null ? translateDate(): (firstMetadataValue('dc.date.accessioned').split('T')[0] |  date:'longDate'))}}

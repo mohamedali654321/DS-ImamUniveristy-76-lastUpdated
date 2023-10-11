@@ -1,20 +1,21 @@
+
+
+
 <!-- <div class="d-flex flex-row  mb-4 pb-4 ng-tns-c416-2"></div> -->
-<ng-container class="container" *ngVar="(itemsRD$ | async) as itemRD">
-    <div style="background-color: #f5f5f596;
-    border-radius: 25px;
-    padding-top: 15px;
-    padding-bottom: 15px;" class="mt-4 container  "  *ngIf=" itemRD?.length > 0" >
+<ng-container class="" *ngVar="(itemsRD$ | async) as itemRD">
+    <div  class="mt-4 "  *ngIf=" itemRD?.length > 0" >
             
             <h2  class="container" >
              {{'home.view-submissions.head' | translate}}</h2>
-            <div class="grid-container container ">
-              <div class="card-container " *ngFor="let item of itemRD.slice(0,5)">
-                <div class="">
-                    <ds-listable-object-component-loader [object]="item.payload" [viewMode]="viewMode" class="">
-                    </ds-listable-object-component-loader>
+             <div class="card-columns row" >
+              <div class="card-column col col-sm-6 col-lg-4"  *ngFor="let item of itemRD.slice(0,5)"  @fadeIn>
+                <div class="card-element" [attr.data-test]="'grid-object' | dsBrowserOnly">
+                  <ds-listable-object-component-loader [object]="item.payload"
+                                                       [viewMode]="viewMode"
+                                                      ></ds-listable-object-component-loader>
                 </div>
+              </div>
             </div>
-        </div>
             <!-- <ds-viewable-collection
             [config]="paginationConfig"
             [sortConfig]="sortConfig"
@@ -25,9 +26,10 @@
            <!-- kware-edit end -->
             <!-- <button (click)="onLoadMore()" class="btn btn-primary search-button mt-4 float-left ng-tns-c290-40"> {{'vocabulary-treeview.load-more' | translate }} ...</button> -->
     </div>
-
+  
     <ds-error *ngIf="itemRD?.length < 0" message="{{'error.recent-submissions' | translate}}"></ds-error>
     <ds-loading *ngIf="!itemRD || itemRD.isLoading" message="{{'loading.recent-submissions' | translate}}">
     </ds-loading>
-</ng-container>
-
+  </ng-container>
+  
+  

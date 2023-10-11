@@ -49,6 +49,7 @@
       *ngFor="let category of browseCategories; let index = index"
     >
       <a
+      [attr.title]="(category.value !== '*') ? (category.value | kwareTranslate)  : ('browse.itemtype.'+ category.value | translate)"
         [ngClass]="
           index === selectedCategory
             ? 'browse-category-link-circle-selected'

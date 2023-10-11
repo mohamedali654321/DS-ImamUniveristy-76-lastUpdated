@@ -81,7 +81,8 @@ export class TopSectionComponent implements OnInit {
 
 this.getMostViewsItems(this.siteId).then((items) => {
   items.subscribe((item) => {
-    item['_embedded'].usagereports[0]?.points?.forEach(async(point) => {
+    item['_embedded'].usagereports[0]?.points?.sort(
+      (p1, p2) => (p1.values.views < p2.values.views) ? 1 : (p1.values.views > p2.values.views) ? -1 : 0).forEach(async(point) => {
       let itemId =await point.id;
       this.itemIds.push(point.id);
 
@@ -94,7 +95,6 @@ this.getMostViewsItems(this.siteId).then((items) => {
     })
   })
 })
-this.itemsRD$.subscribe(item=>{console.log(item)})
   }
   
   async getMostViewsItems(siteId: string) : Promise<any>{

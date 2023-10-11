@@ -107,22 +107,22 @@ export class ItemSearchResultGridElementComponent extends SearchResultGridElemen
 
      switch (true){
       case (this.localeAr && this.arabicLang):
-        this.authors = this.dso.allMetadataValues(['dc.contributor.author', 'dc.creator', 'dc.contributor.advisor']);
+        this.authors = this.dso.allMetadataValues(['dc.contributor.author', 'dc.creator']);
          break;
-       case (this.localeAr && !this.arabicLang && this.dso.allMetadataValues(['dc.contributor.authoralternative',  'dc.contributor.advisoralternative']).length > 0   ):
-       this.authors = this.dso.allMetadataValues(['dc.contributor.authoralternative',  'dc.contributor.advisoralternative']);
+       case (this.localeAr && !this.arabicLang && this.dso.allMetadataValues(['dc.contributor.authoralternative']).length > 0   ):
+       this.authors = this.dso.allMetadataValues(['dc.contributor.authoralternative',]);
          break;
-       case (this.localeAr && !this.arabicLang  && this.dso.allMetadataValues(['dc.contributor.authoralternative',  'dc.contributor.advisoralternative']).length <= 0 ):
-        this.authors = this.dso.allMetadataValues(['dc.contributor.author', 'dc.creator', 'dc.contributor.advisor']);
+       case (this.localeAr && !this.arabicLang  && this.dso.allMetadataValues(['dc.contributor.authoralternative']).length <= 0 ):
+        this.authors = this.dso.allMetadataValues(['dc.contributor.author', 'dc.creator']);
          break;
        case (this.localeEn && this.englishLang) :
-        this.authors = this.dso.allMetadataValues(['dc.contributor.author', 'dc.creator', 'dc.contributor.advisor']);
+        this.authors = this.dso.allMetadataValues(['dc.contributor.author', 'dc.creator']);
          break;
-        case (this.localeEn && !this.englishLang && this.dso.allMetadataValues(['dc.contributor.authoralternative',  'dc.contributor.advisoralternative']).length > 0  ) :
-          this.authors = this.dso.allMetadataValues(['dc.contributor.authoralternative',  'dc.contributor.advisoralternative']);
+        case (this.localeEn && !this.englishLang && this.dso.allMetadataValues(['dc.contributor.authoralternative']).length > 0  ) :
+          this.authors = this.dso.allMetadataValues(['dc.contributor.authoralternative']);
            break;
-         case (this.localeEn && !this.englishLang && this.dso.allMetadataValues(['dc.contributor.authoralternative',  'dc.contributor.advisoralternative']).length <= 0 ) :
-          this.authors = this.dso.allMetadataValues(['dc.contributor.author', 'dc.creator', 'dc.contributor.advisor']);
+         case (this.localeEn && !this.englishLang && this.dso.allMetadataValues(['dc.contributor.authoralternative']).length <= 0 ) :
+          this.authors = this.dso.allMetadataValues(['dc.contributor.author', 'dc.creator']);
            break;
     }
 

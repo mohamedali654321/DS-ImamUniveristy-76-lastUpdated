@@ -20,18 +20,22 @@
             </div>
         </span>
     <div class="card-body" [ngClass]="{'fixed-height':(isCollapsed() | async)}">
-      <div class="d-flex">
+      <div class="d-flex" style="justify-content: space-between;">
         <div class="label_dage" >
           <span class="badge badge-info" style="background-color: #6aa3d5 !important;color: #FFF; margin-bottom: -2px;" *ngIf="dso.hasMetadata('dc.date.issued') || dso.hasMetadata('dc.date.issuedhijri')" >{{firstMetadataValue('dc.date.issued') ? firstMetadataValue('dc.date.issued') : firstMetadataValue('dc.date.issuedhijri') }}</span>
-          <ds-type-badge  *ngIf="showLabel" [object]="dso"></ds-type-badge>        
+          <ds-type-badge  *ngIf="showLabel" [object]="dso"></ds-type-badge> 
        </div>
-      </div>  
-      <ds-truncatable-part [id]="dso.id" [minLines]="3" type="h4" [isGridview]="true">
+       <div>
+        <ds-publictaion-count style="font-size: 16px !important;"  [dso]="dso"></ds-publictaion-count>
+       </div>     
+       
+      </div> 
+      <ds-truncatable-part [id]="dso.id" [minLines]="2" type="h4" [isGridview]="true">
         <!-- kware-edit kwareTranslatePipe -->
                <!-- <h4 class="card-title" [innerHTML]="dsoTitle | kwareTranslate"></h4> -->
 
                <h4 class="card-title"><a [routerLink]="[itemPageRoute]">{{ dsoTitle  | kwareTranslate}}</a> 
-                <ds-publictaion-count style="font-size: 16px !important;"  [dso]="dso"></ds-publictaion-count>
+                <!-- <ds-publictaion-count style="font-size: 16px !important;"  [dso]="dso"></ds-publictaion-count> -->
               </h4>
         <!-- kware-edit end  -->
         <div style="font-size: 15px;font-weight: 400;" *ngIf="dso.allMetadata(['dc.description.frequancy']).length > 0" class="text-muted">{{firstMetadataValue('dc.description.frequancy') | kwareTranslate}}</div>
@@ -47,11 +51,16 @@
           </span>
         </ds-truncatable-part>
       </p>
-      <p *ngIf="dso.hasMetadata('dc.description')" class="item-description card-text">
+      <!-- <p *ngIf="dso.hasMetadata('dc.description')" class="item-description card-text">
         <ds-truncatable-part [id]="dso.id" [minLines]="3" [isGridview]="true">
           <span [innerHTML]="firstMetadataValue('dc.description') | kwareTranslate"></span>
         </ds-truncatable-part>
-      </p>
+      </p> -->
+      <div class="card_text_abstract" *ngIf="dso.hasMetadata('dc.description')">
+        <p class="item-abstract card-text">
+            <span [innerHTML]="removeMarkdown(dso.firstMetadataValue('dc.description') | kwareTranslate)"></span>
+        </p>
+      </div>
       <div style="display:flex;justify-content: space-between;" class="container" [ngClass]="{'fixed-bottom-content':(isCollapsed() | async)}">
         <small *ngIf="firstMetadataValue('dc.date.accessioned')" class="badge badge-pill badge-secondary align-self-center archived-items-lead date-float" [attr.title]="('item.uploaded.on' | translate)">
           <i class="fa-solid fa-upload"></i> {{' ' + (translateDate() !== null ? translateDate(): (firstMetadataValue('dc.date.accessioned').split('T')[0] |  date:'longDate'))}}

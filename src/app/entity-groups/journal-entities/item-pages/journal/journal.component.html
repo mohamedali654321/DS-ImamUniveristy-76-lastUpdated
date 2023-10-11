@@ -100,6 +100,18 @@
 [label]="'journal.page.editorialBoard' | translate">
 </ds-metadata-representation-list>
 
+
+<ds-generic-item-page-field class="item-page-fields" [item]="object"
+[fields]="['dc.description.primaryContactAddress']"
+[label]="'journal.page.primaryContactAddress'">
+</ds-generic-item-page-field>
+
+<ds-generic-item-page-field class="item-page-fields" [item]="object"
+[fields]="['dc.description.technicalContactAddress']"
+[label]="'journal.page.technicalContactAddress'">
+</ds-generic-item-page-field>
+
+
   <!-- kware-edit -->
   </div>
   <div class="col-xs-12 col-md-8">
@@ -115,6 +127,10 @@
       [fields]="['dc.description']"
       [label]="'journal.page.description'">
     </ds-generic-item-page-field>
+
+
+
+    
     <ds-related-items
     [parentItem]="object"
     [relationType]="'isVolumeOfJournal'"

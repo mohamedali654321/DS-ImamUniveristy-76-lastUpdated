@@ -49,6 +49,7 @@
       *ngFor="let category of browseCategories; let index = index"
     >
       <a
+      [attr.title]="'search.filters.entityType.'+sortedCategories[index] | translate"
         [ngClass]="
           index === selectedCategory
             ? 'browse-category-link-circle-selected'
