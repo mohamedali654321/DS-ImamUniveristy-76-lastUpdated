@@ -1,96 +1,11 @@
-.browse-category {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 70px;
-  text-decoration: none;
-  margin: auto;
-  margin-bottom: 15px;
-  margin-top: -60px;
-}
-
-.browse-category-content {
-  display: flex;
-  align-items: center;
-  padding: 0 0.1rem;
-}
-
-.browse-category-controls ul {
-  list-style: none;
-  padding: 0.3rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  overflow-x: hidden;
-  margin: auto;
-  max-width: 1400px;
-}
-
-.browse-category-controls li {
-  padding: 0 0.3rem;
-  align-items: center;
-  justify-content: center;
-}
-
-.browse-category-btn {
-  height: 70px;
-  background-color: rgb(247, 247, 250);
-  border: none;
-  cursor: pointer;
-  font-weight: bold;
-}
-
-.browse-category-link {
-  background-color: rgb(243, 243, 247);
-  color: var(--text-color);
-  display: flex;
-  align-items: center;
-  text-overflow: ellipsis;
-  font-weight: bold;
-  cursor: pointer;
-  height: 70px;
-}
-
-.browse-category-link:is(:hover, .active) {
-  background-color: rgb(250, 250, 252);
-}
-
-.browse-category-link-selected {
-  background-color: #642095;
-  color: rgb(250, 250, 252);
-  display: flex;
-  align-items: center;
-  border-bottom: 4px solid rgb(253, 173, 53);
-  text-overflow: ellipsis;
-  height: 70px;
-  font-weight: bold;
-  opacity: 5;
-
-  /** disable click event */
-  pointer-events: none;
-  cursor: default;
-}
-
-.browse-category-circle {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 15px;
-}
-
-.browse-category-link-circle {
-  height: 12px;
-  width: 12px;
-  border-radius: 50%;
-  border: 1px solid #530a86;
-}
-
-.browse-category-link-circle-selected {
-  height: 12px;
-  width: 12px;
-  background-color: #530a86;
-  border-radius: 50%;
-  border: 1px solid #530a86;
+::ng-deep {
+  ds-publication-category {
+    ds-categories {
+      .browse-category-content {
+        max-width: 1024px !important;
+      }
+    }
+  }
 }
 
 ::ng-deep html[dir="ltr"] .fa-angle-double-left {
@@ -99,11 +14,4 @@
 
 ::ng-deep html[dir="ltr"] .fa-angle-double-right {
   transform: scale(-1) !important;
-}
-
-
-@media screen and (min-width: 700px) {
-  .browse-category {
-    width: 50vw !important;
-  }
 }

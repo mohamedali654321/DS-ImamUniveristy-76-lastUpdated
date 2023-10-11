@@ -6621,7 +6621,7 @@
 'home.new.upload':'تقديم جديد',
 'search.filters.namedresourcetype.Archived':'مؤرشفة',
 'search.filters.namedresourcetype.Workspace':"مساحة العمل",
-'browse.itemtype.*':'الكل',
+'browse.itemtype.All':'الكل',
 
 'publication.counts':'المنشورات',
 'views.counts':'المشاهدات',

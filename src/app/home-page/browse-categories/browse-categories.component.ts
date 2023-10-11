@@ -1,43 +1,61 @@
 /* eslint-disable @typescript-eslint/no-empty-function */
-import { Component, OnInit, QueryList, ViewChildren } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { BrowseEntrySearchOptions } from 'src/app/core/browse/browse-entry-search-options.model';
 import { BrowseService } from 'src/app/core/browse/browse.service';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { Item } from 'src/app/core/shared/item.model';
-import { BrowseCategoryComponent } from './category/browse-category.component';
 import { RemoteData } from 'src/app/core/data/remote-data';
 import { PaginatedList } from 'src/app/core/data/paginated-list.model';
-import { toDSpaceObjectListRD } from 'src/app/core/shared/operators';
 import { PaginationService } from 'src/app/core/pagination/pagination.service';
 import { PaginationComponentOptions } from 'src/app/shared/pagination/pagination-component-options.model';
 import { SortDirection, SortOptions } from 'src/app/core/cache/models/sort-options.model';
 import { environment } from 'src/environments/environment';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { SearchService } from 'src/app/core/shared/search/search.service';
 import { DSpaceObjectType } from 'src/app/core/shared/dspace-object-type.model';
 import { PaginatedSearchOptions } from 'src/app/shared/search/models/paginated-search-options.model';
+import { toDSpaceObjectListRD } from 'src/app/core/shared/operators';
+import { BrowseEntry } from 'src/app/core/shared/browse-entry.model';
+
 @Component({
   selector: 'ds-browse-categories',
   templateUrl: './browse-categories.component.html',
   styleUrls: ['./browse-categories.component.scss']
 })
-export class BrowseCategoriesComponent implements OnInit {
-  @ViewChildren(BrowseCategoryComponent) categoriesIds: QueryList<BrowseCategoryComponent>;
+export class BrowseCategoriesComponent implements OnInit, OnDestroy {
+  parentCategories = [];
+  sortedCategories = ['Publication', 'Person', 'Administration', 'OrgUnit', 'Project', 'JournalIssue', 'JournalVolume', 'Journal', 'Site', 'Place', 'Activity', 'Event', 'Era', 'Series'];
+  categoriesConfigs = {
+    'Publication': { icon: 'fa-solid fa-book-open' },
+    'Person': { icon: 'fa fa-users' },
+    'Administration': { icon: 'fa-solid fa-building' },
+    'OrgUnit': { icon: 'fa fa-sitemap' },
+    'Project': { icon: 'fas fa-project-diagram' },
+    'JournalIssue': { icon: 'fa-solid fa-newspaper' },
+    'JournalVolume': { icon: 'fa-solid fa-newspaper' },
+    'Journal': { icon: 'fa-solid fa-newspaper' },
+    'Site': { icon: 'fa-solid fa-location-dot' },
+    'Place': { icon: 'fa fa-globe' },
+    'Activity': { icon: 'fa-solid fa-house-laptop' },
+    'Event': { icon: 'fa-solid fa-calendar-days' },
+    'Era': { icon: '' },
+    'Series': { icon: '' },
+  };
 
-  isLoading: boolean;
-  browseCategories = [];
-  sortedCategories=['Publication','Person','Administration','OrgUnit','Project','JournalIssue','JournalVolume','Journal','Site','Place','Activity','Event','Era','Series'];
   items$ = new BehaviorSubject([]);
   paginationConfig: PaginationComponentOptions;
   sortConfig: SortOptions;
   selectedCategory = 0;
-  selectedCategoryName = 'Publication';
+  publicationcategory: BrowseEntry;
+
   itemRD$: Observable<RemoteData<PaginatedList<Item>>>;
+
   constructor(
     private browseService: BrowseService,
     private paginationService: PaginationService,
     private searchService: SearchService,
-    private router: Router
+    protected router: Router,
+    private route: ActivatedRoute
   ) {
     this.paginationConfig = Object.assign(new PaginationComponentOptions(), {
       id: 'hp',
@@ -49,35 +67,45 @@ export class BrowseCategoriesComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.isLoading = true;
     this.browseService.getBrowseEntriesFor(
       new BrowseEntrySearchOptions('entityType')
     ).subscribe(entities => {
-      this.browseCategories = entities?.payload?.page;
-      this.browseCategories.sort((a, b) => this.sortedCategories.indexOf(a.value) - this.sortedCategories.indexOf(b.value));
-      const publicationIndex = this.browseCategories?.findIndex(entity => entity.value === 'Publication');
-      const element = this.browseCategories?.splice(publicationIndex, 1)[0];
-      this.browseCategories?.splice(0, 0, element);
+      this.parentCategories = entities?.payload?.page;
+      this.parentCategories?.sort((a, b) => this.sortedCategories.indexOf(a.value) - this.sortedCategories.indexOf(b.value));
+      this.publicationcategory = this.parentCategories?.find(entity => entity.value === 'Publication');
+
+      this.route.queryParams
+        .subscribe(params => {
+          const currentIndex = entities?.payload?.page.findIndex(cat => cat.value === params.category);
+          if (currentIndex && currentIndex !== -1) {
+            this.selectedCategory = currentIndex;
+          } else {
+            this.selectedCategory = 0;
+          }
+        }
+        );
+      this.updateUrl();
     });
+  }
 
-    // this.browseService
-    // .getBrowseItemsFor(
-    //   'Publication',
-    //   '',
-    //   new BrowseEntrySearchOptions('entityType'))
-    // .subscribe(item => {
-    //   this.items$.next(item?.payload?.page);
-    //   this.isLoading = false;
-    // });
+  private updateUrl() {
+    void this.router.navigate([], {
+      queryParams: { 'category': this.parentCategories[this.selectedCategory].value },
+      queryParamsHandling: 'merge'
+    });
+  }
 
-
-    this.itemRD$ = this.searchService.search(
-      new PaginatedSearchOptions({
-        pagination: this.paginationConfig,
-        dsoTypes: [DSpaceObjectType.ITEM],
-        sort: this.sortConfig,
-        query: 'dspace.entity.type:Publication'
-      },),
+  getCategoryItems(categoryValue: string): Observable<RemoteData<PaginatedList<Item>>> {
+    return this.searchService.search(
+      new PaginatedSearchOptions(
+        {
+          pagination: this.paginationConfig,
+          dsoTypes: [DSpaceObjectType.ITEM],
+          sort: this.sortConfig,
+          query: `dspace.entity.type:${categoryValue}`,
+          fixedFilter: `f.entityType=${categoryValue},equals`
+        }
+      ),
       undefined,
       undefined,
       undefined,
@@ -86,47 +114,9 @@ export class BrowseCategoriesComponent implements OnInit {
     ) as Observable<RemoteData<PaginatedList<Item>>>;
   }
 
-  setSelectedCategory($event: number) {
-    this.selectedCategory = $event;
-  }
-
-  setSelectedCategoryName($event: string) {
-    this.selectedCategoryName = $event;
-    }
-
   setSelectedCategoryItems = (catItems: Observable<RemoteData<PaginatedList<Item>>>) => {
     this.itemRD$ = catItems;
   };
-
-  handleCurrentCategoryItmes() {
-    const categoryElementRef = this.categoriesIds.toArray().find(cat => cat.categoryIndex === this.selectedCategory);
-    this.itemRD$ = categoryElementRef.fetchedItems;
-    categoryElementRef.scrollToView();
-
-  }
-
-  setSlideShowCategory(index) {
-    this.selectedCategory = index;
-    this.handleCurrentCategoryItmes();
-  }
-
-  getNextCategory() {
-    if (!this.selectedCategory && this.selectedCategory !== 0) {
-      this.selectedCategory = 0;
-    } else {
-      this.selectedCategory++;
-    }
-    this.handleCurrentCategoryItmes();
-  }
-
-  getPrevCategory() {
-    this.selectedCategory--;
-    this.handleCurrentCategoryItmes();
-  }
-
-  onLoadMore(currentEntity: string) {
-    this.router.navigate(['/browse/entityType?value=', currentEntity]);
-  }
 
   ngOnDestroy(): void {
     this.paginationService.clearPagination(this.paginationConfig.id);

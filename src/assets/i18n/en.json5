@@ -6518,7 +6518,7 @@
 'search.filters.namedresourcetype.Archived':'Archived',
 'search.filters.namedresourcetype.Workspace':"Workspace",
 "search.filters.entityType.Activity":"Activity",
-'browse.itemtype.*':'All',
+'browse.itemtype.All':'All',
 
 'publication.counts':'Publications',
 'views.counts':'Views',
