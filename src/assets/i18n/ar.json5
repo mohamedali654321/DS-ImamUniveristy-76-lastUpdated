@@ -3300,9 +3300,9 @@
 
   "sorting.dc.date.dateIssued.DESC": "تاريخ الإصدار تنازلياً",
 
-  "sorting.dc.date.accessioned.ASC": "تاريخ الانضمام تصاعدياً",
+  "sorting.dc.date.accessioned.ASC": "تاريخ الإيداع تصاعدياً",
 
-  "sorting.dc.date.accessioned.DESC": "تاريخ الانضمام تنازلياً",
+  "sorting.dc.date.accessioned.DESC": "تاريخ الإيداع تنازلياً",
 
   "sorting.lastModified.ASC": "آخر تعديل تصاعدياً",
 
@@ -4155,8 +4155,8 @@
 'item.page.linesnumber':'عدد السطور',
 'item.page.dimensions':'القياس و الأبعاد',
 'item.page.dottingForm':'شكل التنقيط',
-'item.page.underlining':'التسطير',
-'item.page.puncturing':'التخريم',
+'item.page.underlining':'شكل التسطير',
+'item.page.puncturing':'شكل التخريم',
 'item.page.decor':'وصف الأمور الفنية',
 'item.page.introduction':'فاتحة المخطوط ',
 'item.page.conclusion':'خاتمة المخطوط ',
@@ -4238,15 +4238,15 @@
   "search.filters.applied.f.dottingForm":"  شكل التنقيط للمخطوطة",
 
 
-  "search.filters.filter.underlining.head": "التسطير للمخطوطة",
-  "search.filters.filter.underlining.placeholder": " التسطير",
-  "search.filters.filter.underlining.label": "بحث  التسطير  ",
-  "search.filters.applied.f.underlining":"التسطير للمخطوطة",
+  "search.filters.filter.underlining.head": "شكل التسطير للمخطوطة",
+  "search.filters.filter.underlining.placeholder": " شكل التسطير",
+  "search.filters.filter.underlining.label": "بحث  شكل التسطير  ",
+  "search.filters.applied.f.underlining":"شكل التسطير للمخطوطة",
 
-  "search.filters.filter.puncturing.head": "التخريم للمخطوطة",
-  "search.filters.filter.puncturing.placeholder": " التخريم",
-  "search.filters.filter.puncturing.label": "بحث  التخريم  ",
-  "search.filters.applied.f.puncturing":"التخريم للمخطوطة",
+  "search.filters.filter.puncturing.head": "شكل التخريم للمخطوطة",
+  "search.filters.filter.puncturing.placeholder": " شكل التخريم",
+  "search.filters.filter.puncturing.label": "بحث  شكل التخريم  ",
+  "search.filters.applied.f.puncturing":"شكل التخريم للمخطوطة",
 
    "search.filters.filter.decor.head": "الديكور للمخطوطة",
   "search.filters.filter.decor.placeholder": " الديكور",
@@ -5025,7 +5025,7 @@
 'item.page.era':'العصر',
 'item.page.decade':'العقد',
 'item.page.year':'السنة',
-'item.page.dimensions':'المساحة المربعة',
+// 'item.page.dimensions':'المساحة المربعة',
 'item.page.contributor':'المساهمون',
 'item.page.bookEdition':'الطبعة',
 'item.page.ispartof':'النموذج',
@@ -6646,6 +6646,10 @@
   "search.filters.filter.typeFormat.label": "بحث  شكل الوعاء المادي",
   "search.filters.filter.typeFormat.placeholder": 'شكل الوعاء المادي',
   "search.filters.applied.f.typeFormat": 'شكل الوعاء المادي',
+
+  "community.edit.tabs.access-control.head": "التحكم في الوصول" ,
+  "process.overview.delete.clear": "مسح تحديد الحذف",
+  "process.overview.delete": "حذف {{count}} من العمليات",
 
 }
 

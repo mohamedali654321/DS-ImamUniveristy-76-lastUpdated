@@ -133,9 +133,9 @@ export class PublicationCategoryComponent implements OnInit, OnDestroy {
 
   ngOnDestroy(): void {
     this.paginationService.clearPagination(this.paginationConfig.id);
-    void this.router.navigate([], {
-      queryParams: { 'subCategory': null },
-      queryParamsHandling: 'merge'
-    });
+    // void this.router.navigate([], {
+    //   queryParams: { 'subCategory': null },
+    //   queryParamsHandling: 'merge'
+    // });
   }
 }

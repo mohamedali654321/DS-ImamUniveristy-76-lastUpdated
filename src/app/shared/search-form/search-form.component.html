@@ -3,7 +3,7 @@
     <div class="form-group input-group">
       <div *ngIf="showScopeSelector" class="input-group-prepend">
         <button
-          class="scope-button btn btn-outline-secondary text-truncate"
+          class=" scope-button btn btn-outline-secondary text-truncate"
           [ngbTooltip]="dsoNameService.getName(selectedScope | async)"
           type="button"
           (click)="openScopeModal()"
@@ -13,7 +13,18 @@
               ("search.form.scope.all" | translate)
           }}
         </button>
+        
       </div>
+      <select
+      class="btn-outline-secondary text-truncate" 
+      style="background-color: #fff !important; color: #495057 !important"
+      name="queryFilter"
+      [(ngModel)]="selectedFilter"
+    >
+      <option *ngFor="let filter of queryFilters" [(value)]="filter.value">
+        {{ filter.label | translate }}
+      </option>
+    </select>
       <input
         type="text"
         [(ngModel)]="query"
@@ -29,8 +40,8 @@
       <i class="fa-solid fa-xmark"></i>
     </a>
       <!-- kware start edit -->
-      <select
-        class="btn-outline-secondary text-truncate"
+      <!-- <select
+        class="btn-outline-secondary text-truncate" 
         style="background-color: #fff !important; color: #495057 !important"
         name="queryFilter"
         [(ngModel)]="selectedFilter"
@@ -38,7 +49,7 @@
         <option *ngFor="let filter of queryFilters" [(value)]="filter.value">
           {{ filter.label | translate }}
         </option>
-      </select>
+      </select> -->
       <!-- kware end edit -->
       <span class="input-group-append">
         <button

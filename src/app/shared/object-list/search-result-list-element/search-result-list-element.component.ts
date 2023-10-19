@@ -47,7 +47,7 @@ export class SearchResultListElementComponent<T extends SearchResult<K>, K exten
       this.dsoTitle = this.dsoNameService.getName(this.dso);
       // this.linkService.resolveLink<Item>(this.dso, followLink('thumbnail')); 
     }
-    this.dso.metadataAsList.filter( md=>{md && md.key?.includes('relation.isPublicationOf'+this.dso.firstMetadataValue('dspace.entity.type')) && !(md.key?.includes('latestForDiscovery'))? this.publicationRelation.push(md) : null});
+    // this.dso.metadataAsList.filter( md=>{md && md.key?.includes('relation.isPublicationOf'+this.dso.firstMetadataValue('dspace.entity.type')) && !(md.key?.includes('latestForDiscovery'))? this.publicationRelation.push(md) : null});
 
      // this.keywords=this.dso.allMetadataValues('dc.subject').slice(0,3); //kwar-edit
      let  arabic = /[\u0600-\u06FF]/;

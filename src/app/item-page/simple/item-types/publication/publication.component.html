@@ -450,6 +450,12 @@
           [label]="'item.page.dimensions'">
           </ds-generic-item-page-field>
 
+          <ds-generic-item-page-field *ngIf=" object && object.firstMetadataValue('dc.type') === 'Manuscript | مخطوطة'" [item]="object"
+          [fields]="['dc.format.heightDimension','dc.format.widthDimension']"
+          [separator]="'×'"
+          [label]="'item.page.dimensions'">
+        </ds-generic-item-page-field>
+
           <ds-generic-item-page-field [item]="object"
           [fields]="['dc.description.dottingform']"
           [label]="'item.page.dottingForm'">

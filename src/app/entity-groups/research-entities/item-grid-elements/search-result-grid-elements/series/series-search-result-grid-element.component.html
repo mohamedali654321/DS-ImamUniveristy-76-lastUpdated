@@ -87,9 +87,9 @@
     
 </span> -->
 <div class="card_text_abstract" *ngIf="dso.hasMetadata('dc.description')">
-  <p class="item-abstract card-text">
+ <div class="item-abstract card-text">
       <span [innerHTML]="removeMarkdown(dso.firstMetadataValue('dc.description') | kwareTranslate)"></span>
-  </p>
+ </div>
 </div>
 <div style="display:flex;justify-content: space-between;" class="container" [ngClass]="{'fixed-bottom-content':(isCollapsed() | async)}">
   <small *ngIf="firstMetadataValue('dc.date.accessioned')" class="badge badge-pill badge-secondary align-self-center archived-items-lead date-float" [attr.title]="('item.uploaded.on' | translate)">

@@ -4928,7 +4928,7 @@
 'item.page.era':'Era',
 'item.page.decade':'Decade',
 'item.page.year':'Year',
-'item.page.dimensions':'Square area',
+// 'item.page.dimensions':'Square area',
 'item.page.contributor':'Contributor',
 'item.page.bookEdition':'Book edition',
 'item.page.ispartof':'Sample',
@@ -6545,6 +6545,10 @@
   "search.filters.filter.typeFormat.label": "Search  shape of the physical vessel",
   "search.filters.filter.typeFormat.placeholder": "The shape of the physical vessel",
   "search.filters.applied.f.typeFormat": "The shape of the physical vessel",
+
+  "community.edit.tabs.access-control.head": "Access Control",
+  "process.overview.delete.clear": "Clear delete selection",
+   "process.overview.delete": "Delete {{count}} processes",
 }
 
 

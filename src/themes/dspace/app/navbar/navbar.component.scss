@@ -69,6 +69,9 @@ nav{
   background-color: #FFF ; //NU-edit
   position: fixed !important;
   width: 100%;
+  z-index: 1000000;
+  -webkit-transform: translate3d(0,0,1px) !important;
+transform: translate3d(0,0,1px)!important;
 
 h6{
   color: #3992a4 ;
@@ -432,6 +435,8 @@ p {
 
     background-color: rgba(171, 152, 108, .9) !important;
     transition: all .4s ease-in-out;
+    -webkit-transform: translate3d(0,0,1px) !important;
+    transform: translate3d(0,0,1px)!important;
 
     // .navbar-brand{
     //   width: 500px;
@@ -493,4 +498,17 @@ p {
         color: #ab986c !important;
       }
     }
+}
+@media screen and (max-width:767px){
+  ::ng-deep html[dir="rtl"]{
+    ds-expandable-navbar-section .dropdown-menu{
+      transform: translate(2px, -3px) !important;
+    }
+  }
+
+  ::ng-deep html[dir="ltr"]{
+    ds-expandable-navbar-section .dropdown-menu{
+      transform: translate(2px, -5px) !important;
+    }
+  }
 }

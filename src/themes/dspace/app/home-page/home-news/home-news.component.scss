@@ -7,7 +7,7 @@
       background-color: var(--bs-info);
       position: relative;
       // background-image: url('https://imamu.edu.sa/_layouts/15/2016/Portal/img/events-bg.jpg');
-      background-image: url('/assets/dspace/images/events-bg.jpg');
+      background-image: url('/assets/dspace/images/-01.jpg');
         background-size: cover;
         height: 353px;
         width: 100%;
@@ -20,14 +20,14 @@
         position: relative;
         text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
          height: 100%;
-        &:before, &:after {
-          content: '';
-          display: block;
-          width: var(--ds-banner-background-gradient-width);
-          height: 100%;
-          top: 0;
-          position: absolute;
-        }
+        // &:before, &:after {
+        //   content: '';
+        //   display: block;
+        //   width: var(--ds-banner-background-gradient-width);
+        //   height: 100%;
+        //   top: 0;
+        //   position: absolute;
+        // }
   
       //   &:before {
       //     background: linear-gradient(to left, var(--ds-banner-text-background), transparent);

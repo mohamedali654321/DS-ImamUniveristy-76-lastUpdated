@@ -71,6 +71,15 @@
           [innerHTML]="removeMarkdown(firstMetadataValue('dc.description') | kwareTranslate)"></span>
         </ds-truncatable-part>
       </div>
+     
+        <div  *ngIf="dso.hasMetadata('dc.identifier.saveNumber')"  >
+          <div class="card-text">
+            <span class="text-muted">{{('item.page.saveNumber' | translate)+': '+ dso.firstMetadataValue('dc.identifier.saveNumber')}}</span>
+          </div>
+
+
+        </div>
+      
     </ds-truncatable>
     <span  style="display:flex;justify-content: space-between;">
       <small style="background-color:transparent !important;color: #6c757d !important;font-weight: 500;" *ngIf="firstMetadataValue('dc.date.accessioned')" class="badge badge-pill badge-secondary align-self-center archived-items-lead" [attr.title]="('item.uploaded.on' | translate)">

@@ -25,7 +25,7 @@
               "
               [category]="category"
               [categoryIndex]="index"
-              [categoryIcon]="categoriesConfigs[category.value].icon || ''"
+              [categoryIcon]="categoriesConfigs[category.value]?.icon || ''"
               [currentCategoryIndex]="selectedCategory"
               (emitedCategory)="setSelectedCategory($event)"
               [setSelectedCategoryItems]="setSelectedCategoryItems"

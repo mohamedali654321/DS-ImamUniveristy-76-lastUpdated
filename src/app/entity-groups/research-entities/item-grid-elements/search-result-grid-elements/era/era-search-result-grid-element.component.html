@@ -39,7 +39,7 @@
       </ds-truncatable-part>
      
 
-      <p 
+     <div 
          class="item-location card-text">
         <ds-truncatable-part [id]="dso.id" [minLines]="3" [isGridview]="true">
           <!-- kware-edit kwareTranslatePipe -->
@@ -53,7 +53,7 @@
         </ds-truncatable-part>
 
         
-      </p>
+     </div>
       <ds-truncatable-part [id]="dso.id" [minLines]="1" [isGridview]="true" >
         <div  *ngIf="dso.hasMetadata('dc.subject')"  >
           <div class="keys-info  ">
@@ -64,9 +64,9 @@
         </div>
       </ds-truncatable-part>
       <div class="card_text_abstract" *ngIf="dso.hasMetadata('dc.description')">
-        <p class="item-abstract card-text">
+       <div class="item-abstract card-text">
             <span [innerHTML]="removeMarkdown(dso.firstMetadataValue('dc.description') | kwareTranslate)"></span>
-        </p>
+       </div>
       </div>
       <!-- <div  *ngIf="dso.hasMetadata('dc.subject')"  >
         <div class="keys-info  ">
@@ -76,9 +76,9 @@
 
       </div>
       <ds-truncatable-part *ngIf="dso.hasMetadata('dc.description')" [id]="dso.id" [minLines]="3" [isGridview]="true">
-          <p class="item-abstract card-text">
+         <div class="item-abstract card-text">
               <span [innerHTML]="removeMarkdown(firstMetadataValue('dc.description') | kwareTranslate)"></span>
-          </p>
+         </div>
       </ds-truncatable-part> -->
       <div style="display:flex;justify-content: space-between;" class="container" [ngClass]="{'fixed-bottom-content':(isCollapsed() | async)}">
         <small *ngIf="firstMetadataValue('dc.date.accessioned')" class="badge badge-pill badge-secondary align-self-center archived-items-lead date-float" [attr.title]="('item.uploaded.on' | translate)">
