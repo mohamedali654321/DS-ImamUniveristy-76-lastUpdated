@@ -23,3 +23,10 @@ font-size: 1.3333333333em;
 line-height: .75em;
 vertical-align: -.0667em;
 }
+
+
+::ng-deep navbar-nav {
+  -webkit-transform: translate3d(0,0,1px) !important;
+  transform: translate3d(0,0,1px)!important;  
+  z-index: 1000000000000000 !important;
+}

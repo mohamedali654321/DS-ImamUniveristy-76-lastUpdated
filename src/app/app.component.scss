@@ -2849,16 +2849,24 @@ display: block;
     }
 
 
-    ::ng-deep {
-      .dropdown-menu{
-        z-index:  100000000000000000 !important;
-      }
+    // ::ng-deep {
+    //   .dropdown-menu{
+    //     z-index:  100000000000000000 !important;
+    //   }
 
-      nav{
-        -webkit-transform: translate3d(0,0,1px) !important;
-        transform: translate3d(0,0,1px)!important;
+    //   nav{
+    //     -webkit-transform: translate3d(0,0,1px) !important;
+    //     transform: translate3d(0,0,1px)!important;
+    //   }
+    // }
+
+
+    @media screen and (max-width: 755px){
+      ::ng-deep {
+        .dropdown-menu{
+          z-index:  100000000000000000 !important;
+        }
       }
     }
-
 
     

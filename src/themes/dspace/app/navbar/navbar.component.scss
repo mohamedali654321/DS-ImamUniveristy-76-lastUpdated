@@ -3,6 +3,9 @@ nav.navbar {
   border-bottom: 5px var(--bs-green) solid;
   align-items: baseline;
   color: var(--ds-header-icon-color);
+  -webkit-transform: translate3d(0,0,1px) !important;
+  transform: translate3d(0,0,1px)!important;
+  
 
 }
 
@@ -512,3 +515,8 @@ p {
     }
   }
 }
+
+
+::ng-deep html[dir="rtl"] .navbar-brand {
+  margin-right: 0 !important;
+  }

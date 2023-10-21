@@ -1,8 +1,9 @@
-<header class="header">
-  <nav role="navigation" [attr.aria-label]="'nav.user.description' | translate" class="container navbar navbar-expand-md px-0">
+
+<header class="header" [ngClass]="{'header': !(handleScroll | async),'scrolledHeader': ((handleScroll | async)) }">
+  <nav role="navigation" [attr.aria-label]="'nav.user.description' | translate" class="container navbar navbar-expand-md px-0" >
     <div class="d-flex flex-grow-1">
       <a class="navbar-brand my-2" routerLink="/home">
-        <img  src="assets/images/logo-imam.png" [attr.alt]="'menu.header.image.logo' | translate" />
+        <img  [src]="(handleScroll | async) ? 'assets/images/small-logo.svg':'assets/images/logo-imam.png'" [attr.alt]="'menu.header.image.logo' | translate" />
       </a>
 
 
