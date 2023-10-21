@@ -2869,4 +2869,11 @@ display: block;
       }
     }
 
-    
+    ::ng-deep ds-tabbed-related-entities-search{
+      ds-page-with-sidebar .container {
+        overflow-x: hidden !important;
+      }
+      .mt-4 {
+        overflow-x: hidden !important;
+      }
+    }

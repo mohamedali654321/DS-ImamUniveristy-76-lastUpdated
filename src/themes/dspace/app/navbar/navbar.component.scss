@@ -520,3 +520,19 @@ p {
 ::ng-deep html[dir="rtl"] .navbar-brand {
   margin-right: 0 !important;
   }
+
+  @media (min-width: 767px) and (max-width: 1175px) {
+    ::ng-deep{
+      .imam-info{
+        visibility: hidden !important;
+        position: absolute !important;
+    
+      }
+    
+      .navbar-brand{
+        width: 140px !important;
+      }
+    }
+    }
+    
+    
