@@ -2877,3 +2877,25 @@ display: block;
         overflow-x: hidden !important;
       }
     }
+
+
+
+    ::ng-deep .modal {
+      -webkit-transform: translate3d(0,0,3px) !important;
+       transform: translate3d(0,0,3px)!important;
+       z-index: 100000000000000000000000000000000000000000000 !important;
+    }
+
+
+
+    ::ng-deep{
+      @media screen and (min-width: 876px){
+        .d-m-block {
+         display: block !important;
+     }
+    
+     .d-m-none {
+      display: none !important;
+    }
+     }
+    }

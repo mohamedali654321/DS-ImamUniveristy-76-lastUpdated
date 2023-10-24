@@ -6,6 +6,13 @@
     
 
   }
+
+  nav.navbar .navbar-brand {
+    display: none;
+    visibility: hidden;
+    position: absolute;
+
+  }
   // .header {
   //   background-color: var(--ds-header-bg);
 
@@ -51,6 +58,9 @@ nav{
 
    ds-link-menu-item .nav-item{
     color: #3992a4 !important;
+    -webkit-transform: translate3d(0,0,1px) !important;
+  transform: translate3d(0,0,1px)!important;
+  z-index: 10000000000000000000000000000000000000000000 !important;
   }
   .submit-icon{
     color: #3992a4 !important;
