@@ -25,8 +25,8 @@ vertical-align: -.0667em;
 }
 
 
-::ng-deep navbar-nav {
-  -webkit-transform: translate3d(0,0,1px) !important;
-  transform: translate3d(0,0,1px)!important;  
-  z-index: 1000000000000000 !important;
+::ng-deep .dropdown-menu {
+  -webkit-transform: translate3d(0,0,4px) !important;
+  transform: translate3d(0,0,4px)!important;  
+  z-index: 10000000000000000000000000000 !important;
 }
