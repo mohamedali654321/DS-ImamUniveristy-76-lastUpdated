@@ -57,6 +57,7 @@ import { SectionUploadService } from '../../section-upload.service';
 import { Subscription } from 'rxjs';
 import { DynamicFormControlCondition } from '@ng-dynamic-forms/core/lib/model/misc/dynamic-form-control-relation.model';
 import { DynamicDateControlValue } from '@ng-dynamic-forms/core/lib/model/dynamic-date-control.model';
+import { TranslateService } from '@ngx-translate/core';
 
 /**
  * This component represents the edit form for bitstream
@@ -177,6 +178,7 @@ export class SubmissionSectionUploadFileEditComponent
     private cdr: ChangeDetectorRef,
     private formBuilderService: FormBuilderService,
     private formService: FormService,
+    protected translate: TranslateService,
     private submissionService: SubmissionService,
     private operationsBuilder: JsonPatchOperationsBuilder,
     private operationsService: SubmissionJsonPatchOperationsService,
@@ -308,7 +310,7 @@ export class SubmissionSectionUploadFileEditComponent
       for (const accessCondition of this.availableAccessConditionOptions) {
         accessConditionTypeOptions.push(
           {
-            label: accessCondition.name,
+            label: this.translate.instant('access.condition.name.'+ accessCondition.name), //kware-edit translate access condition
             value: accessCondition.name
           }
         );

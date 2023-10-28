@@ -1028,15 +1028,15 @@
 
   "comcol-role.edit.delete": "حذف",
 
-  "comcol-role.edit.community-admin.name": "المديرين",
+  "comcol-role.edit.community-admin.name": "المُديرون",
 
-  "comcol-role.edit.collection-admin.name": "المديرين",
+  "comcol-role.edit.collection-admin.name": "المُديرون",
 
   "comcol-role.edit.community-admin.description": "يمكن لمديري المجتمع إنشاء مجتمعات فرعية أو حاويات، وإدارة أو تعيين الإدارة لتلك المجتمعات الفرعية أو الحاويات. بالإضافة إلى ذلك، يقومون بتقرير من يمكنه تقديم المواد إلى أي حاويات فرعية، وتحرير ميتاداتا المادة (بعد التقديم)، وإضافة (تخطيط) المواد الحالية من الحاويات الأخرى (تخضع للتصريح).",
 
   "comcol-role.edit.collection-admin.description": "يقرر مديري الحاوية من يمكنه تقديم المواد إلى الحاوية، وتحريرميتاداتا المادة (بعد التقديم)، وإضافة (تخطيط) المواد الحاوية من الحاويات الأخرى إلى هذه الحاوية (تخضع للتصريح لتلك الحاوية).",
 
-  "comcol-role.edit.submitters.name": "المقدمين",
+  "comcol-role.edit.submitters.name": "المقدمون",
 
   "comcol-role.edit.submitters.description": "الأشخاص الإلكترونيين والمجموعات الذين يملكون صلاحية تقديم مواد جديدة إلى هذه الحاوية.",
 
@@ -1052,15 +1052,15 @@
 
   "comcol-role.edit.bitstream_read.anonymous-group": "تم تعيين القراءة الافتراضية لتدفقات البت الواردة حاليًا إلى غير معرف الهوية.",
 
-  "comcol-role.edit.editor.name": "المحررين",
+  "comcol-role.edit.editor.name": "المحررون",
 
-  "comcol-role.edit.editor.description": "يمكن للمحررين تحرير ميتاداتا التقديمات الواردة، ثم قبولها أو رفضها.",
+  "comcol-role.edit.editor.description": "يمكن للمحررون تحرير ميتاداتا التقديمات الواردة، ثم قبولها أو رفضها.",
 
-  "comcol-role.edit.finaleditor.name": "المحررين النهائيين",
+  "comcol-role.edit.finaleditor.name": "المحررون النهائيون",
 
-  "comcol-role.edit.finaleditor.description": "يمكن للمحررين النهائيين تحرير ميتاداتا التقديمات الواردة، لكن لا يمكنهم رفضها.",
+  "comcol-role.edit.finaleditor.description": "يمكن للمحررون النهائيون تحرير ميتاداتا التقديمات الواردة، لكن لا يمكنهم رفضها.",
 
-  "comcol-role.edit.reviewer.name": "المراجعين",
+  "comcol-role.edit.reviewer.name": "المراجعون",
 
   "comcol-role.edit.reviewer.description": "يمكن للمراجعين قبول أو رفض التقديمات الواردة. غير أنه لا يمكنهم تحرير ميتاداتا التقديم.",
 
@@ -5525,7 +5525,7 @@
 'submission.sections.describe.relationship-lookup.search-tab.tab-title.isOrgUnitOfEvent':'المؤسسات المحلية ({{ count }})',
 
 
-'submission.sections.describe.relationship-lookup.title.isMangerOfEvent':'مديرين الحدث',
+'submission.sections.describe.relationship-lookup.title.isMangerOfEvent':'مُديرون الحدث',
 
 'submission.sections.describe.relationship-lookup.search-tab.tab-title.isMangerOfEvent':'مديري الحدث  المحليين ({{ count }})',
 
@@ -5627,11 +5627,11 @@
 "submission.sections.describe.relationship-lookup.search-tab.tab-title.isSeriesOfProject":"السلاسل المحلية ({{ count }})",
 'series.search.results.head':"نتائج بحث السلسة",
 
-"submission.sections.describe.relationship-lookup.title.isMangerOfProject":"المديرين",
-"submission.sections.describe.relationship-lookup.search-tab.tab-title.isMangerOfProject":"المديرين المحلية ({{ count }})",
+"submission.sections.describe.relationship-lookup.title.isMangerOfProject":"المُديرون",
+"submission.sections.describe.relationship-lookup.search-tab.tab-title.isMangerOfProject":"المديرين المحليين ({{ count }})",
 
 "submission.sections.describe.relationship-lookup.title.isCoordinatorOfProject":"المنسقين",
-"submission.sections.describe.relationship-lookup.search-tab.tab-title.isCoordinatorOfProject":"المنسقين المحلية ({{ count }})",
+"submission.sections.describe.relationship-lookup.search-tab.tab-title.isCoordinatorOfProject":"المنسقين المحليين ({{ count }})",
 
 "submission.sections.describe.relationship-lookup.title.isFunderOfProject":"الممولين",
 "submission.sections.describe.relationship-lookup.search-tab.tab-title.isFunderOfProject":"التمويلات المحلية ({{ count }})",
@@ -6650,6 +6650,22 @@
   "community.edit.tabs.access-control.head": "التحكم في الوصول" ,
   "process.overview.delete.clear": "مسح تحديد الحذف",
   "process.overview.delete": "حذف {{count}} من العمليات",
+  'search.filters.namedresourcetype.Worksflow':"سير العمل",
+   "search.filters.namedresourcetype.Validation": "التحقق من الصحة",
+  "search.filters.namedresourcetype.Waiting for Controller": "في انتظار المراقب",
+  "submission.sections.upload.form.access-condition-hint": "قم بتحديد شرط وصول للتطبيق على تدفق البت بمجرد إيداع المادة",
+  "submission.sections.upload.form.until-hint": "قم بتحديد التاريخ الذي سيتم حتى بلوغه تطبيق شرط الوصول ذي الصلة",
+  "submission.sections.upload.form.from-hint": "قم بتحديد التاريخ الذي سيتم منه تطبيق شرط الوصول ذي الصلة",
+  'access.condition.name.openaccess':'حر الوصول',
+'access.condition.name.lease':'تأجير',
+'access.condition.name.embargo':'حظر',
+'access.condition.name.administrator':'مسؤول أو مشرف',
 
+  "claimed-approved-search-result-list-element.title": "موافقة",
+
+  "claimed-declined-search-result-list-element.title": "تم الرفض، وتم إعادته إلى مقدم الطلب",
+
+  "claimed-declined-task-search-result-list-element.title": "تم الرفض، وتم إعادته إلى سير عمل مدير المراجعة",
+ "submitter.empty": "غير متاح",
 }
 

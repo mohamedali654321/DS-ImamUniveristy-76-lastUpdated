@@ -178,7 +178,7 @@ nav{
         background-color: rgba(171, 152, 108, .9) !important;
       }
 
-
+      @media screen and (max-width: 550px) {
       ds-search-navbar input{
         position: relative;
     flex: 1 1 auto;
@@ -191,7 +191,7 @@ nav{
     max-width: 120px;
       }
   
-  
+    }
   
 }
 

@@ -659,7 +659,7 @@ ds-item-search-result-grid-element .card{
 
 //  make space between date-picker value and counter in Edit resource policy component
 ::ng-deep html[dir="rtl"] ngb-datepicker-navigation-select > .custom-select {
-  padding: 0 1.2rem !important;
+  padding: 0 1.46rem !important;
 }
 
 // make space between btns in ds-edit-community component
@@ -2899,3 +2899,25 @@ display: block;
     }
      }
     }
+
+    ::ng-deep html[dir="rtl"] ngb-datepicker-navigation {
+      button{
+        transform: scale(-1);
+      }
+      .ngb-dp-navigation-select {
+        
+        flex: 1 1 12rem !important;
+    }
+    }
+
+
+    // ::ng-deep html[dir="rtl"] ngb-datepicker-month{
+    //   direction: ltr !important;
+
+    // }
+
+    // ::ng-deep html[dir="rtl"] ngb-datepicker{
+    //   .ngb-dp-months{
+    //     direction: ltr !important;
+    //   }
+    // }
