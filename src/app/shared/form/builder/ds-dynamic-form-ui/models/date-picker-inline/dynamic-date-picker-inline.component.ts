@@ -11,7 +11,8 @@ import {
 } from '@ng-dynamic-forms/core';
 import { hasValue } from 'src/app/shared/empty.util'; // kware-edit
 
-const WEEKDAYS_AR = ['إث', 'ثل', 'أر', 'خم', 'جم', 'سب', 'أح'];
+// const WEEKDAYS_AR = ['إث', 'ثل', 'أر', 'خم', 'جم', 'سب', 'أح'];
+const WEEKDAYS_AR = ['الإثنين', 'الثلاثاء', 'الإربعاء', 'الخميس', 'الجمعة', 'السبت', 'الأحد'];
 const MONTHS_AR = [
 	'يناير',
 	'فبراير',

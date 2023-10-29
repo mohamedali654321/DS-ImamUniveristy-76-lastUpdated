@@ -2921,3 +2921,9 @@ display: block;
     //     direction: ltr !important;
     //   }
     // }
+
+    ::ng-deep html[dir="rtl"] {
+      .ngb-dp-day, .ngb-dp-weekday, .ngb-dp-week-number {
+        width: 3.4rem ; 
+      }
+    }
