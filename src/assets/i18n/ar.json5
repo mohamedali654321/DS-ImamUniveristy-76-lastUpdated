@@ -6667,5 +6667,15 @@
 
   "claimed-declined-task-search-result-list-element.title": "تم الرفض، وتم إعادته إلى سير عمل مدير المراجعة",
  "submitter.empty": "غير متاح",
+
+ "resource-policies.form.eperson-group-list.modal.header": "لا يمكن تغيير النوع",
+
+  "resource-policies.form.eperson-group-list.modal.text1.toGroup": "لا يمكن استبدال الشخص الإلكتروني بمجموعة.",
+
+  "resource-policies.form.eperson-group-list.modal.text1.toEPerson": "ليس من الممكن استبدال مجموعة بشخص إلكتروني.",
+
+  "resource-policies.form.eperson-group-list.modal.text2": "احذف السياسة الحالية وأنشئ سياسة جديدة بالنوع المطلوب.",
+
+  "resource-policies.form.eperson-group-list.modal.close": "إغلاق",
 }
 

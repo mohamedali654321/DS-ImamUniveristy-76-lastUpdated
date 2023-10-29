@@ -6569,6 +6569,16 @@
 
   "submitter.empty": "N/A",
 
+  "resource-policies.form.eperson-group-list.modal.header": "Cannot change type",
+
+  "resource-policies.form.eperson-group-list.modal.text1.toGroup": "It is not possible to replace an ePerson with a group.",
+
+  "resource-policies.form.eperson-group-list.modal.text1.toEPerson": "It is not possible to replace a group with an ePerson.",
+
+  "resource-policies.form.eperson-group-list.modal.text2": "Delete the current resource policy and create a new one with the desired type.",
+
+  "resource-policies.form.eperson-group-list.modal.close": "Ok",
+
 }
 
 
