@@ -29,6 +29,7 @@ export class PublicationCategoryComponent implements OnInit, OnDestroy {
     'Book | كتاب': { icon: 'fa-solid fa-book' },
     'Manuscript | مخطوطة': { icon: 'fa-solid fa-receipt' },
     'University Dissertations | رسالة جامعية': { icon: 'fa-solid fa-receipt' },
+    'Translated book | كتاب مترجم': { icon: 'fa-solid fa-book' },
     'Presentation | عرض تقديمي': { icon: '' },
     'Dataset | بيانات': { icon: '' },
     'Recording oral | تسجيل شفوي': { icon: '' },

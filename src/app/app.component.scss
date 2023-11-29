@@ -2927,3 +2927,40 @@ display: block;
         width: 3.4rem ; 
       }
     }
+
+    ::ng-deep{
+
+      .ngx-gallery-image-size-contain[_ngcontent-dspace-angular-c410] .ngx-gallery-image[_ngcontent-dspace-angular-c410]{
+        background-size: cover !important;
+      }
+      
+      ds-listable-object-component-loader{
+        .col-9{
+          overflow: hidden !important;
+        }
+      }
+      @media screen and (max-width: 755px){
+
+
+        
+        ds-home-page{
+          .container{
+            overflow-x: hidden !important;
+           }
+        }
+        ds-footer{
+          .container{
+            overflow-x: hidden !important;
+           }
+        }
+  
+        ds-browse-categories{
+          .container{
+            overflow-x: visible !important;
+           }
+        }
+      }
+
+
+      
+    }

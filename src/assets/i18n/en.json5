@@ -6579,6 +6579,20 @@
 
   "resource-policies.form.eperson-group-list.modal.close": "Ok",
 
+  'relationships.isInvestigatorOf.Person':'Investigators',
+'relationships.isTranslatorOf.Person':'Translators',
+
+'submission.sections.describe.relationship-lookup.title.isTranslatorOfPublication':'Translators',
+'submission.sections.describe.relationship-lookup.search-tab.tab-title.isTranslatorOfPublication':"Local Translators ({{ count }})",
+
+'submission.sections.describe.relationship-lookup.title.isInvestigatorOfPublication':'Investigators',
+'submission.sections.describe.relationship-lookup.search-tab.tab-title.isInvestigatorOfPublication':"Local Investigators ({{ count }})",
+
+'item.page.translator':'Translators',
+'item.page.investigator':'Investigators',
+
+'item.page.pagesnumber':'Pages number',
+
 }
 
 

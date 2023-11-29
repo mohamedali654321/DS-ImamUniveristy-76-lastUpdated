@@ -163,6 +163,21 @@
     [label]="'item.page.member' | translate">
   </ds-metadata-representation-list>
 
+
+  <ds-metadata-representation-list class="ds-item-page-mixed-author-field"
+  [parentItem]="object"
+  [itemType]="'Person'"
+  [metadataFields]="['dc.contributor.translator']"
+  [label]="'item.page.translator' | translate">
+</ds-metadata-representation-list>
+
+<ds-metadata-representation-list class="ds-item-page-mixed-author-field"
+[parentItem]="object"
+[itemType]="'Person'"
+[metadataFields]="['dc.contributor.investigator']"
+[label]="'item.page.investigator' | translate">
+</ds-metadata-representation-list>
+
     <!-- <ds-generic-item-page-field [item]="object"
       [fields]="['journal.title']"
       [label]="'publication.page.journal-title'">
@@ -423,6 +438,11 @@
           <ds-generic-item-page-field [item]="object"
           [fields]="['dc.format.paper']"
           [label]="'item.page.papertype'">
+          </ds-generic-item-page-field>
+
+          <ds-generic-item-page-field [item]="object"
+          [fields]="['dc.format.numberofpages']"
+          [label]="'item.page.pagesnumber'">
           </ds-generic-item-page-field>
 
           <ds-generic-item-page-field [item]="object"

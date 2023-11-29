@@ -6677,5 +6677,18 @@
   "resource-policies.form.eperson-group-list.modal.text2": "احذف السياسة الحالية وأنشئ سياسة جديدة بالنوع المطلوب.",
 
   "resource-policies.form.eperson-group-list.modal.close": "إغلاق",
+
+
+  'relationships.isInvestigatorOf.Person':'المحققين',
+'relationships.isTranslatorOf.Person':'المترجمين',
+
+'submission.sections.describe.relationship-lookup.title.isTranslatorOfPublication':'المترجمين',
+'submission.sections.describe.relationship-lookup.search-tab.tab-title.isTranslatorOfPublication':'المترجمين المحليين ({{ count }})',
+
+'submission.sections.describe.relationship-lookup.title.isInvestigatorOfPublication':'المحققين',
+'submission.sections.describe.relationship-lookup.search-tab.tab-title.isInvestigatorOfPublication':'المحققين المحليين ({{ count }})',
+'item.page.translator':'المترجمين',
+'item.page.investigator':'المحققين',
+'item.page.pagesnumber':'عدد الصفحات',
 }
 
