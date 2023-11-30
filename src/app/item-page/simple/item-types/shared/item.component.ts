@@ -66,6 +66,7 @@ relationsItems;
 
   lang:boolean  //kware-edit
 
+  public isAuthenticated$: Observable<boolean>;
   public isXs= new BehaviorSubject(false);
   private subs: Subscription[] = [];
   constructor(protected routeService: RouteService,
@@ -91,6 +92,7 @@ relationsItems;
   };
 
   ngOnInit(): void {
+    this.isAuthenticated$ = this.store.pipe(select(isAuthenticated));
   //   console.log(this.relationsItems)
   // this.relationsItems=this.object.metadataAsList.filter(md=>{return md.authority !== null && md.authority.includes('virtual::')  && !md.key.includes('relation')});
   // console.log(this.relationsItems)
