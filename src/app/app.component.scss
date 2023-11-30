@@ -2261,6 +2261,8 @@ div.card div.thumbnail > .thumbnail-content {
     display: block !important;
     min-width: 90% !important;
     min-height: 100% !important;
+    max-width: 90% !important;
+    max-height: 100% !important;
     margin: auto;
     margin-top: .75rem;
     border-radius: 5px;
@@ -2964,3 +2966,15 @@ display: block;
 
       
     }
+
+
+
+    ::ng-deep{
+      ds-listable-object-component-loader .img-fluid {
+        min-height:230px !important;
+        max-height:230px !important;
+        height: 230px !important;
+        width: -webkit-fill-available !important;
+    }
+    }
+     

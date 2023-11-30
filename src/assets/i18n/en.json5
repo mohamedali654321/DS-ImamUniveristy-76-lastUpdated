@@ -6593,6 +6593,9 @@
 
 'item.page.pagesnumber':'Pages number',
 
+'item.page.issueNumber':'Issue number',
+'item.page.volumeName':'Volume number',
+
 }
 
 
