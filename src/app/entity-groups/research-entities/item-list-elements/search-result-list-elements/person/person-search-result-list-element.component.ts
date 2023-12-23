@@ -11,6 +11,9 @@ import { DSONameService } from '../../../../../core/breadcrumbs/dso-name.service
 import { APP_CONFIG, AppConfig } from '../../../../../../config/app-config.interface';
 import { LocaleService } from 'src/app/core/locale/locale.service'; //kware-edit
 import { LinkService } from 'src/app/core/cache/builders/link.service';//kware-edit
+import { Store, select } from '@ngrx/store';
+import { AppState } from 'src/app/app.reducer';
+import { isAuthenticated } from 'src/app/core/auth/selectors';
 
 @listableObjectComponent('PersonSearchResult', ViewMode.ListElement)
 @Component({
@@ -28,9 +31,10 @@ export class PersonSearchResultListElementComponent extends ItemSearchResultList
     protected dsoNameService: DSONameService,
     public localeService: LocaleService, //kware-edit
     protected linkService: LinkService,//kware-edit
+    public store: Store<AppState>, //kware-edit
     @Inject(APP_CONFIG) protected appConfig: AppConfig
   ) {
-    super(truncatableService, dsoNameService,linkService, appConfig);
+    super(truncatableService, dsoNameService,linkService,store, appConfig);
   }
 
   /**

@@ -10,7 +10,9 @@ import { Metadata } from '../../../core/shared/metadata.utils';
 import { DSONameService } from '../../../core/breadcrumbs/dso-name.service';
 import { APP_CONFIG, AppConfig } from '../../../../config/app-config.interface';
 import { LinkService } from 'src/app/core/cache/builders/link.service';
-
+import { Store, select } from '@ngrx/store';
+import { AppState } from 'src/app/app.reducer';
+import { isAuthenticated } from 'src/app/core/auth/selectors';
 @Component({
   selector: 'ds-search-result-list-element',
   template: ``
@@ -30,10 +32,11 @@ export class SearchResultListElementComponent<T extends SearchResult<K>, K exten
    localeEn: boolean;
    arabicLang: boolean;
    englishLang: boolean;
-
+   public isAuthenticated$: Observable<boolean>;
   public constructor(protected truncatableService: TruncatableService,
                      protected dsoNameService: DSONameService,
                      protected linkService: LinkService, //kware-edit
+                     public store: Store<AppState>, //kware-edit
                      @Inject(APP_CONFIG) protected appConfig?: AppConfig) {
     super(dsoNameService);
   }
@@ -42,6 +45,7 @@ export class SearchResultListElementComponent<T extends SearchResult<K>, K exten
    * Retrieve the dso from the search result
    */
   ngOnInit(): void {
+    this.isAuthenticated$ = this.store.pipe(select(isAuthenticated));
     if (hasValue(this.object)) {
       this.dso = this.object.indexableObject;
       this.dsoTitle = this.dsoNameService.getName(this.dso);

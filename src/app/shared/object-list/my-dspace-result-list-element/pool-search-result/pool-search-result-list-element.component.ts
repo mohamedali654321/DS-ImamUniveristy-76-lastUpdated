@@ -22,6 +22,9 @@ import { getFirstCompletedRemoteData } from '../../../../core/shared/operators';
 import { Item } from '../../../../core/shared/item.model';
 import { isNotEmpty, hasValue } from '../../../empty.util';
 import { Context } from '../../../../core/shared/context.model';
+import { Store, select } from '@ngrx/store';
+import { AppState } from 'src/app/app.reducer';
+import { isAuthenticated } from 'src/app/core/auth/selectors';
 
 /**
  * This component renders pool task object for the search result in the list view.
@@ -70,9 +73,10 @@ export class PoolSearchResultListElementComponent extends SearchResultListElemen
     protected truncatableService: TruncatableService,
     public dsoNameService: DSONameService,
     protected objectCache: ObjectCacheService,
+    public store: Store<AppState>, //kware-edit
     @Inject(APP_CONFIG) protected appConfig: AppConfig
   ) {
-    super(truncatableService, dsoNameService,linkService, appConfig);
+    super(truncatableService, dsoNameService,linkService,store, appConfig);
   }
 
   /**

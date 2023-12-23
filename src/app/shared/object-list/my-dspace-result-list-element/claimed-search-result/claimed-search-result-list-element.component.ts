@@ -21,7 +21,9 @@ import { Item } from '../../../../core/shared/item.model';
 import { mergeMap, tap } from 'rxjs/operators';
 import { isNotEmpty, hasValue } from '../../../empty.util';
 import { Context } from '../../../../core/shared/context.model';
-
+import { Store, select } from '@ngrx/store';
+import { AppState } from 'src/app/app.reducer';
+import { isAuthenticated } from 'src/app/core/auth/selectors';
 @Component({
   selector: 'ds-claimed-search-result-list-element',
   styleUrls: ['../../search-result-list-element/search-result-list-element.component.scss'],
@@ -60,9 +62,10 @@ export class ClaimedSearchResultListElementComponent extends SearchResultListEle
     protected truncatableService: TruncatableService,
     public dsoNameService: DSONameService,
     protected objectCache: ObjectCacheService,
+    public store: Store<AppState>, //kware-edit
     @Inject(APP_CONFIG) protected appConfig: AppConfig
   ) {
-    super(truncatableService, dsoNameService,linkService, appConfig);
+    super(truncatableService, dsoNameService,linkService,store, appConfig);
   }
 
   /**

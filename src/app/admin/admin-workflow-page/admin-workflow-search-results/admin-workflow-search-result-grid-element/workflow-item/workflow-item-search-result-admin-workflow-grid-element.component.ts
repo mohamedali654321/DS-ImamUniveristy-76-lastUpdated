@@ -25,6 +25,9 @@ import { WorkflowItemSearchResult } from '../../../../../shared/object-collectio
 import { ThemeService } from '../../../../../shared/theme-support/theme.service';
 import { DSONameService } from '../../../../../core/breadcrumbs/dso-name.service';
 import { LocaleService } from 'src/app/core/locale/locale.service';
+import { Store, select } from '@ngrx/store';
+import { AppState } from 'src/app/app.reducer';
+import { isAuthenticated } from 'src/app/core/auth/selectors';
 
 @listableObjectComponent(WorkflowItemSearchResult, ViewMode.GridElement, Context.AdminWorkflowSearch)
 @Component({
@@ -64,8 +67,9 @@ export class WorkflowItemSearchResultAdminWorkflowGridElementComponent extends S
     private themeService: ThemeService,
     protected bitstreamDataService: BitstreamDataService,
     public localeService: LocaleService, //kware-edit
+    public store: Store<AppState>, //kware-edit
   ) {
-    super(dsoNameService, truncatableService, bitstreamDataService,linkService,localeService);
+    super(dsoNameService, truncatableService, bitstreamDataService,linkService,localeService,store);
   }
 
   /**

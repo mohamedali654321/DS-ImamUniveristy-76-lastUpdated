@@ -13,6 +13,9 @@ import { LinkService } from 'src/app/core/cache/builders/link.service';
 import { LocaleService } from 'src/app/core/locale/locale.service';
 import { followLink } from 'src/app/shared/utils/follow-link-config.model'; //kware-edit
 import { Item } from 'src/app/core/shared/item.model';
+import { Store, select } from '@ngrx/store';
+import { AppState } from 'src/app/app.reducer';
+import { isAuthenticated } from 'src/app/core/auth/selectors';
 @Component({
   selector: 'ds-search-result-grid-element',
   template: ``
@@ -29,13 +32,14 @@ export class SearchResultGridElementComponent<T extends SearchResult<K>, K exten
   isCollapsed$: Observable<boolean>;
 
   publicationRelation=[];
-
+  public isAuthenticated$: Observable<boolean>;
   public constructor(
     public dsoNameService: DSONameService,
     protected truncatableService: TruncatableService,
     protected bitstreamDataService: BitstreamDataService,
     protected linkService: LinkService, //kware-edit
-    public localeService: LocaleService  /* kware edit - call service from LocaleService */
+    public localeService: LocaleService,  /* kware edit - call service from LocaleService */
+    public store: Store<AppState>, //kware-edit
   ) {
     super(dsoNameService);
   }
@@ -44,6 +48,7 @@ export class SearchResultGridElementComponent<T extends SearchResult<K>, K exten
    * Retrieve the dso from the search result
    */
   ngOnInit(): void {
+    this.isAuthenticated$ = this.store.pipe(select(isAuthenticated));
     if (hasValue(this.object)) {
       this.dso = this.object.indexableObject;
       this.isCollapsed$ = this.isCollapsed();

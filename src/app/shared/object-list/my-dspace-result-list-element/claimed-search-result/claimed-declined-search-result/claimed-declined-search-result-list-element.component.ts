@@ -15,7 +15,9 @@ import { ClaimedTask } from '../../../../../core/tasks/models/claimed-task-objec
 import { DSONameService } from '../../../../../core/breadcrumbs/dso-name.service';
 import { APP_CONFIG, AppConfig } from '../../../../../../config/app-config.interface';
 import { Context } from '../../../../../core/shared/context.model';
-
+import { Store, select } from '@ngrx/store';
+import { AppState } from 'src/app/app.reducer';
+import { isAuthenticated } from 'src/app/core/auth/selectors';
 /**
  * This component renders claimed task declined object for the search result in the list view.
  */
@@ -46,9 +48,10 @@ export class ClaimedDeclinedSearchResultListElementComponent extends SearchResul
     protected linkService: LinkService,
     protected truncatableService: TruncatableService,
     public dsoNameService: DSONameService,
+    public store: Store<AppState>, //kware-edit
     @Inject(APP_CONFIG) protected appConfig: AppConfig
   ) {
-    super(truncatableService, dsoNameService,linkService, appConfig);
+    super(truncatableService, dsoNameService,linkService,store, appConfig);
   }
 
   /**

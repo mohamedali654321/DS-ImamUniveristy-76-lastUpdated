@@ -18,7 +18,9 @@ import { getFirstSucceededRemoteDataPayload } from '../../../../core/shared/oper
 import { ItemSearchResult } from '../../../object-collection/shared/item-search-result.model';
 import { CollectionElementLinkType } from '../../../object-collection/collection-element-link.type';
 import { Context } from '../../../../core/shared/context.model';
-
+import { Store, select } from '@ngrx/store';
+import { AppState } from 'src/app/app.reducer';
+import { isAuthenticated } from 'src/app/core/auth/selectors';
 /**
  * This component renders workflowitem object for the search result in the list view.
  */
@@ -53,9 +55,10 @@ export class WorkflowItemSearchResultListElementComponent extends SearchResultLi
     protected truncatableService: TruncatableService,
     protected linkService: LinkService,
     public dsoNameService: DSONameService,
+    public store: Store<AppState>, //kware-edit
     @Inject(APP_CONFIG) protected appConfig: AppConfig
   ) {
-    super(truncatableService, dsoNameService,linkService, appConfig);
+    super(truncatableService, dsoNameService,linkService,store, appConfig);
   }
 
   /**

@@ -65,7 +65,15 @@
         </ds-truncatable-part>
       </div>
 
-      <div *ngIf="!dso.firstMetadataValue('dc.description.abstract') && dso.firstMetadataValue('dc.description') " class="item-list-abstract">
+      <div *ngIf="!dso.firstMetadataValue('dc.description.abstract') && dso.firstMetadataValue('dc.description') && (dso && dso.firstMetadataValue('dc.type') === 'University Dissertations | رسالة جامعية' && (isAuthenticated$ | async)) " class="item-list-abstract">
+        <!-- kware-edit kwareTranslatePipe -->
+        <ds-truncatable-part [id]="dso.id" [minLines]="3"><span class="text-muted"
+          [innerHTML]="removeMarkdown(firstMetadataValue('dc.description') | kwareTranslate)"></span>
+        </ds-truncatable-part>
+      </div>
+
+
+      <div *ngIf="!dso.firstMetadataValue('dc.description.abstract') && dso.firstMetadataValue('dc.description') && dso.hasMetadata('dc.description') && (dso && dso.firstMetadataValue('dc.type') !== 'University Dissertations | رسالة جامعية' )  " class="item-list-abstract">
         <!-- kware-edit kwareTranslatePipe -->
         <ds-truncatable-part [id]="dso.id" [minLines]="3"><span class="text-muted"
           [innerHTML]="removeMarkdown(firstMetadataValue('dc.description') | kwareTranslate)"></span>

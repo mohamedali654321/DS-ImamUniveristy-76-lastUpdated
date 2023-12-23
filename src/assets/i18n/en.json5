@@ -6596,6 +6596,8 @@
 'item.page.issueNumber':'Issue number',
 'item.page.volumeName':'Volume number',
 
+'organization.openingDaysSpecification':'Working days',
+
 }
 
 

@@ -14,6 +14,9 @@ import { BitstreamDataService } from '../../../../../core/data/bitstream-data.se
 import { LinkService } from 'src/app/core/cache/builders/link.service';
 import { LocaleService } from 'src/app/core/locale/locale.service';
 import { followLink } from 'src/app/shared/utils/follow-link-config.model';
+import { Store, select } from '@ngrx/store';
+import { AppState } from 'src/app/app.reducer';
+import { isAuthenticated } from 'src/app/core/auth/selectors';
 
 @listableObjectComponent('PublicationSearchResult', ViewMode.GridElement)
 @listableObjectComponent(ItemSearchResult, ViewMode.GridElement)
@@ -53,8 +56,9 @@ export class ItemSearchResultGridElementComponent extends SearchResultGridElemen
     protected bitstreamDataService: BitstreamDataService,
     protected linkService: LinkService, //kware-edit
     public localeService: LocaleService, //kware-edit
+    public store: Store<AppState>, //kware-edit
   ) {
-    super(dsoNameService, truncatableService, bitstreamDataService ,linkService,localeService);
+    super(dsoNameService, truncatableService, bitstreamDataService ,linkService,localeService,store);
   }
 
 

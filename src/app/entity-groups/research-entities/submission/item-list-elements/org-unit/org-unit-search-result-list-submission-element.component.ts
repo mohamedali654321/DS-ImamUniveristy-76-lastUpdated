@@ -19,6 +19,9 @@ import { NameVariantModalComponent } from '../../name-variant-modal/name-variant
 import { DSONameService } from '../../../../../core/breadcrumbs/dso-name.service';
 import { APP_CONFIG, AppConfig } from '../../../../../../config/app-config.interface';
 import { LinkService } from 'src/app/core/cache/builders/link.service';//kware-edit
+import { Store, select } from '@ngrx/store';
+import { AppState } from 'src/app/app.reducer';
+import { isAuthenticated } from 'src/app/core/auth/selectors';
 
 @listableObjectComponent('OrgUnitSearchResult', ViewMode.ListElement, Context.EntitySearchModal)
 @listableObjectComponent('OrgUnitSearchResult', ViewMode.ListElement, Context.EntitySearchModalWithNameVariants)
@@ -52,9 +55,10 @@ export class OrgUnitSearchResultListSubmissionElementComponent extends SearchRes
               private selectableListService: SelectableListService,
               protected dsoNameService: DSONameService,
               protected linkService: LinkService,//kware-edit
+              public store: Store<AppState>, //kware-edit
               @Inject(APP_CONFIG) protected appConfig: AppConfig
   ) {
-    super(truncatableService, dsoNameService,linkService, appConfig);
+    super(truncatableService, dsoNameService,linkService,store, appConfig);
   }
 
   ngOnInit() {

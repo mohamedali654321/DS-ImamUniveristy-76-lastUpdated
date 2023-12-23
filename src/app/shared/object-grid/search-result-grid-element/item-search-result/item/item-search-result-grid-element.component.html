@@ -73,11 +73,17 @@
           </p>
         </div>
 
-      <div [ngStyle]="{'-webkit-line-clamp':dso.hasMetadata('dc.identifier.saveNumber') === true ? '5' : '6'}" class="card_text_abstract" *ngIf="!dso.hasMetadata('dc.description.abstract') && dso.hasMetadata('dc.description') ">
-        <p class="item-abstract card-text">
-            <span [innerHTML]="removeMarkdown(dso.firstMetadataValue('dc.description') | kwareTranslate)"></span>
-        </p>
-      </div>
+        <div   [ngStyle]="{'-webkit-line-clamp':dso.hasMetadata('dc.identifier.saveNumber') === true ? '5' : '6'}" class="card_text_abstract" *ngIf="!dso.hasMetadata('dc.description.abstract') && dso.hasMetadata('dc.description') && (dso && dso.firstMetadataValue('dc.type') === 'University Dissertations | رسالة جامعية' && (isAuthenticated$ | async)) ">
+          <p class="item-abstract card-text">
+              <span [innerHTML]="removeMarkdown(dso.firstMetadataValue('dc.description') | kwareTranslate)"></span>
+          </p>
+        </div>
+  
+        <div   [ngStyle]="{'-webkit-line-clamp':dso.hasMetadata('dc.identifier.saveNumber') === true ? '5' : '6'}" class="card_text_abstract" *ngIf="!dso.hasMetadata('dc.description.abstract') && dso.hasMetadata('dc.description') && (dso && dso.firstMetadataValue('dc.type') !== 'University Dissertations | رسالة جامعية' ) ">
+          <p class="item-abstract card-text">
+              <span [innerHTML]="removeMarkdown(dso.firstMetadataValue('dc.description') | kwareTranslate)"></span>
+          </p>
+        </div>
 
       </ds-truncatable>
       

@@ -14,6 +14,10 @@ import { APP_CONFIG, AppConfig } from 'src/config/app-config.interface';
 import { TruncatableService } from 'src/app/shared/truncatable/truncatable.service';
 import { LinkService } from 'src/app/core/cache/builders/link.service';
 import { VirtualMetadataFieldsService } from 'src/app/core/services/virtual-metadata-fields.service';
+import { Store, select } from '@ngrx/store';
+import { AppState } from 'src/app/app.reducer';
+import { isAuthenticated } from 'src/app/core/auth/selectors';
+
 @listableObjectComponent('AdministrationSearchResult', ViewMode.ListElement)
 @Component({
   selector: 'ds-sub-org-unit-search-result-list-element',
@@ -37,9 +41,10 @@ export class SubOrgUnitSearchResultListElementComponent extends ItemSearchResult
   protected virtualMetadataFieldsService:VirtualMetadataFieldsService ,
                      protected dsoNameService: DSONameService,
                      protected linkService: LinkService, //kware-edit
+                     public store: Store<AppState>, //kware-edit
                      @Inject(APP_CONFIG) protected appConfig?: AppConfig
 ) {
-   super(truncatableService,dsoNameService,linkService);
+   super(truncatableService,dsoNameService,linkService,store);
  }
 
 

@@ -10,7 +10,9 @@ import { TruncatableService } from '../../../../../shared/truncatable/truncatabl
 import { LinkService } from '../../../../../core/cache/builders/link.service';
 import { TranslateService } from '@ngx-translate/core';
 import { DSONameService } from '../../../../../core/breadcrumbs/dso-name.service';
-
+import { Store, select } from '@ngrx/store';
+import { AppState } from 'src/app/app.reducer';
+import { isAuthenticated } from 'src/app/core/auth/selectors';
 @listableObjectComponent('PersonSearchResult', ViewMode.ListElement, Context.SideBarSearchModal)
 @listableObjectComponent('PersonSearchResult', ViewMode.ListElement, Context.SideBarSearchModalCurrent)
 @Component({
@@ -25,9 +27,10 @@ export class PersonSidebarSearchListElementComponent extends SidebarSearchListEl
   constructor(protected truncatableService: TruncatableService,
               protected linkService: LinkService,
               protected translateService: TranslateService,
-              public dsoNameService: DSONameService
+              public dsoNameService: DSONameService,
+              public store: Store<AppState>, //kware-edit
   ) {
-    super(truncatableService, linkService, dsoNameService,);
+    super(truncatableService, linkService, dsoNameService,store);
   }
 
   /**

@@ -11,6 +11,9 @@ import { hasNoValue, hasValue } from '../../../empty.util';
 import { followLink } from '../../../utils/follow-link-config.model';
 import { DSONameService } from '../../../../core/breadcrumbs/dso-name.service';
 import { LocaleService } from 'src/app/core/locale/locale.service';
+import { Store, select } from '@ngrx/store';
+import { AppState } from 'src/app/app.reducer';
+import { isAuthenticated } from 'src/app/core/auth/selectors';
 
 @Component({
   selector: 'ds-community-search-result-grid-element',
@@ -33,8 +36,9 @@ export class CommunitySearchResultGridElementComponent extends SearchResultGridE
     protected truncatableService: TruncatableService,
     protected bitstreamDataService: BitstreamDataService,
     public localeService: LocaleService, //kware-edit
+    public store: Store<AppState>, //kware-edit
   ) {
-    super(dsoNameService, truncatableService, bitstreamDataService,linkService,localeService);
+    super(dsoNameService, truncatableService, bitstreamDataService,linkService,localeService,store);
   }
 
   // @ts-ignore

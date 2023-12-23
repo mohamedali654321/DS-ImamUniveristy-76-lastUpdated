@@ -31,7 +31,9 @@ import { SupervisionOrder } from '../../../../../core/supervision-order/models/s
 import { SupervisionOrderDataService } from '../../../../../core/supervision-order/supervision-order-data.service';
 import { PaginatedList } from '../../../../../core/data/paginated-list.model';
 import { DSpaceObject } from '../../../../../core/shared/dspace-object.model';
-
+import { Store, select } from '@ngrx/store';
+import { AppState } from 'src/app/app.reducer';
+import { isAuthenticated } from 'src/app/core/auth/selectors';
 @listableObjectComponent(WorkspaceItemSearchResult, ViewMode.ListElement, Context.AdminWorkflowSearch)
 @Component({
   selector: 'ds-workflow-item-search-result-admin-workflow-list-element',
@@ -62,9 +64,10 @@ export class WorkspaceItemSearchResultAdminWorkflowListElementComponent extends 
               public dsoNameService: DSONameService,
               protected supervisionOrderDataService: SupervisionOrderDataService,
               protected truncatableService: TruncatableService,
+              public store: Store<AppState>, //kware-edit
               @Inject(APP_CONFIG) protected appConfig: AppConfig
   ) {
-    super(truncatableService, dsoNameService,linkService, appConfig);
+    super(truncatableService, dsoNameService,linkService,store, appConfig);
   }
 
   /**

@@ -6692,5 +6692,7 @@
 'item.page.pagesnumber':'عدد الصفحات',
 'item.page.issueNumber':'رقم العدد',
 'item.page.volumeName':'رقم المجلد',
+
+'organization.openingDaysSpecification':'أيام العمل',
 }
 

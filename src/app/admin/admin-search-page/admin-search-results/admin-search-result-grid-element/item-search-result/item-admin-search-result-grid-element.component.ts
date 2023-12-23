@@ -16,6 +16,9 @@ import { ThemeService } from '../../../../../shared/theme-support/theme.service'
 import { DSONameService } from '../../../../../core/breadcrumbs/dso-name.service';
 import { LinkService } from 'src/app/core/cache/builders/link.service';
 import { LocaleService } from 'src/app/core/locale/locale.service';
+import { Store, select } from '@ngrx/store';
+import { AppState } from 'src/app/app.reducer';
+import { isAuthenticated } from 'src/app/core/auth/selectors';
 
 @listableObjectComponent(ItemSearchResult, ViewMode.GridElement, Context.AdminSearch)
 @Component({
@@ -39,8 +42,9 @@ export class ItemAdminSearchResultGridElementComponent extends SearchResultGridE
     private componentFactoryResolver: ComponentFactoryResolver,
     protected linkService: LinkService,
     public localeService: LocaleService, //kware-edit
+    public store: Store<AppState>, //kware-edit
   ) {
-    super(dsoNameService, truncatableService, bitstreamDataService,linkService,localeService);
+    super(dsoNameService, truncatableService, bitstreamDataService,linkService,localeService,store);
   }
 
   /**

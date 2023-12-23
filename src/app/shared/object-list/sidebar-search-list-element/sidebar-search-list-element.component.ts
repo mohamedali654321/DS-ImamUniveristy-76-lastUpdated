@@ -12,6 +12,9 @@ import { followLink } from '../../utils/follow-link-config.model';
 import { RemoteData } from '../../../core/data/remote-data';
 import { Context } from '../../../core/shared/context.model';
 import { DSONameService } from '../../../core/breadcrumbs/dso-name.service';
+import { Store, select } from '@ngrx/store';
+import { AppState } from 'src/app/app.reducer';
+import { isAuthenticated } from 'src/app/core/auth/selectors';
 
 @Component({
   selector: 'ds-sidebar-search-list-element',
@@ -36,8 +39,9 @@ export class SidebarSearchListElementComponent<T extends SearchResult<K>, K exte
   public constructor(protected truncatableService: TruncatableService,
                      protected linkService: LinkService,
                      public dsoNameService: DSONameService,
+                     public store: Store<AppState>, //kware-edit
   ) {
-    super(truncatableService, dsoNameService, null);
+    super(truncatableService, dsoNameService, null,store);
   }
 
   /**
